@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuyang0564.github.io</id>
     <title>日常开发</title>
-    <updated>2020-04-10T01:31:34.739Z</updated>
+    <updated>2020-04-10T01:44:52.212Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuyang0564.github.io"/>
     <link rel="self" href="https://yuyang0564.github.io/atom.xml"/>
@@ -10,4 +10,22 @@
     <logo>https://yuyang0564.github.io/images/avatar.png</logo>
     <icon>https://yuyang0564.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 日常开发</rights>
+    <entry>
+        <title type="html"><![CDATA[uni-app 差异化注意事项]]></title>
+        <id>https://yuyang0564.github.io/post/uni-app-chai-yi-hua-zhu-yi-shi-xiang/</id>
+        <link href="https://yuyang0564.github.io/post/uni-app-chai-yi-hua-zhu-yi-shi-xiang/">
+        </link>
+        <updated>2020-04-10T01:33:07.000Z</updated>
+        <content type="html"><![CDATA[<p>🌈      1. 不要把 <code>js,css,scss</code> 等文件直接放入 <strong>static</strong> 文件中，因为此文件是不会进行编译的</p>
+<p>🌈      2. 在<strong>css中</strong>和<strong>组件中</strong>引入样式，只能通过<code>相对路径</code>的方式</p>
+<pre><code class="language-css">@import url(&quot;../../xx.css&quot;);
+</code></pre>
+<pre><code class="language-html">&lt;style&gt;
+    @import &quot;../../xxx.css&quot;
+&lt;/style&gt;
+</code></pre>
+<p>🌈      3. 使用<code>rpx</code> 作为尺寸单位， 默认根据 750px 的宽度计算</p>
+<p>🌈      4.</p>
+]]></content>
+    </entry>
 </feed>
