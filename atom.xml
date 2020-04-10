@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuyang0564.github.io</id>
     <title>日常开发</title>
-    <updated>2020-04-10T02:10:15.772Z</updated>
+    <updated>2020-04-10T02:58:55.235Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuyang0564.github.io"/>
     <link rel="self" href="https://yuyang0564.github.io/atom.xml"/>
@@ -10,6 +10,55 @@
     <logo>https://yuyang0564.github.io/images/avatar.png</logo>
     <icon>https://yuyang0564.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 日常开发</rights>
+    <entry>
+        <title type="html"><![CDATA[uni-app 条件编译]]></title>
+        <id>https://yuyang0564.github.io/post/uni-app-tiao-jian-bian-yi/</id>
+        <link href="https://yuyang0564.github.io/post/uni-app-tiao-jian-bian-yi/">
+        </link>
+        <updated>2020-04-10T02:33:16.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="条件编译通过注释的写法区分不同的环境">条件编译通过<code>注释</code>的写法，区分不同的环境</h2>
+<h3 id="️-语法">✍️  语法</h3>
+<pre><code class="language-js">#ifdef %PLATFORM%
+
+#endif
+</code></pre>
+<h3 id="platform-可选值">👓  <code>%PLATFORM%</code> 可选值</h3>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>平台</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>APP-PLUS</td>
+<td>APP</td>
+</tr>
+<tr>
+<td>H5</td>
+<td>H5</td>
+</tr>
+<tr>
+<td>MP-WEIXIN</td>
+<td>微信小程序</td>
+</tr>
+</tbody>
+</table>
+<h3 id="js">js</h3>
+<p>// #ifdef <code>APP-PLUS</code></p>
+<p>// #endif</p>
+<h3 id="css">css</h3>
+<p>/* #ifdef  <code>APP-PLUS</code>    */</p>
+<p>/* #endif                     */</p>
+<h3 id="pagesjson">pages.json</h3>
+<p>// #ifdef <code>APP-PLUS</code></p>
+<p>// #endif</p>
+<h3 id="template">template</h3>
+<p><code>&lt;!-- #ifdef</code>APP-PLUS<code>--&gt;</code></p>
+<p><code>&lt;!-- #endif --&gt;</code></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[uni-app 差异化注意事项]]></title>
         <id>https://yuyang0564.github.io/post/uni-app-chai-yi-hua-zhu-yi-shi-xiang/</id>
