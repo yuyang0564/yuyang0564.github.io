@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuyang0564.github.io</id>
     <title>日常开发</title>
-    <updated>2020-04-10T02:00:55.314Z</updated>
+    <updated>2020-04-10T02:10:15.772Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuyang0564.github.io"/>
     <link rel="self" href="https://yuyang0564.github.io/atom.xml"/>
@@ -26,6 +26,21 @@
 </code></pre>
 <p>🌈      3. 使用<code>rpx</code> 作为尺寸单位， 默认根据 750px 的宽度计算</p>
 <p>🌈      4. <strong>背景图片</strong> 不支持本地图片，可以转为<code>base64</code> , 注意源文件不要大于 <strong>40Kb</strong></p>
+<p>🌈      5.  不支持 vue 的 classObject 的方式绑定样式</p>
+<pre><code class="language-html">    &lt;div :class=&quot;classObject&quot;&gt;&lt;/div&gt;
+    &lt;script&gt;
+        data: {
+            classObject: {
+                color: &quot;#fff&quot;,
+                fontSize: &quot;16px&quot;
+            }
+        }
+    &lt;/script&gt;
+</code></pre>
+<p>🌈      6. 不支持在自定义组件上使用 <code>class</code> 和 <code>style</code> 绑定</p>
+<pre><code class="language-html">    &lt;v-component :class=&quot;classStyle&quot; /&gt;
+</code></pre>
+<p>🌈      7. 事件修饰符只支持 <code>.stop</code> 阻止事件冒泡 ， 其他修饰符只在 <code>H5</code> 端有效</p>
 ]]></content>
     </entry>
 </feed>
