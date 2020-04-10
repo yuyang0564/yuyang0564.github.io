@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuyang0564.github.io</id>
     <title>日常开发</title>
-    <updated>2020-04-10T03:04:00.978Z</updated>
+    <updated>2020-04-10T03:07:14.114Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuyang0564.github.io"/>
     <link rel="self" href="https://yuyang0564.github.io/atom.xml"/>
@@ -22,41 +22,47 @@
 
 #endif
 </code></pre>
-<h3 id="platform-可选值">👓  <code>%PLATFORM%</code> 可选值</h3>
+<h3 id="platform-常用可选值">👓  <code>%PLATFORM%</code> 常用可选值</h3>
 <table>
 <thead>
 <tr>
-<th>值</th>
-<th>平台</th>
+<th style="text-align:center">值</th>
+<th style="text-align:center">平台</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>APP-PLUS</td>
-<td>APP</td>
+<td style="text-align:center">APP-PLUS</td>
+<td style="text-align:center">APP</td>
 </tr>
 <tr>
-<td>H5</td>
-<td>H5</td>
+<td style="text-align:center">H5</td>
+<td style="text-align:center">H5</td>
 </tr>
 <tr>
-<td>MP-WEIXIN</td>
-<td>微信小程序</td>
+<td style="text-align:center">MP-WEIXIN</td>
+<td style="text-align:center">微信小程序</td>
 </tr>
 </tbody>
 </table>
 <h3 id="js">js</h3>
-<p>// #ifdef <code>APP-PLUS</code></p>
-<p>// #endif</p>
+<pre><code class="language-js">// #ifdef APP-PLUS
+
+// #endif
+</code></pre>
 <h3 id="css">css</h3>
-<p>/* #ifdef  <code>APP-PLUS</code>    */</p>
-<p>/* #endif                     */</p>
+<pre><code class="language-css">/* #ifdef  APP-PLUS */
+
+/* #endif */
+</code></pre>
 <h3 id="pagesjson">pages.json</h3>
 <p>// #ifdef <code>APP-PLUS</code></p>
 <p>// #endif</p>
 <h3 id="template">template</h3>
-<p><code>&lt;!-- #ifdef</code>APP-PLUS<code>--&gt;</code></p>
-<p><code>&lt;!-- #endif --&gt;</code></p>
+<pre><code class="language-html">&lt;!--  #ifdef  APP-PLUS--&gt;
+
+&lt;!--  #endif --&gt;
+</code></pre>
 ]]></content>
     </entry>
     <entry>
