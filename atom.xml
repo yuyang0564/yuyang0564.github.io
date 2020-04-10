@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuyang0564.github.io</id>
     <title>日常开发</title>
-    <updated>2020-04-10T08:32:41.238Z</updated>
+    <updated>2020-04-10T14:50:23.146Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuyang0564.github.io"/>
     <link rel="self" href="https://yuyang0564.github.io/atom.xml"/>
@@ -11,106 +11,45 @@
     <icon>https://yuyang0564.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 日常开发</rights>
     <entry>
+        <title type="html"><![CDATA[规范1]]></title>
+        <id>https://yuyang0564.github.io/gui-fan/</id>
+        <link href="https://yuyang0564.github.io/gui-fan/">
+        </link>
+        <updated>2020-04-10T13:32:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[uni-app wgt资源包升级]]></title>
+        <id>https://yuyang0564.github.io/uni-app-wgt-zi-yuan-bao-sheng-ji/</id>
+        <link href="https://yuyang0564.github.io/uni-app-wgt-zi-yuan-bao-sheng-ji/">
+        </link>
+        <updated>2020-04-10T09:48:47.000Z</updated>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[uni-app  无法打开微信开发者工具]]></title>
-        <id>https://yuyang0564.github.io/post/uni-app-wu-fa-da-kai-wei-xin-kai-fa-zhe-gong-ju/</id>
-        <link href="https://yuyang0564.github.io/post/uni-app-wu-fa-da-kai-wei-xin-kai-fa-zhe-gong-ju/">
+        <id>https://yuyang0564.github.io/uni-app-wu-fa-da-kai-wei-xin-kai-fa-zhe-gong-ju/</id>
+        <link href="https://yuyang0564.github.io/uni-app-wu-fa-da-kai-wei-xin-kai-fa-zhe-gong-ju/">
         </link>
         <updated>2020-04-10T08:09:29.000Z</updated>
-        <content type="html"><![CDATA[<p>刚接手的别人的项目，从svn一拉下来。从 hbuildx 运行到开发者工具时，一直卡在了  open IDE<br>
-<img src="https://yuyang0564.github.io/post-images/1586506450057.png" alt="" loading="lazy"></p>
-<p>就是打不开项目。。。😡😡</p>
-<p>尝试一同，修改了一下 HBuildx 配置中的小程序 APPID，问题解决<br>
-<img src="https://yuyang0564.github.io/post-images/1586506586474.png" alt="" loading="lazy"></p>
-<p>同时也需要打开微信开发者工具中的  <code>安全</code>  -&gt; <code>开启服务端口</code><br>
-<img src="https://yuyang0564.github.io/post-images/1586507163095.png" alt="" loading="lazy"></p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[uni-app 条件编译]]></title>
-        <id>https://yuyang0564.github.io/post/uni-app-tiao-jian-bian-yi/</id>
-        <link href="https://yuyang0564.github.io/post/uni-app-tiao-jian-bian-yi/">
+        <id>https://yuyang0564.github.io/uni-app-tiao-jian-bian-yi/</id>
+        <link href="https://yuyang0564.github.io/uni-app-tiao-jian-bian-yi/">
         </link>
         <updated>2020-04-10T02:33:16.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="条件编译通过注释的写法区分不同的环境">条件编译通过<code>注释</code>的写法，区分不同的环境</h2>
-<h3 id="️-语法">✍️  语法</h3>
-<pre><code class="language-js">#ifdef %PLATFORM%
-
-#endif
-</code></pre>
-<h3 id="platform-常用可选值">👓  <code>%PLATFORM%</code> 常用可选值</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">值</th>
-<th style="text-align:center">平台</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">APP-PLUS</td>
-<td style="text-align:center">APP</td>
-</tr>
-<tr>
-<td style="text-align:center">H5</td>
-<td style="text-align:center">H5</td>
-</tr>
-<tr>
-<td style="text-align:center">MP-WEIXIN</td>
-<td style="text-align:center">微信小程序</td>
-</tr>
-</tbody>
-</table>
-<h3 id="js">js</h3>
-<pre><code class="language-js">// #ifdef APP-PLUS
-
-// #endif
-</code></pre>
-<h3 id="css">css</h3>
-<pre><code class="language-css">/* #ifdef  APP-PLUS */
-
-/* #endif */
-</code></pre>
-<h3 id="pagesjson">pages.json</h3>
-<p>// #ifdef <code>APP-PLUS</code></p>
-<p>// #endif</p>
-<h3 id="template">template</h3>
-<pre><code class="language-html">&lt;!--  #ifdef  APP-PLUS--&gt;
-
-&lt;!--  #endif --&gt;
-</code></pre>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[uni-app 差异化注意事项]]></title>
-        <id>https://yuyang0564.github.io/post/uni-app-chai-yi-hua-zhu-yi-shi-xiang/</id>
-        <link href="https://yuyang0564.github.io/post/uni-app-chai-yi-hua-zhu-yi-shi-xiang/">
+        <id>https://yuyang0564.github.io/uni-app-chai-yi-hua-zhu-yi-shi-xiang/</id>
+        <link href="https://yuyang0564.github.io/uni-app-chai-yi-hua-zhu-yi-shi-xiang/">
         </link>
         <updated>2020-04-10T01:33:07.000Z</updated>
-        <content type="html"><![CDATA[<p>🌈      1. 不要把 <code>js,css,scss</code> 等文件直接放入 <strong>static</strong> 文件中，因为此文件是不会进行编译的</p>
-<p>🌈      2. 在<strong>css中</strong>和<strong>组件中</strong>引入样式，只能通过<code>相对路径</code>的方式</p>
-<pre><code class="language-css">@import url(&quot;../../xx.css&quot;);
-</code></pre>
-<pre><code class="language-html">&lt;style&gt;
-    @import &quot;../../xxx.css&quot;
-&lt;/style&gt;
-</code></pre>
-<p>🌈      3. 使用<code>rpx</code> 作为尺寸单位， 默认根据 750px 的宽度计算</p>
-<p>🌈      4. <strong>背景图片</strong> 不支持本地图片，可以转为<code>base64</code> , 注意源文件不要大于 <strong>40Kb</strong></p>
-<p>🌈      5.  不支持 vue 的 classObject 的方式绑定样式</p>
-<pre><code class="language-html">    &lt;div :class=&quot;classObject&quot;&gt;&lt;/div&gt;
-    &lt;script&gt;
-        data: {
-            classObject: {
-                color: &quot;#fff&quot;,
-                fontSize: &quot;16px&quot;
-            }
-        }
-    &lt;/script&gt;
-</code></pre>
-<p>🌈      6. 不支持在自定义组件上使用 <code>class</code> 和 <code>style</code> 绑定</p>
-<pre><code class="language-html">    &lt;v-component :class=&quot;classStyle&quot; /&gt;
-</code></pre>
-<p>🌈      7. 事件修饰符只支持 <code>.stop</code> 阻止事件冒泡 ， 其他修饰符只在 <code>H5</code> 端有效</p>
-]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[uniapp 差异化注意事项]]></title>
+        <id>https://yuyang0564.github.io/uniapp-chai-yi-hua-zhu-yi-shi-xiang-01/</id>
+        <link href="https://yuyang0564.github.io/uniapp-chai-yi-hua-zhu-yi-shi-xiang-01/">
+        </link>
+        <updated>2020-04-09T14:00:55.000Z</updated>
     </entry>
 </feed>
