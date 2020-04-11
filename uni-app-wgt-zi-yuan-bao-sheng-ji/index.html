@@ -20,7 +20,9 @@
 2.  在HBuildX 中生成wgt安装包，格式为 .wgt 结尾
 [发行] -&gt; [制作应用 wgt 包]
 
-..." />
+3. 与服务端协商升级接口
+4. 代码中通过环境判断APP端
+// #ifdef A..." />
     <meta name="keywords" content="uni-app" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
@@ -76,7 +78,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1586583882274" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1586585389927" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -115,6 +117,79 @@
 <h2 id="2-在hbuildx-中生成wgt安装包格式为-wgt-结尾">2.  在<code>HBuildX</code> 中生成wgt安装包，格式为 <code>.wgt</code> 结尾</h2>
 <p>[发行] -&gt; [制作应用 wgt 包]<br>
 <img src="https://yuyang0564.github.io/post-images/1586512528933.png" alt="" loading="lazy"></p>
+<h2 id="3-与服务端协商升级接口">3. 与服务端协商升级接口</h2>
+<h2 id="4-代码中通过环境判断app端">4. 代码中通过环境判断APP端</h2>
+<pre><code class="language-js">// #ifdef APP-PLUS
+
+// #endif
+</code></pre>
+<h2 id="5-使用-unidownloadfile-下载文件">5. 使用 uni.downloadFile 下载文件</h2>
+<pre><code class="language-js">const downloadTask = await uni.downloadFile({
+    url,
+    success(res) {
+        let {tempFilePath ,  statusCode} = res
+        ...
+    }
+})
+</code></pre>
+<p>下载成功时会传入一个事件对象</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">tempFilePath</td>
+<td style="text-align:center">已下载文件的临时路径</td>
+</tr>
+<tr>
+<td style="text-align:center">statusCode</td>
+<td style="text-align:center">开发者服务返回的状态码</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-监听下载-可选">6. 监听下载( 可选 )</h2>
+<p>上文中 uni.downloadFile 会返回一个 <code>downloadTask</code> 对象</p>
+<pre><code class="language-js">downloadTask.onProgressUpdate(res=&gt;{
+    let {
+        progress,                                 //  下载进度百分比
+        totalBytesWritten,                  //   已经下载的数据长度, 单位 Bytes
+        totalBytesExpectedToWrite   //    数据总长度 ,  单位 Bytes
+    } = res
+})
+</code></pre>
+<p><strong>downloadTask</strong> 对象可用方法</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">abort</td>
+<td style="text-align:center">中断当前下载</td>
+</tr>
+<tr>
+<td style="text-align:center">onProgressUpdate</td>
+<td style="text-align:center">监听下载进度变化</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-通过-h5-的-install-方法来安装更新">7. 通过 h5+  的 install 方法来安装更新</h2>
+<p><strong>步骤5</strong> 下载成功后会返回一个文件的临时路径  <code>tempFilePath</code></p>
+<pre><code class="language-js">   plus.runtime.install(tempFilePath , {
+       force: false        //  是否强制安装
+   },()=&gt;{
+       //  安装成功回调
+   }()=&gt;{
+       //  安装失败回调
+   })
+</code></pre>
 
                 </div>
                 <div class="clear"></div>
