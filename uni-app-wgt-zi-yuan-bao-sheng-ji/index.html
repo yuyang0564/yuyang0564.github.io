@@ -78,7 +78,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1586585389927" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1586744252551" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -93,7 +93,7 @@
         <div class="center content">
           <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/uni-app-wgt-zi-yuan-bao-sheng-ji.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-04-10"><i class="fa fa-calendar"></i><span class="lately">20 小时前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-04-10"><i class="fa fa-calendar"></i><span class="lately">3 天前</span></time>
               
             </div>
             <div class="info">
@@ -181,11 +181,12 @@
 </tbody>
 </table>
 <h2 id="7-通过-h5-的-install-方法来安装更新">7. 通过 h5+  的 install 方法来安装更新</h2>
-<p><strong>步骤5</strong> 下载成功后会返回一个文件的临时路径  <code>tempFilePath</code></p>
+<p><strong>步骤5</strong> 下载成功后会返回一个文件的临时路径  <code>tempFilePath</code><br>
+安装成功后，需要重启才能生效 。通过 <code>plus.runtime.restart()</code> 方法</p>
 <pre><code class="language-js">   plus.runtime.install(tempFilePath , {
        force: false        //  是否强制安装
    },()=&gt;{
-       //  安装成功回调
+       plus.runtime.restart()  
    }()=&gt;{
        //  安装失败回调
    })
