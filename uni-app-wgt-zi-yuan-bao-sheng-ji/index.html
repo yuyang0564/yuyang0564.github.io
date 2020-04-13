@@ -78,7 +78,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1586744252551" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1586749818659" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -191,6 +191,14 @@
        //  安装失败回调
    })
 </code></pre>
+<h2 id="注意事项">注意事项:</h2>
+<ul>
+<li>appid  识别应用的唯一 ID，不可变更</li>
+<li>升级时需要通过条件编译识别APP平台</li>
+<li>识别 manifest.json 中配置的版本号，需要在 <code>plus.rumtime.getProperty</code> 中获取</li>
+<li>需要保持 HBuildX 的基座版本号与即将升级的APP 的基座版本号一致</li>
+<li>安装完 wgt 必须重启应用才能生效</li>
+</ul>
 
                 </div>
                 <div class="clear"></div>
