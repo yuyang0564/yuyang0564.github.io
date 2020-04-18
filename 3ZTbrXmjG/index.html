@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>我的阅读 | 日常开发</title>
+<title>css 常用文本属性 | 日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,13 +15,30 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <link rel="stylesheet" href="https://yuyang0564.github.io/media/js/Bmdb.min.css">
-    <script type='text/javascript' src='https://yuyang0564.github.io/media/js/Bmdb.min.js'></script>
+    <meta name="description" content="color
+设置文本的颜色
+
+name
+hax
+rgb
+
+direction
+设置文本的排列方向
+
+ltr     从左向右排列
+rtl     从右向左排列
+
+.box {
+    direction: rtl;
+}
+
+
+letter-s..." />
+    <meta name="keywords" content="css" />
+    <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -82,14 +99,162 @@
         </div>
       </div>
 
-      <main id="friends" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/3ZTbrXmjG.png');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-04-18"><i class="fa fa-calendar"></i><span class="lately">2 小时前</span></time>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-0 ctag-LQTZpssFQ" aria-label="">css</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">css 常用文本属性</h1>
+            </div>
+          </div>
+        </div>  
+
         <div class="epcl-page-wrapper">
-          <div class="section-content" style="margin-top:3em;"></div>
-        </div>
-        </div>
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h2 id="color">color</h2>
+<p>设置文本的颜色</p>
+<ul>
+<li>name</li>
+<li>hax</li>
+<li>rgb</li>
+</ul>
+<h2 id="direction">direction</h2>
+<p>设置文本的排列方向</p>
+<ul>
+<li>ltr     从左向右排列</li>
+<li>rtl     从右向左排列</li>
+</ul>
+<pre><code class="language-css">.box {
+    direction: rtl;
+}
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://yuyang0564.github.io/post-images/1587193875488.png" alt="" loading="lazy"></figure>
+<h2 id="letter-spacing">letter-spacing</h2>
+<p>设置文字之间的间距  <code>允许使用负值</code></p>
+<pre><code class="language-css">.box {
+    letter-spacing: 15px;
+}
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://yuyang0564.github.io/post-images/1587194036982.png" alt="" loading="lazy"></figure>
+<h2 id="white-space">white-space</h2>
+<p>文字是否换行</p>
+<ul>
+<li>nowrap        不换行</li>
+</ul>
+<h2 id="text-decoration">text-decoration</h2>
+<p>修饰文本</p>
+<ul>
+<li>underline         为文本添加<code>下划线</code></li>
+<li>overline            为文本添加<code>上划线</code></li>
+<li>line-through     为文本添加<code>删除线</code><br>
+<img src="https://yuyang0564.github.io/post-images/1587196159013.png" alt="" loading="lazy"></li>
+</ul>
+<h2 id="text-indent">text-indent</h2>
+<p>文本的首行缩进</p>
+<ul>
+<li>length        通过像素单位，设置固定大小</li>
+<li>%                  基于父元素宽度的百分比</li>
+</ul>
+<h2 id="text-transform">text-transform</h2>
+<p>文本的大小写</p>
+<ul>
+<li>capitalize        每个单词以大写字母开头</li>
+<li>uppercase      全部转为大写</li>
+<li>lowecase         全部转为小写</li>
+</ul>
+<h2 id="text-align">text-align</h2>
+<p>设置<code>行元素</code> , <code>img</code> 和 <code>文本</code>  的水平对齐方式</p>
+<ul>
+<li>left            左对齐</li>
+<li>right          右对齐</li>
+<li>center      居中</li>
+<li>justify         两端对齐</li>
+</ul>
+<h2 id="vertical-align">vertical-align</h2>
+<p><code>行元素</code>,<code>img</code>,<code>文本</code> 在水平方向与其他元素垂直方向的对齐方式</p>
+<ul>
+<li>top                 元素顶端与其他元素中最高的元素顶端对齐</li>
+<li>bottom         元素顶端与其他元素中最低的元素顶端对齐</li>
+<li>text-top        元素的顶端与父元素字体的顶端对齐</li>
+<li>text-bottom 元素的<code>底</code>端与父元素字体的<code>底</code>端对齐</li>
+<li>middle          元素放置在父元素的中间</li>
+</ul>
+<h2 id="line-height">line-height</h2>
+<p>设置行间距(行高) <code>没有负值</code></p>
+<ul>
+<li>number   设置为数值时，会与当前的字体尺寸相乘</li>
+<li>length      像素单位</li>
+<li>%                基于当前字体的百分比</li>
+</ul>
+<h2 id="text-overflow">text-overflow</h2>
+<p>当文本<code>溢出包含的元素</code>时的显示方式</p>
+<ul>
+<li>clip           裁剪掉</li>
+<li>ellipsis      以省略号代表被裁剪掉的文本</li>
+<li>string        用自定义的字符串来代表被裁剪的文本</li>
+</ul>
+<h2 id="text-shadow">text-shadow</h2>
+<p>为文字添加阴影</p>
+<ul>
+<li>h-shadow          水平阴影</li>
+<li>v-shadow           垂直阴影</li>
+<li>blur                       模糊距离</li>
+<li>color                     颜色<br>
+<img src="https://yuyang0564.github.io/post-images/1587198817624.png" alt="" loading="lazy"></li>
+</ul>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/KMjITJtJa.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/KMjITJtJa/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-04-11">2020-04-11</time>
+                  <h4 class="title white no-margin">uni-app AppId 的作用</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
+            
+              <div id="comments" class="bg-white hosted ">
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+              </div>
+              <div class="clear"></div>
+            
+
+            </div>
+          </div>
       </main>
-        <footer id="footer" class="grid-container">
+
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -220,15 +385,9 @@
 
         
 
-    <script>
-    new Bmdb({
-      type: 'books',
-      selector: '.section-content',
-      secret: '0bba46738324c778ad2da662837c14d2c1e5bceb22e3729febc9fd3677bdcea5',
-      noMoreText: '没有更多数据了',
-      limit: 30
-    })
-    </script>
+      
+    <script src="https://yuyang0564.github.io/media/js/functions-post.js"></script>
+
     </div>
     <!-- end: #wrapper -->
   </body>
