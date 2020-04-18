@@ -89,7 +89,7 @@ letter-s..." />
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1587199105394" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1587199389320" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -153,20 +153,35 @@ letter-s..." />
 <ul>
 <li>nowrap        不换行</li>
 </ul>
+<pre><code class="language-css">.box {
+    white-space: nowrap;
+}
+</code></pre>
 <h2 id="text-decoration"><strong>text-decoration</strong></h2>
 <p>修饰文本</p>
 <ul>
 <li>underline         为文本添加<code>下划线</code></li>
 <li>overline            为文本添加<code>上划线</code></li>
-<li>line-through     为文本添加<code>删除线</code><br>
-<img src="https://yuyang0564.github.io/post-images/1587196159013.png" alt="" loading="lazy"></li>
+<li>line-through     为文本添加<code>删除线</code></li>
 </ul>
+<pre><code class="language-css">.box {
+    text-decoration: underline;
+    text-decoration: overline;
+    text-decoration: line-through;
+}
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://yuyang0564.github.io/post-images/1587196159013.png" alt="" loading="lazy"></figure>
 <h2 id="text-indent"><strong>text-indent</strong></h2>
 <p>文本的首行缩进</p>
 <ul>
 <li>length        通过像素单位，设置固定大小</li>
 <li>%                  基于父元素宽度的百分比</li>
 </ul>
+<pre><code class="language-css">.box {
+    text-indent: 32px;
+    text-indent: 10%;
+}
+</code></pre>
 <h2 id="text-transform"><strong>text-transform</strong></h2>
 <p>文本的大小写</p>
 <ul>
@@ -182,6 +197,13 @@ letter-s..." />
 <li>center      居中</li>
 <li>justify         两端对齐</li>
 </ul>
+<pre><code class="language-css">.box {
+  text-align: left;
+  text-align: right;
+  text-align: center;
+  text-align: justify;
+}
+</code></pre>
 <h2 id="vertical-align"><strong>vertical-align</strong></h2>
 <p><code>行元素</code>,<code>img</code>,<code>文本</code> 在水平方向与其他元素垂直方向的对齐方式</p>
 <ul>
@@ -191,6 +213,14 @@ letter-s..." />
 <li>text-bottom 元素的<code>底</code>端与父元素字体的<code>底</code>端对齐</li>
 <li>middle          元素放置在父元素的中间</li>
 </ul>
+<pre><code class="language-css">.box {
+    vertical-align: top;
+    vertical-align: bottom;
+    vertical-align: text-top;
+    vertical-align: text-bottom;
+    vertical-align: middle;
+}
+</code></pre>
 <h2 id="line-height"><strong>line-height</strong></h2>
 <p>设置行间距(行高) <code>没有负值</code></p>
 <ul>
