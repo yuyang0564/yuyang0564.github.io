@@ -1884,6 +1884,10 @@ a.hover-effect:hover span.cover,
 .widget_media_image a:hover span.cover {
   opacity: 0.85;
 }
+div.articles article.bgstyle .gradient-effect a {
+  color: #fff;
+  font-weight: 700;
+}
 .gradient-effect a:not(.epcl-button) {
   padding-bottom: 5px;
   background-image: -webkit-gradient(linear, left top, right top, from(#00bec1), to(#00bec1));
@@ -9622,3 +9626,6 @@ photos .photo:last-child {
   font-size: 13px;
   margin-left: 10px;
 }
+
+      div.gradient-effect >a {color: #333333;}
+    

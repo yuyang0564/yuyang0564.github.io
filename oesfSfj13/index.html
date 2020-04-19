@@ -1,8 +1,8 @@
 <html>
   <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>我的朋友们 | 日常开发</title>
+<title>css 背景 | 日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -14,11 +14,37 @@
 <script src="https://yuyang0564.github.io/media/js/view-image.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
+    <meta name="referrer" content="never">
+    <meta name="description" content="background-color
+背景色
+
+
+
+可选值
+说明
+
+
+
+
+color
+has \ rgb
+
+
+transparent
+透明
+
+
+
+background-image
+设置元素的背景图像
+
+图像默认的范围一直到元素 padding
+..." />
+    <meta name="keywords" content="css" />
+    <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -79,24 +105,254 @@
         </div>
       </div>
 
-      <main id="friends" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/oesfSfj13.png');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-04-19"><i class="fa fa-calendar"></i><span class="lately">7 小时前</span></time>
+              
+              <a href="https://yuyang0564.github.io/oesfSfj13/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/oesfSfj13/"> </span>
+              </a>
+              <span id="/oesfSfj13/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-0 ctag-LQTZpssFQ" aria-label="">css</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">css 背景</h1>
+            </div>
+          </div>
+        </div>  
+
         <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h2 id="background-color"><strong>background-color</strong></h2>
+<p>背景色</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">可选值</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">color</td>
+<td style="text-align:center">has \ rgb</td>
+</tr>
+<tr>
+<td style="text-align:center">transparent</td>
+<td style="text-align:center">透明</td>
+</tr>
+</tbody>
+</table>
+<h2 id="background-image"><strong>background-image</strong></h2>
+<p>设置元素的背景图像</p>
+<ol>
+<li>图像默认的范围一直到元素 <code>padding</code></li>
+<li>图像默认从<code>左上角</code>开始'</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">可选值</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">url('URL')</td>
+<td style="text-align:center">图像的本地或网络地址</td>
+</tr>
+<tr>
+<td style="text-align:center">none</td>
+<td style="text-align:center">不显示背景图</td>
+</tr>
+</tbody>
+</table>
+<h2 id="background-position"><strong>background-position</strong></h2>
+<p>设置背景图片的起始位置</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">可选值</th>
+<th style="text-align:center">值</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">模糊位置</td>
+<td style="text-align:center">left / right / top / center / bottom</td>
+<td style="text-align:center">只设置一个时，另一个为 center</td>
+</tr>
+<tr>
+<td style="text-align:center">百分比</td>
+<td style="text-align:center">x%  y%</td>
+<td style="text-align:center">只设置一个时，另一个为 50%</td>
+</tr>
+<tr>
+<td style="text-align:center">详细像素单位</td>
+<td style="text-align:center">xpx ypx</td>
+<td style="text-align:center">只设置一个时，另一个为 50%</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-css">body {
+    background-image: url('xx.png');
+    background-position: 50%;
+}
+</code></pre>
+<h2 id="backround-repeat"><strong>backround-repeat</strong></h2>
+<p>设置背景图片的平铺方式</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">可选值</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">repeat</td>
+<td style="text-align:center">默认向水平和垂直方向上平铺</td>
+</tr>
+<tr>
+<td style="text-align:center">repeat-x</td>
+<td style="text-align:center">水平方向平铺</td>
+</tr>
+<tr>
+<td style="text-align:center">repeat-y</td>
+<td style="text-align:center">垂直方向平铺</td>
+</tr>
+<tr>
+<td style="text-align:center">no-repeat</td>
+<td style="text-align:center">不平铺</td>
+</tr>
+</tbody>
+</table>
+<h2 id="background-clip"><strong>background-clip</strong></h2>
+<p>背景图片的填充区域 <code>IE11兼容</code><br>
+默认值： border-box</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">可选值</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">border-box</td>
+<td style="text-align:center">背景图片从边框开始填充</td>
+</tr>
+<tr>
+<td style="text-align:center">padding-box</td>
+<td style="text-align:center">背景图片从 padding 开始填充</td>
+</tr>
+<tr>
+<td style="text-align:center">content-box</td>
+<td style="text-align:center">背景图片只在内容区填充</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>border-box<img src="https://yuyang0564.github.io/post-images/1587278521513.png" alt="" loading="lazy"></li>
+<li>padding-box<img src="https://yuyang0564.github.io/post-images/1587276678602.png" alt="" loading="lazy"></li>
+<li>content-box<img src="https://yuyang0564.github.io/post-images/1587276743333.png" alt="" loading="lazy"></li>
+</ul>
+<h2 id="background-size"><strong>background-size</strong></h2>
+<p>调整背景图片的大小</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">可选值</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">像素单位 / 百分比</td>
+<td style="text-align:center">如果只设置一个值，另外一个为auto</td>
+</tr>
+<tr>
+<td style="text-align:center">cover</td>
+<td style="text-align:center">等比例放大，最小时为图片大小</td>
+</tr>
+<tr>
+<td style="text-align:center">contain</td>
+<td style="text-align:center">等比例缩小, 最大时图片大小</td>
+</tr>
+</tbody>
+</table>
+<h1 id="background-简写"><strong>background 简写</strong></h1>
+<p>color 、 image 、 position / size  、 repeat</p>
+<pre><code class="language-css">body {
+    background: #ff0000 url('xx.jpg') center/cover no-repeat;
+}
+</code></pre>
 
-          <div class="widget_tag_cloud tagcloud">
-          
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              <article class="prev grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/y8ek7idBn.png');"></div>
+                 <a href="https://yuyang0564.github.io/y8ek7idBn/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-04-19">2020-04-19</time>
+                  <h4 class="title white no-margin">css border/outline</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/xMEynXf8C.png');"></div>
+                 <a href="https://yuyang0564.github.io/xMEynXf8C/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-04-19">2020-04-19</time>
+                  <h4 class="title white no-margin">css 字体</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
             
-          
-          </div>
-        </div>
+              <div id="comments" class="bg-white hosted ">
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+              </div>
+              <div class="clear"></div>
+            
 
-        </div>
+            </div>
           </div>
-        </div>
       </main>
 
-        <footer id="footer" class="grid-container">
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -236,6 +492,9 @@
     <div class="clear"></div>
 
         
+
+      
+    <script src="https://yuyang0564.github.io/media/js/functions-post.js"></script>
 
     </div>
     <!-- end: #wrapper -->

@@ -1,8 +1,8 @@
 <html>
   <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>我的朋友们 | 日常开发</title>
+<title>css 字体 | 日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -14,11 +14,36 @@
 <script src="https://yuyang0564.github.io/media/js/view-image.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
+    <meta name="referrer" content="never">
+    <meta name="description" content="@font-face
+设置 web 字体
+
+
+
+属性
+值
+默认值
+
+
+
+
+font-family
+自定义字体名称
+无(必须设置)
+
+
+src:url()
+字体的url或本地字体文件
+无(必须设置)
+
+
+font-style
+设置字体显示的样..." />
+    <meta name="keywords" content="css" />
+    <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -79,24 +104,184 @@
         </div>
       </div>
 
-      <main id="friends" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/xMEynXf8C.png');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-04-19"><i class="fa fa-calendar"></i><span class="lately">8 小时前</span></time>
+              
+              <a href="https://yuyang0564.github.io/xMEynXf8C/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/xMEynXf8C/"> </span>
+              </a>
+              <span id="/xMEynXf8C/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-0 ctag-LQTZpssFQ" aria-label="">css</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">css 字体</h1>
+            </div>
+          </div>
+        </div>  
+
         <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h2 id="font-face"><strong>@font-face</strong></h2>
+<p>设置 web 字体</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:center">值</th>
+<th style="text-align:center">默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">font-family</td>
+<td style="text-align:center">自定义字体名称</td>
+<td style="text-align:center">无(必须设置)</td>
+</tr>
+<tr>
+<td style="text-align:center">src:url()</td>
+<td style="text-align:center">字体的url或本地字体文件</td>
+<td style="text-align:center">无(必须设置)</td>
+</tr>
+<tr>
+<td style="text-align:center">font-style</td>
+<td style="text-align:center">设置字体显示的样式</td>
+<td style="text-align:center">normal</td>
+</tr>
+<tr>
+<td style="text-align:center">font-weight</td>
+<td style="text-align:center">字体的粗细</td>
+<td style="text-align:center">normal</td>
+</tr>
+</tbody>
+</table>
+<p>出于兼容性考虑，需要在 <code>src:url(....)</code> 之后使用 <code>format</code> 对字体设置明确的格式</p>
+<pre><code class="language-css">src: url(...) format(...)
+</code></pre>
+<p>format 可选值对照</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">truetype</td>
+<td style="text-align:center">.ttf</td>
+</tr>
+<tr>
+<td style="text-align:center">woff</td>
+<td style="text-align:center">.woff</td>
+</tr>
+<tr>
+<td style="text-align:center">woff2</td>
+<td style="text-align:center">.woff2</td>
+</tr>
+<tr>
+<td style="text-align:center">embedded-opentype</td>
+<td style="text-align:center">.eot</td>
+</tr>
+<tr>
+<td style="text-align:center">svg</td>
+<td style="text-align:center">.svg</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>定义字体</li>
+</ul>
+<pre><code class="language-css">@font-face {
+    font-familt: &quot;myFont&quot;;
+    src: url(&quot;xx.eot&quot;);
+    src: url(xx.ttf) format(&quot;truetype&quot;),
+         url(xx.woff) format(&quot;woff&quot;),
+         url(xx.woff2) format(&quot;woff2&quot;),
+         url(xx.svg) fromat(&quot;svg&quot;);
+    font-style: normal;
+    font-weight: normal;      
+}
+</code></pre>
+<ul>
+<li>引用字体</li>
+</ul>
+<pre><code class="language-css">body {
+    font-family: &quot;myFont&quot;;
+}
+</code></pre>
+<h2 id="font-family"><strong>font-family</strong></h2>
+<p>引用字体,可同时设置多个字体作为回退，当浏览器没有找到相应的字体时，会依次向后读取<br>
+多个字体之间用 <code>,</code> 分隔</p>
+<pre><code class="language-css">body {
+    font-family: &quot;Times New Roman&quot; , serif , fantasy
+}
+</code></pre>
 
-          <div class="widget_tag_cloud tagcloud">
-          
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              <article class="prev grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/oesfSfj13.png');"></div>
+                 <a href="https://yuyang0564.github.io/oesfSfj13/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-04-19">2020-04-19</time>
+                  <h4 class="title white no-margin">css 背景</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/3ZTbrXmjG.png');"></div>
+                 <a href="https://yuyang0564.github.io/3ZTbrXmjG/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-04-18">2020-04-18</time>
+                  <h4 class="title white no-margin">css 常用文本属性</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
             
-          
-          </div>
-        </div>
+              <div id="comments" class="bg-white hosted ">
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+              </div>
+              <div class="clear"></div>
+            
 
-        </div>
+            </div>
           </div>
-        </div>
       </main>
 
-        <footer id="footer" class="grid-container">
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -236,6 +421,9 @@
     <div class="clear"></div>
 
         
+
+      
+    <script src="https://yuyang0564.github.io/media/js/functions-post.js"></script>
 
     </div>
     <!-- end: #wrapper -->
