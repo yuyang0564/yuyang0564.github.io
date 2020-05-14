@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuyang0564.github.io</id>
     <title>日常开发</title>
-    <updated>2020-04-19T10:46:39.211Z</updated>
+    <updated>2020-05-14T10:52:59.642Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuyang0564.github.io"/>
     <link rel="self" href="https://yuyang0564.github.io/atom.xml"/>
@@ -10,6 +10,20 @@
     <logo>https://yuyang0564.github.io/images/avatar.png</logo>
     <icon>https://yuyang0564.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 日常开发</rights>
+    <entry>
+        <title type="html"><![CDATA[Vue 指令]]></title>
+        <id>https://yuyang0564.github.io/gb9VgBmPf/</id>
+        <link href="https://yuyang0564.github.io/gb9VgBmPf/">
+        </link>
+        <updated>2020-05-14T10:15:04.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Vue2 模板语法]]></title>
+        <id>https://yuyang0564.github.io/5TNcrkqyR/</id>
+        <link href="https://yuyang0564.github.io/5TNcrkqyR/">
+        </link>
+        <updated>2020-05-14T07:59:09.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[css 盒模型]]></title>
         <id>https://yuyang0564.github.io/rimzBw6DU/</id>
@@ -65,19 +79,5 @@
         <link href="https://yuyang0564.github.io/gui-fan/">
         </link>
         <updated>2020-04-10T13:32:00.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[uni-app wgt资源包升级]]></title>
-        <id>https://yuyang0564.github.io/uni-app-wgt-zi-yuan-bao-sheng-ji/</id>
-        <link href="https://yuyang0564.github.io/uni-app-wgt-zi-yuan-bao-sheng-ji/">
-        </link>
-        <updated>2020-04-10T09:48:47.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[uni-app  无法打开微信开发者工具]]></title>
-        <id>https://yuyang0564.github.io/uni-app-wu-fa-da-kai-wei-xin-kai-fa-zhe-gong-ju/</id>
-        <link href="https://yuyang0564.github.io/uni-app-wu-fa-da-kai-wei-xin-kai-fa-zhe-gong-ju/">
-        </link>
-        <updated>2020-04-10T08:09:29.000Z</updated>
     </entry>
 </feed>

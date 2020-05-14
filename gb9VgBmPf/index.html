@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>我的阅读 | 日常开发</title>
+<title>Vue 指令 | 日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,13 +15,16 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <link rel="stylesheet" href="https://yuyang0564.github.io/media/js/Bmdb.min.css">
-    <script type='text/javascript' src='https://yuyang0564.github.io/media/js/Bmdb.min.js'></script>
+    <meta name="description" content="Vue 指令以 v- 开头 ，它是一种特殊的属性，它的值为一个表达式
+&lt;span v-if=&quot;isTrue&quot;&gt;&lt;/span&gt;
+
+v-bind: 指令，用来动态的绑定属性
+&lt;span v-bi..." />
+    <meta name="keywords" content="vue2" />
+    <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -82,14 +85,108 @@
         </div>
       </div>
 
-      <main id="friends" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/gb9VgBmPf.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-05-14"><i class="fa fa-calendar"></i><span class="lately">38 分钟前</span></time>
+              
+              <a href="https://yuyang0564.github.io/gb9VgBmPf/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/gb9VgBmPf/"> </span>
+              </a>
+              <span id="/gb9VgBmPf/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-0 ctag-XZnOL5tqL" aria-label="">vue2</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">Vue 指令</h1>
+            </div>
+          </div>
+        </div>  
+
         <div class="epcl-page-wrapper">
-          <div class="section-content" style="margin-top:3em;"></div>
-        </div>
-        </div>
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h1 id="vue-指令以-v-开头-它是一种特殊的属性它的值为一个表达式">Vue 指令以 <code>v-</code> 开头 ，它是一种特殊的属性，它的值为一个表达式</h1>
+<pre><code class="language-html">&lt;span v-if=&quot;isTrue&quot;&gt;&lt;/span&gt;
+</code></pre>
+<h1 id="v-bind-指令用来动态的绑定属性">v-bind: 指令，用来动态的绑定属性</h1>
+<pre><code class="language-html">&lt;span v-bind:href=&quot;url&quot;&gt;&lt;/span&gt;
+</code></pre>
+<p>绑定一个 href 属性，它的值为 url 数据对象的值</p>
+<h1 id="动态参数">动态参数</h1>
+<pre><code class="language-html">&lt;span v-bind:[attribute]=&quot;url&quot;&gt;&lt;/span&gt;
+</code></pre>
+<p>针对<code>attribute</code> 求值后，作为属性使用<br>
+<code>注意： 不能使用 空格 和 引号</code></p>
+<pre><code class="language-html">&lt;span v-bind:[attribute + 'xxx' ]=&quot;url&quot;&gt; 错误示例 &lt;/span&gt;
+</code></pre>
+<h1 id="v-bind-简写">v-bind 简写</h1>
+<pre><code class="language-html">&lt;span :href=&quot;url&quot;&gt;&lt;/span&gt;
+</code></pre>
+<pre><code class="language-html">&lt;span :[attribute]=&quot;url&quot;&gt;&lt;/span&gt;
+</code></pre>
+<h1 id="v-on-指令-用来绑定事件">v-on: 指令 ,  用来绑定事件</h1>
+<pre><code class="language-html">&lt;button v-on:click=&quot;handleClick&quot;&gt;&lt;/button&gt;
+</code></pre>
+<p>为当前 button 绑定一个 click 事件， 事件处理方法为 &quot; handleClick&quot;</p>
+<h1 id="动态绑定事件">动态绑定事件</h1>
+<pre><code class="language-html">&lt;button v-on:[eventHandle]=&quot;handleClick&quot;&gt;&lt;/button&gt;
+</code></pre>
+<p>针对 <code>eventHandle</code> 求值后，作为事件名</p>
+<h1 id="v-on-简写">v-on 简写</h1>
+<pre><code class="language-html">&lt;span @click=&quot;handleClick&quot;&gt;&lt;/span&gt;
+</code></pre>
+<pre><code class="language-html">&lt;span @[attribute]=&quot;url&quot;&gt;&lt;/span&gt;
+</code></pre>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/5TNcrkqyR.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/5TNcrkqyR/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-05-14">2020-05-14</time>
+                  <h4 class="title white no-margin">Vue2 模板语法</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
+            
+              <div id="comments" class="bg-white hosted ">
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+              </div>
+              <div class="clear"></div>
+            
+
+            </div>
+          </div>
       </main>
-        <footer id="footer" class="grid-container">
+
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -236,15 +333,9 @@
 
         
 
-    <script>
-    new Bmdb({
-      type: 'books',
-      selector: '.section-content',
-      secret: '0bba46738324c778ad2da662837c14d2c1e5bceb22e3729febc9fd3677bdcea5',
-      noMoreText: '没有更多数据了',
-      limit: 30
-    })
-    </script>
+      
+    <script src="https://yuyang0564.github.io/media/js/functions-post.js"></script>
+
     </div>
     <!-- end: #wrapper -->
   </body>
