@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuyang0564.github.io</id>
     <title>日常开发</title>
-    <updated>2020-05-14T10:52:59.642Z</updated>
+    <updated>2020-05-18T04:02:23.111Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuyang0564.github.io"/>
     <link rel="self" href="https://yuyang0564.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://yuyang0564.github.io/images/avatar.png</logo>
     <icon>https://yuyang0564.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 日常开发</rights>
+    <entry>
+        <title type="html"><![CDATA[Vue class 与 style 绑定]]></title>
+        <id>https://yuyang0564.github.io/tOMZ6OxlC/</id>
+        <link href="https://yuyang0564.github.io/tOMZ6OxlC/">
+        </link>
+        <updated>2020-05-15T05:54:54.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Vue 指令]]></title>
         <id>https://yuyang0564.github.io/gb9VgBmPf/</id>
@@ -72,12 +79,5 @@
         <link href="https://yuyang0564.github.io/KMjITJtJa/">
         </link>
         <updated>2020-04-11T05:32:07.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[规范1]]></title>
-        <id>https://yuyang0564.github.io/gui-fan/</id>
-        <link href="https://yuyang0564.github.io/gui-fan/">
-        </link>
-        <updated>2020-04-10T13:32:00.000Z</updated>
     </entry>
 </feed>

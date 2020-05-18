@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>css 盒子阴影 | 日常开发</title>
+<title>Vue class 与 style 绑定 | 日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,32 +15,11 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="box-shadow
-为元素的边框添加阴影效果
+    <meta name="description" content="对象语法
+&lt;span :class=&quot;{active:  isActive}&quot;&gt;&lt;/span&gt;
 
-
-
-属性
-值
-
-
-
-
-h-shadow
-水平阴影大小 (可以为负值)
-
-
-v-shadow
-垂直阴影大小 (可以为负值)
-
-
-blur
-模糊程度(值越小，模糊程度越低)
-
-
-spread
-阴..." />
-    <meta name="keywords" content="css" />
+是否应用 &quot;active&quot; 这个类名，取决与数据对象&quot;isActiv..." />
+    <meta name="keywords" content="vue2" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
@@ -108,23 +87,23 @@ spread
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/Z4fDbT_D-.png');">
+          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/tOMZ6OxlC.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-04-19"><i class="fa fa-calendar"></i><span class="lately">1 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-05-15"><i class="fa fa-calendar"></i><span class="lately">3 天前</span></time>
               
-              <a href="https://yuyang0564.github.io/Z4fDbT_D-/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/Z4fDbT_D-/"> </span>
+              <a href="https://yuyang0564.github.io/tOMZ6OxlC/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/tOMZ6OxlC/"> </span>
               </a>
-              <span id="/Z4fDbT_D-/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/tOMZ6OxlC/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-0 ctag-LQTZpssFQ" aria-label="">css</a>
+                      <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-0 ctag-XZnOL5tqL" aria-label="">vue2</a>
                     
               </div>
-              <h1 class="title ularge white bold">css 盒子阴影</h1>
+              <h1 class="title ularge white bold">Vue class 与 style 绑定</h1>
             </div>
           </div>
         </div>  
@@ -134,43 +113,39 @@ spread
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="box-shadow"><strong>box-shadow</strong></h1>
-<p>为元素的边框添加阴影效果</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">属性</th>
-<th style="text-align:center">值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">h-shadow</td>
-<td style="text-align:center">水平阴影大小 (可以为负值)</td>
-</tr>
-<tr>
-<td style="text-align:center">v-shadow</td>
-<td style="text-align:center">垂直阴影大小 (可以为负值)</td>
-</tr>
-<tr>
-<td style="text-align:center">blur</td>
-<td style="text-align:center">模糊程度(值越小，模糊程度越低)</td>
-</tr>
-<tr>
-<td style="text-align:center">spread</td>
-<td style="text-align:center">阴影范围的大小</td>
-</tr>
-<tr>
-<td style="text-align:center">color</td>
-<td style="text-align:center">has / rgb</td>
-</tr>
-</tbody>
-</table>
-<pre><code class="language-css">div {
-    box-shadow: 10px 10px 15px 5px #d0d0d0;
+                  <h1 id="对象语法">对象语法</h1>
+<pre><code class="language-html">&lt;span :class=&quot;{active:  isActive}&quot;&gt;&lt;/span&gt;
+</code></pre>
+<p>是否应用 &quot;active&quot; 这个类名，取决与数据对象&quot;isActive&quot; 是否为true</p>
+<h1 id="对象语法2">对象语法2</h1>
+<pre><code class="language-html">&lt;span :class=&quot;classObject&quot;&gt;&lt;/span&gt;
+</code></pre>
+<pre><code class="language-js">classObject: {
+    active: true,
+    isShow: true
 }
 </code></pre>
-<figure data-type="image" tabindex="1"><img src="https://yuyang0564.github.io/post-images/1587281575600.png" alt="" loading="lazy"></figure>
+<p>通过一个对象一次控制多个类名<br>
+最终显示为</p>
+<pre><code class="language-html">&lt;span class=&quot;active isShow&quot;&gt;&lt;/span&gt;
+</code></pre>
+<h1 id="数组语法">数组语法</h1>
+<pre><code class="language-html">&lt;span :class=&quot;[activeClass ,  isShowClass]&quot;&gt;&lt;/span&gt;
+</code></pre>
+<p>绑定的类名取数据对象 &quot;activeClass&quot;  , &quot;isShowClass&quot;  的值</p>
+<pre><code class="language-js">activeClass: &quot;active&quot;,
+isShowClass: &quot;show&quot;
+</code></pre>
+<p>最终显示为</p>
+<pre><code class="language-html">&lt;span class=&quot;active show&quot;&gt;&lt;/span&gt;
+</code></pre>
+<h1 id="其他用法">其他用法</h1>
+<p>三元表达式判断应用类名</p>
+<pre><code class="language-html">&lt;span  :class=&quot;[activeClass ? active : '']&quot;&gt;&lt;/span&gt;
+</code></pre>
+<p>数组语法中包含对象语法</p>
+<pre><code class="language-html">&lt;span :class=&quot;[ {active: }]&quot;&gt;&lt;/span&gt;
+</code></pre>
 
                 </div>
                 <div class="clear"></div>
@@ -180,26 +155,13 @@ spread
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/rimzBw6DU.png');"></div>
-                 <a href="https://yuyang0564.github.io/rimzBw6DU/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-04-19">2020-04-19</time>
-                  <h4 class="title white no-margin">css 盒模型</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/y8ek7idBn.png');"></div>
-                 <a href="https://yuyang0564.github.io/y8ek7idBn/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/gb9VgBmPf.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/gb9VgBmPf/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-04-19">2020-04-19</time>
-                  <h4 class="title white no-margin">css border/outline</h4>
+                  <time datetime="2020-05-14">2020-05-14</time>
+                  <h4 class="title white no-margin">Vue 指令</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
