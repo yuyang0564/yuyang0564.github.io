@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>我的阅读 | 日常开发</title>
+<title>Vue 事件处理 | 日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,13 +15,15 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <link rel="stylesheet" href="https://yuyang0564.github.io/media/js/Bmdb.min.css">
-    <script type='text/javascript' src='https://yuyang0564.github.io/media/js/Bmdb.min.js'></script>
+    <meta name="description" content="通过 v-on 监听DOM事件 , 并设置方法名, 当事件触发时，会调用指定的方法
+&lt;div v-on:click=&quot;handleClick&quot;&gt;点击事件&lt;/div&gt;
+
+可以在事件处理方法中接收一个..." />
+    <meta name="keywords" content="vue2" />
+    <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -82,14 +84,96 @@
         </div>
       </div>
 
-      <main id="friends" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/1Q4Y64TAs.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-05-21"><i class="fa fa-calendar"></i><span class="lately">1 天前</span></time>
+              
+              <a href="https://yuyang0564.github.io/1Q4Y64TAs/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/1Q4Y64TAs/"> </span>
+              </a>
+              <span id="/1Q4Y64TAs/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-0 ctag-XZnOL5tqL" aria-label="">vue2</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">Vue 事件处理</h1>
+            </div>
+          </div>
+        </div>  
+
         <div class="epcl-page-wrapper">
-          <div class="section-content" style="margin-top:3em;"></div>
-        </div>
-        </div>
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h1 id="通过-v-on-监听dom事件-并设置方法名-当事件触发时会调用指定的方法">通过 v-on 监听DOM事件 , 并设置方法名, 当事件触发时，会调用指定的方法</h1>
+<pre><code class="language-html">&lt;div v-on:click=&quot;handleClick&quot;&gt;点击事件&lt;/div&gt;
+</code></pre>
+<p>可以在事件处理方法中接收一个默认参数为“原生事件对象”</p>
+<pre><code class="language-js">handleClick(event) {...}
+</code></pre>
+<h1 id="为事件处理方法传递参数">为事件处理方法传递参数</h1>
+<pre><code class="language-html">&lt;div v-on:click=&quot;handleClick('attribute')&quot;&gt;点击事件&lt;/div&gt;
+</code></pre>
+<h1 id="同时传递-event-事件对象-通过特殊的变量-event">同时传递 event 事件对象 ， 通过特殊的变量 $event</h1>
+<pre><code class="language-html">  &lt;div v-on:click=&quot;handleClick('attribute',$event)&quot;&gt;点击事件&lt;/div&gt;
+</code></pre>
+<h1 id="事件修饰符">事件修饰符</h1>
+<ul>
+<li>.stop   阻止事件冒泡</li>
+<li>.prevent    阻止事件默认行为</li>
+<li>.capture    事件使用捕获</li>
+<li>.self   只有再触发事件的元素为自身时</li>
+<li>.once   只触发一次就销毁事件</li>
+</ul>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/Ebj0LLIpd.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/Ebj0LLIpd/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-05-21">2020-05-21</time>
+                  <h4 class="title white no-margin">Vue 条件渲染</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
+            
+              <div id="comments" class="bg-white hosted ">
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+              </div>
+              <div class="clear"></div>
+            
+
+            </div>
+          </div>
       </main>
-        <footer id="footer" class="grid-container">
+
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -242,15 +326,9 @@
 
         
 
-    <script>
-    new Bmdb({
-      type: 'books',
-      selector: '.section-content',
-      secret: '0bba46738324c778ad2da662837c14d2c1e5bceb22e3729febc9fd3677bdcea5',
-      noMoreText: '没有更多数据了',
-      limit: 30
-    })
-    </script>
+      
+    <script src="https://yuyang0564.github.io/media/js/functions-post.js"></script>
+
     </div>
     <!-- end: #wrapper -->
   </body>

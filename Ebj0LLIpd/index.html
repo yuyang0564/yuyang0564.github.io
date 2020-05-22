@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>我的阅读 | 日常开发</title>
+<title>Vue 条件渲染 | 日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,13 +15,18 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <link rel="stylesheet" href="https://yuyang0564.github.io/media/js/Bmdb.min.css">
-    <script type='text/javascript' src='https://yuyang0564.github.io/media/js/Bmdb.min.js'></script>
+    <meta name="description" content="通过  v-if  指令 ，只有在表达式的值为 true  时 ， 元素才会显示
+&lt;h1 v-if=&quot;isShow&quot;&gt;标题&lt;/h1&gt;
+
+isShow: true
+
+v-else
+相当于 if - ..." />
+    <meta name="keywords" content="vue2" />
+    <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -82,14 +87,113 @@
         </div>
       </div>
 
-      <main id="friends" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/Ebj0LLIpd.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-05-21"><i class="fa fa-calendar"></i><span class="lately">1 天前</span></time>
+              
+              <a href="https://yuyang0564.github.io/Ebj0LLIpd/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/Ebj0LLIpd/"> </span>
+              </a>
+              <span id="/Ebj0LLIpd/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-0 ctag-XZnOL5tqL" aria-label="">vue2</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">Vue 条件渲染</h1>
+            </div>
+          </div>
+        </div>  
+
         <div class="epcl-page-wrapper">
-          <div class="section-content" style="margin-top:3em;"></div>
-        </div>
-        </div>
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h1 id="通过-v-if-指令-只有在表达式的值为-true-时-元素才会显示">通过  <code>v-if</code>  指令 ，只有在表达式的值为 true  时 ， 元素才会显示</h1>
+<pre><code class="language-html">&lt;h1 v-if=&quot;isShow&quot;&gt;标题&lt;/h1&gt;
+</code></pre>
+<pre><code class="language-js">isShow: true
+</code></pre>
+<h1 id="v-else"><code>v-else</code></h1>
+<p>相当于 if - else</p>
+<h1 id="v-else-if"><code>v-else-if</code></h1>
+<p>相当于 if - else if - else</p>
+<h1 id="注意">注意!!!! 👈👈👈</h1>
+<p>在使用   v-else-if   ，  v-else 时必须紧跟在一起<br>
+❌ <code>错误示例</code></p>
+<pre><code class="language-html">&lt;h1 v-if=&quot;isShow&quot;&gt;...&lt;/h1&gt;
+&lt;h1&gt;...&lt;/h1&gt;
+&lt;h1 v-else&gt;&lt;/h1&gt;
+</code></pre>
+<h1 id="通过-template-控制整块元素的显隐">通过 <code>template</code> 控制整块元素的显隐</h1>
+<p><code>&lt;template&gt;</code> 不会渲染为元素 ， 所以可以当作一个包裹层</p>
+<pre><code class="language-html">&lt;template v-if=&quot;isShow&quot;&gt;
+     &lt;div&gt;...&lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+<h1 id="v-show">v-show</h1>
+<p>它与  v-if  在用法上大致一样, 但是 v-show 的元素始终会保留 DOM ， 只不过为元素设置了 display 属性</p>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              <article class="prev grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/1Q4Y64TAs.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/1Q4Y64TAs/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-05-21">2020-05-21</time>
+                  <h4 class="title white no-margin">Vue 事件处理</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/tOMZ6OxlC.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/tOMZ6OxlC/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-05-15">2020-05-15</time>
+                  <h4 class="title white no-margin">Vue class 与 style 绑定</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
+            
+              <div id="comments" class="bg-white hosted ">
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+              </div>
+              <div class="clear"></div>
+            
+
+            </div>
+          </div>
       </main>
-        <footer id="footer" class="grid-container">
+
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -242,15 +346,9 @@
 
         
 
-    <script>
-    new Bmdb({
-      type: 'books',
-      selector: '.section-content',
-      secret: '0bba46738324c778ad2da662837c14d2c1e5bceb22e3729febc9fd3677bdcea5',
-      noMoreText: '没有更多数据了',
-      limit: 30
-    })
-    </script>
+      
+    <script src="https://yuyang0564.github.io/media/js/functions-post.js"></script>
+
     </div>
     <!-- end: #wrapper -->
   </body>
