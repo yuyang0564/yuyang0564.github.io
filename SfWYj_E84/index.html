@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>uni-app 差异化注意事项 | 日常开发</title>
+<title>css 水平居中 | 日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,10 +15,11 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="🌈      1. 不要把 js,css,scss 等文件直接放入 static 文件中，因为此文件是不会进行编译的
-🌈      2. 在css中和组件中引入样式，只能通过相对路径的方式
-@import url(&quot;../....." />
-    <meta name="keywords" content="uni-app" />
+    <meta name="description" content="块元素水平居中
+在块元素有固定宽度, 并且宽度非 100%时，可以通过左右的 margin 设置为 auto ， 来使块元素水平居中
+ &lt;div class=&quot;con&quot;&gt;
+    &lt;div class=..." />
+    <meta name="keywords" content="css" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
@@ -86,23 +87,23 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/uni-app-chai-yi-hua-zhu-yi-shi-xiang.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/SfWYj_E84.png');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-04-10"><i class="fa fa-calendar"></i><span class="lately">1 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-05-23"><i class="fa fa-calendar"></i><span class="lately">1 小时前</span></time>
               
-              <a href="https://yuyang0564.github.io/uni-app-chai-yi-hua-zhu-yi-shi-xiang/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/uni-app-chai-yi-hua-zhu-yi-shi-xiang/"> </span>
+              <a href="https://yuyang0564.github.io/SfWYj_E84/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/SfWYj_E84/"> </span>
               </a>
-              <span id="/uni-app-chai-yi-hua-zhu-yi-shi-xiang/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/SfWYj_E84/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://yuyang0564.github.io/gLtCooV-x/" class="ctag ctag-0 ctag-gLtCooV-x" aria-label="">uni-app</a>
+                      <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-0 ctag-LQTZpssFQ" aria-label="">css</a>
                     
               </div>
-              <h1 class="title ularge white bold">uni-app 差异化注意事项</h1>
+              <h1 class="title ularge white bold">css 水平居中</h1>
             </div>
           </div>
         </div>  
@@ -112,31 +113,41 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <p>🌈      1. 不要把 <code>js,css,scss</code> 等文件直接放入 <strong>static</strong> 文件中，因为此文件是不会进行编译的</p>
-<p>🌈      2. 在<strong>css中</strong>和<strong>组件中</strong>引入样式，只能通过<code>相对路径</code>的方式</p>
-<pre><code class="language-css">@import url(&quot;../../xx.css&quot;);
+                  <h1 id="块元素水平居中">块元素水平居中</h1>
+<p>在块元素有<code>固定宽度</code>, 并且<code>宽度非 100%</code>时，可以通过左右的 margin 设置为 auto ， 来使块元素水平居中</p>
+<pre><code class="language-html"> &lt;div class=&quot;con&quot;&gt;
+    &lt;div class=&quot;box1&quot;&gt;1&lt;/div&gt;
+  &lt;/div&gt;
 </code></pre>
-<pre><code class="language-html">&lt;style&gt;
-    @import &quot;../../xxx.css&quot;
-&lt;/style&gt;
+<pre><code class="language-css">.box1 {
+  width: 50%;
+  margin: 100px auto;
+  text-align: center;
+}
 </code></pre>
-<p>🌈      3. 使用<code>rpx</code> 作为尺寸单位， 默认根据 750px 的宽度计算</p>
-<p>🌈      4. <strong>背景图片</strong> 不支持本地图片，可以转为<code>base64</code> , 注意源文件不要大于 <strong>40Kb</strong></p>
-<p>🌈      5.  不支持 vue 的 classObject 的方式绑定样式</p>
-<pre><code class="language-html">    &lt;div :class=&quot;classObject&quot;&gt;&lt;/div&gt;
-    &lt;script&gt;
-        data: {
-            classObject: {
-                color: &quot;#fff&quot;,
-                fontSize: &quot;16px&quot;
-            }
-        }
-    &lt;/script&gt;
+<figure data-type="image" tabindex="1"><img src="https://yuyang0564.github.io/post-images/1590227601606.png" alt="" loading="lazy"></figure>
+<h1 id="元素转为-inline-block">元素转为 inline-block</h1>
+<p>把元素转为 <code>inline-block</code> 并通过设置 <code>text-align</code> 属性来使元素居中<br>
+需要注意的是， inline-block 之间的元素是有一定间隙的 ， 可以通过为 <code>包裹层</code> 设置 <code>font-size</code> 为 0 来解决元素之间有间隙的问题</p>
+<pre><code class="language-html">&lt;div class=&quot;con&quot;&gt;
+    &lt;div class=&quot;box1&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;box2&quot;&gt;1&lt;/div&gt;
+&lt;/div&gt;
 </code></pre>
-<p>🌈      6. 不支持在自定义组件上使用 <code>class</code> 和 <code>style</code> 绑定</p>
-<pre><code class="language-html">    &lt;v-component :class=&quot;classStyle&quot; /&gt;
+<pre><code class="language-css">.con {
+  background: #fc5c5c;
+  text-align: center;
+  font-size: 0;
+}
+.box1,.box2 {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  font-size: 16px;
+  background: #e0cd
+}
 </code></pre>
-<p>🌈      7. 事件修饰符只支持 <code>.stop</code> 阻止事件冒泡 ， 其他修饰符只在 <code>H5</code> 端有效</p>
+<figure data-type="image" tabindex="2"><img src="https://yuyang0564.github.io/post-images/1590230177227.png" alt="" loading="lazy"></figure>
 
                 </div>
                 <div class="clear"></div>
@@ -146,19 +157,19 @@
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/uni-app-tiao-jian-bian-yi.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/uni-app-tiao-jian-bian-yi/" class="full-link"></a>
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/UPDgIH1zK.png');"></div>
+                 <a href="https://yuyang0564.github.io/UPDgIH1zK/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-04-10">2020-04-10</time>
-                  <h4 class="title white no-margin">uni-app 条件编译</h4>
+                  <time datetime="2020-05-23">2020-05-23</time>
+                  <h4 class="title white no-margin">css position</h4>
                 </div>
                  <span class="epcl-button red">
-                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
+                  <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
                 </span>
                 <div class="overlay"></div>
               </article>
-              
               
 
                 <div class="clear"></div>
