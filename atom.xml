@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuyang0564.github.io</id>
     <title>日常开发</title>
-    <updated>2020-05-23T11:13:59.058Z</updated>
+    <updated>2020-05-26T07:42:49.848Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuyang0564.github.io"/>
     <link rel="self" href="https://yuyang0564.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://yuyang0564.github.io/images/avatar.png</logo>
     <icon>https://yuyang0564.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 日常开发</rights>
+    <entry>
+        <title type="html"><![CDATA[css 垂直居中]]></title>
+        <id>https://yuyang0564.github.io/HN4j53ksu/</id>
+        <link href="https://yuyang0564.github.io/HN4j53ksu/">
+        </link>
+        <updated>2020-05-26T06:44:43.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[css 水平居中]]></title>
         <id>https://yuyang0564.github.io/SfWYj_E84/</id>
@@ -72,12 +79,5 @@
         <link href="https://yuyang0564.github.io/Z4fDbT_D-/">
         </link>
         <updated>2020-04-19T07:22:42.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[css border/outline]]></title>
-        <id>https://yuyang0564.github.io/y8ek7idBn/</id>
-        <link href="https://yuyang0564.github.io/y8ek7idBn/">
-        </link>
-        <updated>2020-04-19T07:00:35.000Z</updated>
     </entry>
 </feed>

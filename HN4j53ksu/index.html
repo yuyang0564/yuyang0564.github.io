@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vue 指令 | 日常开发</title>
+<title>css 垂直居中 | 日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,12 +15,12 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="Vue 指令以 v- 开头 ，它是一种特殊的属性，它的值为一个表达式
-&lt;span v-if=&quot;isTrue&quot;&gt;&lt;/span&gt;
+    <meta name="description" content="通过 块元素  的 &quot;before&quot; 伪类实现垂直居中
 
-v-bind: 指令，用来动态的绑定属性
-&lt;span v-bi..." />
-    <meta name="keywords" content="vue2" />
+为父元素的伪类设置为 &quot;inline-block&quot; , 并设置 &quot;vertical-align: middle&quot;
+
+.pa..." />
+    <meta name="keywords" content="css" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
@@ -88,23 +88,23 @@ v-bind: 指令，用来动态的绑定属性
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/gb9VgBmPf.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/HN4j53ksu.png');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-05-14"><i class="fa fa-calendar"></i><span class="lately">12 天前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-05-26"><i class="fa fa-calendar"></i><span class="lately">1 小时前</span></time>
               
-              <a href="https://yuyang0564.github.io/gb9VgBmPf/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/gb9VgBmPf/"> </span>
+              <a href="https://yuyang0564.github.io/HN4j53ksu/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/HN4j53ksu/"> </span>
               </a>
-              <span id="/gb9VgBmPf/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/HN4j53ksu/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-0 ctag-XZnOL5tqL" aria-label="">vue2</a>
+                      <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-0 ctag-LQTZpssFQ" aria-label="">css</a>
                     
               </div>
-              <h1 class="title ularge white bold">Vue 指令</h1>
+              <h1 class="title ularge white bold">css 垂直居中</h1>
             </div>
           </div>
         </div>  
@@ -114,37 +114,35 @@ v-bind: 指令，用来动态的绑定属性
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="vue-指令以-v-开头-它是一种特殊的属性它的值为一个表达式">Vue 指令以 <code>v-</code> 开头 ，它是一种特殊的属性，它的值为一个表达式</h1>
-<pre><code class="language-html">&lt;span v-if=&quot;isTrue&quot;&gt;&lt;/span&gt;
+                  <h1 id="通过-块元素-的-before-伪类实现垂直居中">通过 <code>块元素</code>  的 &quot;before&quot; 伪类实现垂直居中</h1>
+<ul>
+<li>为<code>父元素</code>的伪类设置为 &quot;inline-block&quot; , 并设置 &quot;vertical-align: middle&quot;</li>
+</ul>
+<pre><code class="language-css">.parent:before {
+  content: &quot;&quot;;
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+} 
 </code></pre>
-<h1 id="v-bind-指令用来动态的绑定属性">v-bind: 指令，用来动态的绑定属性</h1>
-<pre><code class="language-html">&lt;span v-bind:href=&quot;url&quot;&gt;&lt;/span&gt;
+<ul>
+<li><code>子元素</code>  同理</li>
+<li>因为 <code>子元素</code> 被转为了 <code>inline-block</code> , 所以相互之间会有一定的间隙<br>
+<img src="https://yuyang0564.github.io/post-images/1590475958579.png" alt="" loading="lazy"></li>
+<li>设置 <code>父元素</code> 的 &quot;font-size&quot; 为 0 ，即可解决</li>
+</ul>
+<pre><code class="language-css">.parent {
+    ...
+    font-size: 0;
+}
 </code></pre>
-<p>绑定一个 href 属性，它的值为 url 数据对象的值</p>
-<h1 id="动态参数">动态参数</h1>
-<pre><code class="language-html">&lt;span v-bind:[attribute]=&quot;url&quot;&gt;&lt;/span&gt;
-</code></pre>
-<p>针对<code>attribute</code> 求值后，作为属性使用<br>
-<code>注意： 不能使用 空格 和 引号</code></p>
-<pre><code class="language-html">&lt;span v-bind:[attribute + 'xxx' ]=&quot;url&quot;&gt; 错误示例 &lt;/span&gt;
-</code></pre>
-<h1 id="v-bind-简写">v-bind 简写</h1>
-<pre><code class="language-html">&lt;span :href=&quot;url&quot;&gt;&lt;/span&gt;
-</code></pre>
-<pre><code class="language-html">&lt;span :[attribute]=&quot;url&quot;&gt;&lt;/span&gt;
-</code></pre>
-<h1 id="v-on-指令-用来绑定事件">v-on: 指令 ,  用来绑定事件</h1>
-<pre><code class="language-html">&lt;button v-on:click=&quot;handleClick&quot;&gt;&lt;/button&gt;
-</code></pre>
-<p>为当前 button 绑定一个 click 事件， 事件处理方法为 &quot; handleClick&quot;</p>
-<h1 id="动态绑定事件">动态绑定事件</h1>
-<pre><code class="language-html">&lt;button v-on:[eventHandle]=&quot;handleClick&quot;&gt;&lt;/button&gt;
-</code></pre>
-<p>针对 <code>eventHandle</code> 求值后，作为事件名</p>
-<h1 id="v-on-简写">v-on 简写</h1>
-<pre><code class="language-html">&lt;span @click=&quot;handleClick&quot;&gt;&lt;/span&gt;
-</code></pre>
-<pre><code class="language-html">&lt;span @[attribute]=&quot;url&quot;&gt;&lt;/span&gt;
+<figure data-type="image" tabindex="1"><img src="https://yuyang0564.github.io/post-images/1590476025135.png" alt="" loading="lazy"></figure>
+<h1 id="通过-定位-垂直居中同水平居中的定位方法改变偏移的方向即可">通过 <code>定位</code> 垂直居中，同水平居中的定位方法(改变偏移的方向即可)</h1>
+<h1 id="通过-flex-垂直居中">通过 flex 垂直居中</h1>
+<pre><code class="language-css">.parent {
+    display: flex;
+    align-items: center;
+}
 </code></pre>
 
                 </div>
@@ -155,26 +153,13 @@ v-bind: 指令，用来动态的绑定属性
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/tOMZ6OxlC.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/tOMZ6OxlC/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-05-15">2020-05-15</time>
-                  <h4 class="title white no-margin">Vue class 与 style 绑定</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/5TNcrkqyR.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/5TNcrkqyR/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/SfWYj_E84.png');"></div>
+                 <a href="https://yuyang0564.github.io/SfWYj_E84/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-05-14">2020-05-14</time>
-                  <h4 class="title white no-margin">Vue2 模板语法</h4>
+                  <time datetime="2020-05-23">2020-05-23</time>
+                  <h4 class="title white no-margin">css 水平居中</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
