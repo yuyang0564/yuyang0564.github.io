@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>规范1 | 日常开发</title>
+<title>scss  @mixin | 日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,14 +15,14 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="🚀      1.  单一变量模式
-只使用一个变量声明在函数作用域的顶部，一次性声明并初始化即将用到的所有变量
-;(function(){
-    let  a = 1,
-         b = 2,
-         c = 3
-  ..." />
-    <meta name="keywords" content="javascript,编码规范" />
+    <meta name="description" content="@mixin 混合器  👈
+混合器的作用是把可以重用的代码单独抽离出来，作为可复用的代码，以混入其他的样式中
+
+混合器使用 @mixin  关键字定义，后面跟上样式代码块定义的名称
+
+@mixin border {
+    border:..." />
+    <meta name="keywords" content="css" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
@@ -90,25 +90,23 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/gui-fan.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/01/tGnWxs.gif');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-04-10"><i class="fa fa-calendar"></i><span class="lately">2 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-06-01"><i class="fa fa-calendar"></i><span class="lately">2 小时前</span></time>
               
-              <a href="https://yuyang0564.github.io/gui-fan/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/gui-fan/"> </span>
+              <a href="https://yuyang0564.github.io/DyYlP5Spv/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/DyYlP5Spv/"> </span>
               </a>
-              <span id="/gui-fan/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/DyYlP5Spv/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-0 ctag-tgCHrWGK6" aria-label="">javascript</a>
-                    
-                      <a href="https://yuyang0564.github.io/wPui5d2amF/" class="ctag ctag-1 ctag-wPui5d2amF" aria-label="">编码规范</a>
+                      <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-0 ctag-LQTZpssFQ" aria-label="">css</a>
                     
               </div>
-              <h1 class="title ularge white bold">规范1</h1>
+              <h1 class="title ularge white bold">scss  @mixin</h1>
             </div>
           </div>
         </div>  
@@ -118,40 +116,51 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <p>🚀      <strong>1.  单一变量模式</strong></p>
-<p>只使用一个变量声明在函数作用域的顶部，一次性声明并初始化即将用到的所有变量</p>
-<pre><code class="language-js">;(function(){
-    let  a = 1,
-         b = 2,
-         c = 3
-         d = 4
-})()
-</code></pre>
+                  <h1 id="mixin-混合器">@mixin 混合器  👈</h1>
+<p>混合器的作用是把可以<code>重用</code>的代码单独抽离出来，作为可复用的代码，以混入其他的样式中</p>
 <ul>
-<li>防止变量在定义前就被使用</li>
-<li>提高可读性</li>
+<li>混合器使用 <code>@mixin</code>  关键字定义，后面跟上样式代码块<code>定义的名称</code></li>
 </ul>
-<p>🚀     <strong>2. for 循环时，缓存数组的长度</strong></p>
-<pre><code class="language-js">let length = arr.length
-for( let i = 0; i &lt; length; i++ ) {
-    ...
+<pre><code class="language-scss">@mixin border {
+    border: 1px solid #000;
+    outline: 0 none;
 }
 </code></pre>
 <ul>
-<li>避免每次循环都去计算数组的长度</li>
-<li>尤其在循环DOM时，平凡的查询DOM是非常耗时的</li>
+<li>使用 <code>@include</code> 引入混合器</li>
 </ul>
-<p>🚀      <strong>3. for-in 遍历</strong></p>
-<p>for-in 主要用来遍历对象，它的原意是&quot;枚举&quot; , 但是它也会遍历出原型上可枚举的属性。在大多数情况下这是没有必要的，通常通过 <code>Object.hasOwnProperty</code> 来过滤 <code>非自有属性</code></p>
-<pre><code class="language-js">for(let i in obj) {
-    if(Object.prototype.hasOwnProperty.call(obj,i)) {
-        // 只遍历自有属性
+<pre><code class="language-scss">.box {
+    @include border;
+}
+</code></pre>
+<h1 id="混合器规则">混合器规则 👈</h1>
+<ul>
+<li>css 样式</li>
+</ul>
+<pre><code class="language-scss">@mixin border {
+    font-size: 100%;
+} 
+</code></pre>
+<ul>
+<li>css 匹配规则</li>
+</ul>
+<pre><code class="language-scss">@mixin li-style {
+    font-size: 100%;
+    li {
+        list-style: none;
     }
 }
 </code></pre>
-<p>🚀      <strong>4. parseInt 函数</strong></p>
-<p>parseInt 主要是从一个字符串中获取数值，它的第二个参数是一个<code>进制参数</code> 。 这个参数建议不能省略，应该始终都正确的设置，避免因为意外传递了一个不是进制的参数，导致返回 <code>NaN</code></p>
-<pre><code class="language-js">parseInt(&quot;5&quot;,1)   // NaN
+<h1 id="可以传参的混合器">可以传参的混合器 👈</h1>
+<p>可以传参的混合器,类似于 <code>function</code> , 在引用时需要严格对应指定的参数</p>
+<pre><code class="language-scss">@mixin   li-style($color,$bgc) {
+    color: $color;
+    background-color: $bgc;
+}
+
+li {
+    @include li-style(#ff000,red);
+}
 </code></pre>
 
                 </div>
@@ -163,11 +172,11 @@ for( let i = 0; i &lt; length; i++ ) {
             <section class="related section">
               
               <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/KMjITJtJa.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/KMjITJtJa/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/01/tGnWxs.gif');"></div>
+                 <a href="https://yuyang0564.github.io/5ztAe1rR9/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-04-11">2020-04-11</time>
-                  <h4 class="title white no-margin">uni-app AppId 的作用</h4>
+                  <time datetime="2020-06-01">2020-06-01</time>
+                  <h4 class="title white no-margin">scss @extend</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
@@ -177,11 +186,11 @@ for( let i = 0; i &lt; length; i++ ) {
               
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/uni-app-wgt-zi-yuan-bao-sheng-ji.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/uni-app-wgt-zi-yuan-bao-sheng-ji/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/01/t8OnUO.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/jGofPocsp/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-04-10">2020-04-10</time>
-                  <h4 class="title white no-margin">uni-app wgt资源包升级</h4>
+                  <time datetime="2020-06-01">2020-06-01</time>
+                  <h4 class="title white no-margin">资源/工具</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
