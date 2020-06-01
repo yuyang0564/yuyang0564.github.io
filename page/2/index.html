@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vue2 模板语法 | 日常开发</title>
+<title>日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -14,17 +14,11 @@
 <script src="https://yuyang0564.github.io/media/js/view-image.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
-    <meta name="referrer" content="never">
-    <meta name="description" content="vue 中使用了 &quot;Mustache&quot;  插值表达式 (双大括号)
-&lt;span&gt;{{ msg }}&lt;/span&gt;
-
-msg 对应数据对象， 只要msg 发生变动，页面上的显示会自动更新
-显示原始 ..." />
-    <meta name="keywords" content="vue2" />
-    <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
-    <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
   <body>
+    <!-- start: #wrapper -->
+    <div class="wrapper">
+      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -85,106 +79,71 @@ msg 对应数据对象， 只要msg 发生变动，页面上的显示会自动�
         </div>
       </div>
 
-      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
-
-        <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/5TNcrkqyR.jpg');">
-            <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-05-14"><i class="fa fa-calendar"></i><span class="lately">18 天前</span></time>
-              
-              <a href="https://yuyang0564.github.io/5TNcrkqyR/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/5TNcrkqyR/"> </span>
-              </a>
-              <span id="/5TNcrkqyR/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
-              
-            </div>
-            <div class="info">
-              <div class="tags ">
+      <main id="home" class="main">
+        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
+        <div class="row">
+          <div class="content-wrapper grid-posts content">
                 
-                      <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-0 ctag-XZnOL5tqL" aria-label="">vue2</a>
+            <!-- start: .articles -->
+            
+              
+              
+              <div class="articles columns-3">
+                
+                <article class="bgstyle grid-33 tablet-grid-50 mobile-grid-100 np-mobile post type-post status-publish format-standard has-post-thumbnail hentry" style="">
+                  <div class="article-wrapper  cover" style="background-image: url('https://yuyang0564.github.io/post-images/uni-app-chai-yi-hua-zhu-yi-shi-xiang.jpg');">
+                  <header>
                     
-              </div>
-              <h1 class="title ularge white bold">Vue2 模板语法</h1>
-            </div>
-          </div>
-        </div>  
-
-        <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile">
-            <article class="main-article post">
-              <section class="post-content">
-                <div class="text">
-                  <h1 id="vue-中使用了-mustache-插值表达式-双大括号">vue 中使用了 &quot;Mustache&quot;  插值表达式 (双大括号)</h1>
-<pre><code class="language-html">&lt;span&gt;{{ msg }}&lt;/span&gt;
-</code></pre>
-<p><code>msg</code> 对应数据对象， 只要<code>msg</code> 发生变动，页面上的显示会自动更新</p>
-<h1 id="显示原始-html">显示原始 HTML</h1>
-<p>由于 &quot; {{  }} &quot; 会把数据解析成文本，所以在要输出原始HTML的元素上使用 <code>v-html</code> 而非使用<code>插值表达式 {{ }}</code></p>
-<pre><code class="language-html">&lt;span v-html=&quot;html&quot;&gt;&lt;/span&gt;
-</code></pre>
-<p>span 的内容会被名为 &quot;html&quot; 的数据对象的内容所替换</p>
-<h1 id="可以在-mustache-中使用表达式但只能是单表达式">可以在 Mustache 中使用表达式,但只能是单表达式</h1>
-<pre><code class="language-html">&lt;span&gt;{{ number  +1  }}&lt;/span&gt;
-&lt;span&gt;{{ number  == 1 ? 1 : 0  }}&lt;/span&gt;
-&lt;span&gt;{{ number.tofixed(2)  }}&lt;/span&gt;
-</code></pre>
-<h1 id="注意-不要在属性上使用-mustache">注意！！！ 不要在属性上使用 &quot;Mustache&quot;</h1>
-<pre><code class="language-html">&lt;span v-bind:id={{ id }}&gt; 错误示例 &lt;/span&gt;
-</code></pre>
-
+                      <div class="tags absolute">
+                        <a href="https://yuyang0564.github.io/gLtCooV-x/" class="ctag ctag-0 ctag-gLtCooV-x">uni-app</a>
+                      </div>
+                    
+                    <div class="meta">
+                      <time datetime="2020-04-10"><i class="fa fa-calendar"></i><span class="lately">2 个月前</span></time>
+                      <div class="clear"></div>
+                    </div>
+                    <h1 class="title main-title gradient-effect"><a href="https://yuyang0564.github.io/uni-app-chai-yi-hua-zhu-yi-shi-xiang/">uni-app 差异化注意事项</a></h1>
+                  </header>
+                  <footer class="author-meta">
+                    <a href="" class="author" title="">
+                      <span class="author-image cover" style="background-image: url('https://yuyang0564.github.io/images/avatar.png');"></span>
+                      <span class="author-name">日常开发</span>
+                    </a>
+                    
+                    <a href="https://yuyang0564.github.io/uni-app-chai-yi-hua-zhu-yi-shi-xiang/#comments" class="comments meta-info alignright" title="">
+                      <span class="comment-count valine-comment-count" data-xid="/uni-app-chai-yi-hua-zhu-yi-shi-xiang/"> </span><i class="fa fa-comment"></i>
+                    </a>
+                    <div id="/uni-app-chai-yi-hua-zhu-yi-shi-xiang/" class="leancloud_visitors views-counter meta-info alignright" title=""><span class="leancloud-visitors-count" style="vertical-align: middle;"></span><i class="fa fa-leancloud"></i></div>
+                    
+                    <div class="clear"></div>
+                  </footer>
+                  <div class="overlay"></div>       
                 </div>
-                <div class="clear"></div>
-              </section>
-            </article>
-            <div class="clear"></div>
-
-            <section class="related section">
-              
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/gb9VgBmPf.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/gb9VgBmPf/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-05-14">2020-05-14</time>
-                  <h4 class="title white no-margin">Vue 指令</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
               </article>
+                
               
               
-              <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/rimzBw6DU.png');"></div>
-                 <a href="https://yuyang0564.github.io/rimzBw6DU/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-04-19">2020-04-19</time>
-                  <h4 class="title white no-margin">css 盒模型</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
-
-                <div class="clear"></div>
-            </section>
-
               <div class="clear"></div>
-              
-            
-              <div id="comments" class="bg-white hosted ">
-                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
-              </div>
-              <div class="clear"></div>
-            
-
+              <div class="separator last hide-on-tablet hide-on-mobile"></div>
             </div>
+            <!-- end: .articles -->
+            
+                        <div class="epcl-pagination section">
+              <div class="nav">
+                
+                  <a href="https://yuyang0564.github.io/" class="prev button red">上一页</a>
+                
+                
+              </div>
+            </div>
+
+            
           </div>
+          </div>
+        </div>
       </main>
 
-          <footer id="footer" class="grid-container">
+        <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -346,9 +305,6 @@ msg 对应数据对象， 只要msg 发生变动，页面上的显示会自动�
     <div class="clear"></div>
 
         
-
-      
-    <script src="https://yuyang0564.github.io/media/js/functions-post.js"></script>
 
     </div>
     <!-- end: #wrapper -->
