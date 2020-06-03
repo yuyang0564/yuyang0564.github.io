@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>uni-app 差异化注意事项 | 日常开发</title>
+<title>Vue v-model | 日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,10 +15,10 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="🌈      1. 不要把 js,css,scss 等文件直接放入 static 文件中，因为此文件是不会进行编译的
-🌈      2. 在css中和组件中引入样式，只能通过相对路径的方式
-@import url(&quot;../....." />
-    <meta name="keywords" content="uni-app" />
+    <meta name="description" content="v-model 用来在表单类型中创建双向数据绑定
+它会忽略表单元素 value 、 selected 、 checked 的初始值 ，而使用 v-model 绑定的数据作为初始值
+&lt;input  v-model=&quot;input..." />
+    <meta name="keywords" content="vue2" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
@@ -86,23 +86,23 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/uni-app-chai-yi-hua-zhu-yi-shi-xiang.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/01/t84GkR.md.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-04-10"><i class="fa fa-calendar"></i><span class="lately">2 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-06-03"><i class="fa fa-calendar"></i><span class="lately">35 分钟前</span></time>
               
-              <a href="https://yuyang0564.github.io/uni-app-chai-yi-hua-zhu-yi-shi-xiang/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/uni-app-chai-yi-hua-zhu-yi-shi-xiang/"> </span>
+              <a href="https://yuyang0564.github.io/tFKRiinFM/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/tFKRiinFM/"> </span>
               </a>
-              <span id="/uni-app-chai-yi-hua-zhu-yi-shi-xiang/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/tFKRiinFM/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://yuyang0564.github.io/gLtCooV-x/" class="ctag ctag-0 ctag-gLtCooV-x" aria-label="">uni-app</a>
+                      <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-0 ctag-XZnOL5tqL" aria-label="">vue2</a>
                     
               </div>
-              <h1 class="title ularge white bold">uni-app 差异化注意事项</h1>
+              <h1 class="title ularge white bold">Vue v-model</h1>
             </div>
           </div>
         </div>  
@@ -112,31 +112,82 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <p>🌈      1. 不要把 <code>js,css,scss</code> 等文件直接放入 <strong>static</strong> 文件中，因为此文件是不会进行编译的</p>
-<p>🌈      2. 在<strong>css中</strong>和<strong>组件中</strong>引入样式，只能通过<code>相对路径</code>的方式</p>
-<pre><code class="language-css">@import url(&quot;../../xx.css&quot;);
+                  <h1 id="v-model-用来在表单类型中创建双向数据绑定">v-model 用来在表单类型中创建双向数据绑定</h1>
+<p>它会忽略表单元素 <code>value</code> 、 <code>selected</code> 、 <code>checked</code> 的初始值 ，而使用 v-model 绑定的数据作为初始值</p>
+<pre><code class="language-html">&lt;input  v-model=&quot;inputValue&quot; /&gt;
 </code></pre>
-<pre><code class="language-html">&lt;style&gt;
-    @import &quot;../../xxx.css&quot;
-&lt;/style&gt;
-</code></pre>
-<p>🌈      3. 使用<code>rpx</code> 作为尺寸单位， 默认根据 750px 的宽度计算</p>
-<p>🌈      4. <strong>背景图片</strong> 不支持本地图片，可以转为<code>base64</code> , 注意源文件不要大于 <strong>40Kb</strong></p>
-<p>🌈      5.  不支持 vue 的 classObject 的方式绑定样式</p>
-<pre><code class="language-html">    &lt;div :class=&quot;classObject&quot;&gt;&lt;/div&gt;
-    &lt;script&gt;
-        data: {
-            classObject: {
-                color: &quot;#fff&quot;,
-                fontSize: &quot;16px&quot;
-            }
+<pre><code class="language-js">export default {
+    data() {
+        return {
+            inputValue: &quot; &quot;
         }
-    &lt;/script&gt;
+    }
+}
 </code></pre>
-<p>🌈      6. 不支持在自定义组件上使用 <code>class</code> 和 <code>style</code> 绑定</p>
-<pre><code class="language-html">    &lt;v-component :class=&quot;classStyle&quot; /&gt;
+<h1 id="v-model-是一个语法糖实际上它在底层监听用户的输入事件并更新数据">v-model 是一个语法糖🍡，实际上它在底层监听用户的输入事件并更新数据</h1>
+<ul>
+<li>针对 <code>text</code>  和  <code>textarea</code>  的 input，监听 <strong style="color: red">input</strong> 事件， 同步 value 属性</li>
+<li>针对  <code>checkbox</code> 和 <code>radio</code> 的 input , 监听 <strong style="color: red">change</strong> 事件 , 同步 checked 属性</li>
+<li>针对 <code>select</code> 元素 , 监听 <code>change</code>事件 ， 同步 value 属性</li>
+</ul>
+<h2 id="checkbox-️">checkbox  ☕️</h2>
+<pre><code class="language-html">&lt;div&gt;
+        &lt;label for=&quot;a&quot;&gt;A&lt;/label&gt;
+        &lt;input type=&quot;checkbox&quot; id=&quot;a&quot; value=&quot;A&quot; v-model=&quot;checkboxList&quot;&gt;
+        &lt;label for=&quot;b&quot;&gt;B&lt;/label&gt;
+        &lt;input type=&quot;checkbox&quot; id=&quot;b&quot; value=&quot;B&quot; v-model=&quot;checkboxList&quot;&gt;
+        &lt;label for=&quot;c&quot;&gt;C&lt;/label&gt;
+        &lt;input type=&quot;checkbox&quot; id=&quot;c&quot; value=&quot;C&quot; v-model=&quot;checkboxList&quot;&gt;
+&lt;/div&gt;
 </code></pre>
-<p>🌈      7. 事件修饰符只支持 <code>.stop</code> 阻止事件冒泡 ， 其他修饰符只在 <code>H5</code> 端有效</p>
+<pre><code class="language-js">export default {
+    return {
+        checkboxList: [ ]
+    }
+}
+</code></pre>
+<h2 id="radio-️">radio ☕️</h2>
+<pre><code class="language-html">&lt;div&gt;
+        &lt;label for=&quot;a&quot;&gt;A&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; id=&quot;a&quot; value=&quot;selectA&quot; v-model=&quot;radio&quot;&gt;
+
+        &lt;label for=&quot;b&quot;&gt;B&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; id=&quot;b&quot; value=&quot;selectB&quot; v-model=&quot;radio&quot;&gt;
+
+        &lt;label for=&quot;c&quot;&gt;C&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; id=&quot;c&quot; value=&quot;selectC&quot; v-model=&quot;radio&quot;&gt;
+ &lt;/div&gt;
+</code></pre>
+<pre><code class="language-js">export default {
+    return {
+        radio: &quot; &quot;
+    }
+}
+</code></pre>
+<h2 id="textarea-️">textarea ☕️</h2>
+<pre><code class="language-html">&lt;div&gt;
+        &lt;textarea v-model=&quot;text&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+</code></pre>
+<h2 id="select-️">select  ☕️</h2>
+<pre><code class="language-html">&lt;div&gt;
+        &lt;select v-model=&quot;select&quot;&gt;
+          &lt;option value=&quot;&quot; disabled selected&gt;未选择&lt;/option&gt;
+          &lt;option &gt;选择一&lt;/option&gt;
+          &lt;option &gt;选择二&lt;/option&gt;
+          &lt;option &gt;选择三&lt;/option&gt;
+        &lt;/select&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>针对 <strong style="color: red">select</strong> ,  最好提供一个 disabled 的 <code>option</code> ,  同时 value 为空，以提供默认值</li>
+<li>当没有为 option 提供 value 属性时， 会把 option 的值作为 value 的值</li>
+</ul>
+<pre><code class="language-html">...
+&lt;option &gt;选择一&lt;/option&gt;
+...
+&lt;!--  当选中时， value 的值为 &quot; 选择一 &quot; --&gt;
+</code></pre>
 
                 </div>
                 <div class="clear"></div>
@@ -146,19 +197,19 @@
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/uni-app-tiao-jian-bian-yi.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/uni-app-tiao-jian-bian-yi/" class="full-link"></a>
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/01/tGnWxs.gif');"></div>
+                 <a href="https://yuyang0564.github.io/NtrhYJ8BR/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-04-10">2020-04-10</time>
-                  <h4 class="title white no-margin">uni-app 条件编译</h4>
+                  <time datetime="2020-06-03">2020-06-03</time>
+                  <h4 class="title white no-margin">scss  运算符 &#34; / &#34;</h4>
                 </div>
                  <span class="epcl-button red">
-                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
+                  <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
                 </span>
                 <div class="overlay"></div>
               </article>
-              
               
 
                 <div class="clear"></div>
