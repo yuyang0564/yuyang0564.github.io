@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>css position | 日常开发</title>
+<title>Vue prop | 日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,13 +15,16 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="position 为元素设置定位
-每个定位的元素可以设置  top , left , right , bottom 属性，决定元素的位置
-relative   相对定位
+    <meta name="description" content="子组件是通过 props 配置接收父组件传递的数据
+export default {
+    props: {
+        list: Array
+    }
+}
 
-relative 是相对于元素当前的位置启用定位。
-不会改变元素的原..." />
-    <meta name="keywords" content="css" />
+
+👉 除了 静态字符串 , 其他任意值都需要通过绑定属性的方式传递值..." />
+    <meta name="keywords" content="vue2" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
@@ -89,23 +92,23 @@ relative 是相对于元素当前的位置启用定位。
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/UPDgIH1zK.png');">
+          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/01/t84GkR.md.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-05-23"><i class="fa fa-calendar"></i><span class="lately">1 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-06-04"><i class="fa fa-calendar"></i><span class="lately">14 天前</span></time>
               
-              <a href="https://yuyang0564.github.io/UPDgIH1zK/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/UPDgIH1zK/"> </span>
+              <a href="https://yuyang0564.github.io/W5Qxj_AEr/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/W5Qxj_AEr/"> </span>
               </a>
-              <span id="/UPDgIH1zK/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/W5Qxj_AEr/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-0 ctag-LQTZpssFQ" aria-label="">css</a>
+                      <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-0 ctag-XZnOL5tqL" aria-label="">vue2</a>
                     
               </div>
-              <h1 class="title ularge white bold">css position</h1>
+              <h1 class="title ularge white bold">Vue prop</h1>
             </div>
           </div>
         </div>  
@@ -115,71 +118,47 @@ relative 是相对于元素当前的位置启用定位。
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="position-为元素设置定位">position 为元素设置定位</h1>
-<p>每个定位的元素可以设置  top , left , right , bottom 属性，决定元素的位置</p>
-<h1 id="relative-相对定位">relative   相对定位</h1>
+                  <h1 id="子组件是通过-props-配置接收父组件传递的数据">子组件是通过 <code>props</code> 配置接收父组件传递的数据</h1>
+<pre><code class="language-js">export default {
+    props: {
+        list: Array
+    }
+}
+</code></pre>
 <ul>
-<li>relative 是相对于元素当前的位置启用定位。</li>
-<li>不会改变元素的原始样式。</li>
-<li>定位的元素不会发生位置的偏移 。</li>
+<li>👉 除了 <code>静态字符串</code> , 其他任意值都需要通过绑定属性的方式传递值</li>
 </ul>
-<pre><code class="language-html">&lt;div class=&quot;box1&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;box2&quot;&gt;&lt;/div&gt;
+<pre><code class="language-html">&lt;child-component  v-bind:list=&quot;list&quot;    /&gt;
+&lt;!-- 静态字符串 --&gt;
+&lt;child-component str=&quot;abc&quot;  /&gt;
+&lt;!-- boolean --&gt;
+&lt;child-component  v-bind:bool=&quot;true&quot; /&gt;
+&lt;!-- 数值 --&gt;
+&lt;child-component  v-bind:num=&quot;10&quot; /&gt;
 </code></pre>
-<pre><code class="language-css">.box1 {
-  width: 100px;
-  height: 100px;
-  background: #ff0000;
-}
-.box2 {
-  width: 100px;
-  height: 100px;
-  background: #c0c;
-  position: relative;
-}
-</code></pre>
-<p><img src="https://yuyang0564.github.io/post-images/1590205115846.png" alt="" loading="lazy"><br>
-<code>对 inline 元素设置相对定位后，并不会改变元素的默认样式</code></p>
-<pre><code class="language-html">&lt;span class=&quot;test&quot;&gt;inline 元素设置相对定位&lt;/span&gt;
-</code></pre>
-<pre><code class="language-css">.test {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  background: #c0c0c0;
-}
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="https://yuyang0564.github.io/post-images/1590206150130.png" alt="" loading="lazy"></figure>
-<h1 id="absolute-绝对定位">absolute 绝对定位</h1>
 <ul>
-<li>绝对定位元素的位置是相对于最近的已定位父元素，如果没有已定位的父元素，那么它的位置相对于 body</li>
-<li>绝对定位会使元素脱离<code>文档流</code> ,  不再占据文档中的位置</li>
-<li>如果该元素没有设置宽，高，则宽，高为auto</li>
+<li>👉 如果想把一个对象的所有属性都传递给<code>子组件</code> , 可以直接通过 <code>v-bind</code> 绑定一个对象</li>
 </ul>
-<pre><code class="language-html">&lt;div class=&quot;con&quot;&gt;
-    &lt;div class=&quot;box1&quot;&gt;1&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-<pre><code class="language-css">.con {
-  width: 200px;
-  height: 200px;
-  background-color: #fc5c5c;
-  margin: 50px 0 0 50px;
-}
-.box1 {
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  width: 200px;
+<pre><code class="language-js">...
+data = {
+    id: 1,
+    name: &quot;li&quot;
+    ...
 }
 </code></pre>
-<figure data-type="image" tabindex="2"><img src="https://yuyang0564.github.io/post-images/1590225971484.png" alt="" loading="lazy"></figure>
-<h1 id="fixed-固定定位">fixed 固定定位</h1>
-<p>固定定位的元素是相对于窗口进行定位 , 它的位置是固定的。即使浏览器发生滚动行为，它的位置也不会发生变化</p>
-<ul>
-<li>固定定位同样会使元素脱离<code>文档流</code>,不再占据页面的空间</li>
-<li>如果该元素没有设置宽，高，则宽，高为auto</li>
-</ul>
+<pre><code class="language-html">&lt;child-component   v-bind=&quot;data&quot; /&gt;
+</code></pre>
+<h1 id="单向数据流">单向数据流</h1>
+<p>父子之间通过 prop 形成了一个单向下行绑定。<br>
+父级的数据更新时会自动同步到所有的子组件中，但是不能直接在子组件中直接修改 prop 数据。这样会导致其他用到此数据的组件也发生改变</p>
+<h1 id="非-prop-属性">非 prop 属性</h1>
+<p>当父组件传递数据给子组件 , 但是子组件没有定义 prop 来接收数据时， 父组件传递的数据会被添加到子组件的 <code>根节点</code> 上<br>
+👨 父组件</p>
+<pre><code class="language-html">&lt;child-component  v-bind:num=&quot;10&quot;  /&gt;
+</code></pre>
+<p>👶 子组件未定义props 接收此数据时，会被渲染为</p>
+<pre><code class="language-html"> &lt;div num=&quot;10&quot;&gt; ... &lt;/div&gt;
+</code></pre>
 
                 </div>
                 <div class="clear"></div>
@@ -190,11 +169,11 @@ relative 是相对于元素当前的位置启用定位。
             <section class="related section">
               
               <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/SfWYj_E84.png');"></div>
-                 <a href="https://yuyang0564.github.io/SfWYj_E84/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/01/t84GkR.md.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/V__VfydC-/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-05-23">2020-05-23</time>
-                  <h4 class="title white no-margin">css 水平居中</h4>
+                  <time datetime="2020-06-18">2020-06-18</time>
+                  <h4 class="title white no-margin">Vue slot</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
@@ -204,11 +183,11 @@ relative 是相对于元素当前的位置启用定位。
               
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/1Q4Y64TAs.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/1Q4Y64TAs/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/01/t84GkR.md.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/tFKRiinFM/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-05-21">2020-05-21</time>
-                  <h4 class="title white no-margin">Vue 事件处理</h4>
+                  <time datetime="2020-06-03">2020-06-03</time>
+                  <h4 class="title white no-margin">Vue v-model</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">

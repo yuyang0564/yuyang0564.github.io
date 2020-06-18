@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>css position | 日常开发</title>
+<title>Vue slot | 日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,13 +15,11 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="position 为元素设置定位
-每个定位的元素可以设置  top , left , right , bottom 属性，决定元素的位置
-relative   相对定位
-
-relative 是相对于元素当前的位置启用定位。
-不会改变元素的原..." />
-    <meta name="keywords" content="css" />
+    <meta name="description" content="👉 slot  是组件的一块HTML模板，这块模板显示的内容由外界决定
+👴 父组件中为子组件的slot 传值，传入的任何内容都会替换slot
+&lt;div id=&quot;app&quot;&gt;
+	&lt;child-compo..." />
+    <meta name="keywords" content="vue2" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
@@ -89,23 +87,23 @@ relative 是相对于元素当前的位置启用定位。
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/UPDgIH1zK.png');">
+          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/01/t84GkR.md.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-05-23"><i class="fa fa-calendar"></i><span class="lately">1 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-06-18"><i class="fa fa-calendar"></i><span class="lately">2 小时前</span></time>
               
-              <a href="https://yuyang0564.github.io/UPDgIH1zK/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/UPDgIH1zK/"> </span>
+              <a href="https://yuyang0564.github.io/V__VfydC-/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/V__VfydC-/"> </span>
               </a>
-              <span id="/UPDgIH1zK/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/V__VfydC-/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-0 ctag-LQTZpssFQ" aria-label="">css</a>
+                      <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-0 ctag-XZnOL5tqL" aria-label="">vue2</a>
                     
               </div>
-              <h1 class="title ularge white bold">css position</h1>
+              <h1 class="title ularge white bold">Vue slot</h1>
             </div>
           </div>
         </div>  
@@ -115,71 +113,72 @@ relative 是相对于元素当前的位置启用定位。
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="position-为元素设置定位">position 为元素设置定位</h1>
-<p>每个定位的元素可以设置  top , left , right , bottom 属性，决定元素的位置</p>
-<h1 id="relative-相对定位">relative   相对定位</h1>
+                  <h1 id="slot-是组件的一块html模板这块模板显示的内容由外界决定">👉 slot  是组件的一块HTML模板，这块模板显示的内容由外界决定</h1>
+<p>👴 父组件中为子组件的<code>slot</code> 传值，传入的任何内容都会替换slot</p>
+<pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+	&lt;child-component&gt;传入一段文本替换slot&lt;/child-component&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    ...
+    data() {
+        return {
+            num: 1
+        }
+    },
+    components: {
+        listComponent
+    }
+&lt;/script&gt;
+</code></pre>
+<p>👶 子组件中通过定义 <code>slot</code> 来接收外界传入的内容</p>
+<pre><code class="language-html">&lt;!-- export   child-component --&gt;
+&lt;h1&gt;
+    &lt;slot&gt;&lt;/slot&gt;
+&lt;/h1&gt;
+</code></pre>
+<p>最终会渲染为 📽<br>
+<img src="https://s1.ax1x.com/2020/06/18/Nmuepj.png" alt="Nmuepj.png" loading="lazy"></p>
+<h3 id="插槽也可以定义默认值当外界没有传入内容时会使用插槽的默认值">👉 插槽也可以定义默认值，当外界没有传入内容时，会使用插槽的默认值</h3>
+<pre><code class="language-html">&lt;!-- export   child-component --&gt;
+&lt;h1&gt;
+    &lt;slot&gt;这是子组件插槽的默认值&lt;/slot&gt;
+&lt;/h1&gt;
+</code></pre>
+<h3 id="在插槽内使用变量">👉  在插槽内使用变量</h3>
+<p>使用规则: 父级模板里的所有内容都是在父级作用域中编译的；子模板里的所有内容都是在子作用域中编译的。</p>
 <ul>
-<li>relative 是相对于元素当前的位置启用定位。</li>
-<li>不会改变元素的原始样式。</li>
-<li>定位的元素不会发生位置的偏移 。</li>
+<li>在父级模板中替换插槽时，只能访问父级作用域</li>
 </ul>
-<pre><code class="language-html">&lt;div class=&quot;box1&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;box2&quot;&gt;&lt;/div&gt;
-</code></pre>
-<pre><code class="language-css">.box1 {
-  width: 100px;
-  height: 100px;
-  background: #ff0000;
-}
-.box2 {
-  width: 100px;
-  height: 100px;
-  background: #c0c;
-  position: relative;
-}
-</code></pre>
-<p><img src="https://yuyang0564.github.io/post-images/1590205115846.png" alt="" loading="lazy"><br>
-<code>对 inline 元素设置相对定位后，并不会改变元素的默认样式</code></p>
-<pre><code class="language-html">&lt;span class=&quot;test&quot;&gt;inline 元素设置相对定位&lt;/span&gt;
-</code></pre>
-<pre><code class="language-css">.test {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  background: #c0c0c0;
-}
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="https://yuyang0564.github.io/post-images/1590206150130.png" alt="" loading="lazy"></figure>
-<h1 id="absolute-绝对定位">absolute 绝对定位</h1>
-<ul>
-<li>绝对定位元素的位置是相对于最近的已定位父元素，如果没有已定位的父元素，那么它的位置相对于 body</li>
-<li>绝对定位会使元素脱离<code>文档流</code> ,  不再占据文档中的位置</li>
-<li>如果该元素没有设置宽，高，则宽，高为auto</li>
-</ul>
-<pre><code class="language-html">&lt;div class=&quot;con&quot;&gt;
-    &lt;div class=&quot;box1&quot;&gt;1&lt;/div&gt;
+<pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+	&lt;child-component&gt;
+        {{ num  }}
+    &lt;/child-component&gt;
 &lt;/div&gt;
 </code></pre>
-<pre><code class="language-css">.con {
-  width: 200px;
-  height: 200px;
-  background-color: #fc5c5c;
-  margin: 50px 0 0 50px;
-}
-.box1 {
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  width: 200px;
-}
-</code></pre>
-<figure data-type="image" tabindex="2"><img src="https://yuyang0564.github.io/post-images/1590225971484.png" alt="" loading="lazy"></figure>
-<h1 id="fixed-固定定位">fixed 固定定位</h1>
-<p>固定定位的元素是相对于窗口进行定位 , 它的位置是固定的。即使浏览器发生滚动行为，它的位置也不会发生变化</p>
+<h3 id="具名-slot">👉 具名 slot</h3>
 <ul>
-<li>固定定位同样会使元素脱离<code>文档流</code>,不再占据页面的空间</li>
-<li>如果该元素没有设置宽，高，则宽，高为auto</li>
+<li>当定义了多个 slot 时， 可以通过设置 <code>name</code>属性，为 slot 定义名称</li>
 </ul>
+<pre><code class="language-html">&lt;slot name=&quot;header&quot;&gt;&lt;/slot&gt;
+&lt;slot name=&quot;footer&quot;&gt;&lt;/slot&gt;
+</code></pre>
+<ul>
+<li>不含有 <code>name</code>属性 的 slot ， 默认会带有一个隐含的 name 属性，值为 &quot;default&quot;  （<strong style="color: red;">只能有 1 个</strong>）</li>
+</ul>
+<pre><code class="language-html">&lt;slot&gt;&lt;/slot&gt;
+&lt;!-- 等价于 --&gt;
+&lt;slot name=&quot;default&quot;&gt;&lt;/slot&gt;
+</code></pre>
+<h3 id="替换具名-slot">👉 替换具名 slot</h3>
+<p>替换具名 slot ， 需要在 <strong style="color: red;">  <code>&lt;template&gt;</code>  </strong> 上使用 <code>v-slot:name</code> 标识需要替换的具名插槽的name名称,内容需要包裹在 <code>&lt;template&gt;</code> 中。<br>
+🗣 v-slot:name  简写 <strong style="color: red;">#name</strong></p>
+<pre><code class="language-html">&lt;slot name=&quot;header&quot;&gt;...&lt;/slot&gt;
+
+&lt;!-- 替换 &quot;header&quot; 插槽 --&gt;
+&lt;template v-slot:header&gt;...&lt;/template&gt;
+&lt;!-- 简写 --&gt;
+&lt;template #header&gt;&lt;/template&gt;
+</code></pre>
 
                 </div>
                 <div class="clear"></div>
@@ -190,11 +189,11 @@ relative 是相对于元素当前的位置启用定位。
             <section class="related section">
               
               <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/SfWYj_E84.png');"></div>
-                 <a href="https://yuyang0564.github.io/SfWYj_E84/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/01/t84GkR.md.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/EIzMfdUsy/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-05-23">2020-05-23</time>
-                  <h4 class="title white no-margin">css 水平居中</h4>
+                  <time datetime="2020-06-18">2020-06-18</time>
+                  <h4 class="title white no-margin">Vue slot (二)</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
@@ -204,11 +203,11 @@ relative 是相对于元素当前的位置启用定位。
               
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/1Q4Y64TAs.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/1Q4Y64TAs/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/01/t84GkR.md.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/W5Qxj_AEr/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-05-21">2020-05-21</time>
-                  <h4 class="title white no-margin">Vue 事件处理</h4>
+                  <time datetime="2020-06-04">2020-06-04</time>
+                  <h4 class="title white no-margin">Vue prop</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
