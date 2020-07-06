@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>搜索结果 | 日常开发</title>
+<title>数值转换 | 日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -14,16 +14,17 @@
 <script src="https://yuyang0564.github.io/media/js/view-image.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
-    <script src="/media/gridea-search/fuse.js"></script>
-    <script src="/media/gridea-search/ejs.min.js"></script>
-    <script src="/media/gridea-search/gridea-search.js"></script>
-    <script src="/media/gridea-search/result-template.ejs" type="text/ejs"></script>
-</head>
-
+    <meta name="referrer" content="never">
+    <meta name="description" content="👉 NaN
+NaN是一种特殊的数值，用来表示即将要返回数值的操作数，最终返回的不是一个数值
+❗️❗️ 注意：  &quot; NaN &quot; 不能用来比较，它与任何类型的值都不相等，包括它自身
+👉 3种数值转换
+📌 Number..." />
+    <meta name="keywords" content="javascript" />
+    <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
+  </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -84,22 +85,125 @@
         </div>
       </div>
 
-      <main id="home" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
-        <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
-          <div class="main-article post">
-            <div id="gridea-search-result">
-              <h2 class="searching">搜索中......</h2>
-              <h2 class="no-result" style="display:none">未搜索到相关文章</h2>
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-06-29"><i class="fa fa-calendar"></i><span class="lately">7 天前</span></time>
+              
+              <a href="https://yuyang0564.github.io/FKgYxSmal/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/FKgYxSmal/"> </span>
+              </a>
+              <span id="/FKgYxSmal/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-0 ctag-tgCHrWGK6" aria-label="">javascript</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">数值转换</h1>
             </div>
           </div>
+        </div>  
+
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h1 id="nan">👉 NaN</h1>
+<p>NaN是一种特殊的数值，用来表示即将要返回数值的操作数，最终返回的不是一个数值</p>
+<p>❗️❗️ 注意：  &quot; NaN &quot; 不能用来比较，它与任何类型的值都不相等，包括它自身</p>
+<h1 id="3种数值转换">👉 3种数值转换</h1>
+<h2 id="number">📌 Number()</h2>
+<p>Number() 可以转换任何数据类型</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Boolean</td>
+<td style="text-align:center">true =&gt; 1  , false =&gt; 2</td>
+</tr>
+<tr>
+<td style="text-align:center">Number</td>
+<td style="text-align:center">原样返回</td>
+</tr>
+<tr>
+<td style="text-align:center">null</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">undefined</td>
+<td style="text-align:center">NaN</td>
+</tr>
+<tr>
+<td style="text-align:center">String</td>
+<td style="text-align:center">1. 空字符串转为 0  。   2. 转为 10 进制 , 忽略前导 0 , 从字符串的开头逐位匹配直到非数值,如果字符串的开头就是非数值, 则直接返回 NaN</td>
+</tr>
+</tbody>
+</table>
+<h2 id="parseint">📌 parseInt()</h2>
+<ul>
+<li>用于字符串格式的数值转为 &quot; 整数 &quot; , 忽略空格</li>
+<li>对&quot;空字符串&quot;返回 NaN</li>
+<li>默认转为 10 进制 , 忽略前导 0 , 从字符串的开头逐位匹配直到非数值</li>
+<li>忽略浮点类型的小数点( . )</li>
+</ul>
+<h2 id="parsefloat">📌 parseFloat()</h2>
+<ul>
+<li>忽略前导0 。</li>
+<li>只识别第一个小数点( . ) 。   &quot;23.45.45&quot;  =&gt; 23.45</li>
+<li>如果是整数或者小数点后全是0，则转为 &quot; 整数&quot; 。    &quot;23&quot; =&gt; 23    &quot;23.0000&quot;  =&gt; 23</li>
+</ul>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/5t5zxcYsk/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-06-29">2020-06-29</time>
+                  <h4 class="title white no-margin">ES5 数据类型</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
+            
+              <div id="comments" class="bg-white hosted ">
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+              </div>
+              <div class="clear"></div>
+            
+
+            </div>
           </div>
-        </div>
-        </div>
       </main>
 
-        <footer id="footer" class="grid-container">
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -279,6 +383,9 @@
     <div class="clear"></div>
 
         
+
+      
+    <script src="https://yuyang0564.github.io/media/js/functions-post.js"></script>
 
     </div>
     <!-- end: #wrapper -->
