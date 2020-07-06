@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>css 盒子阴影 | 日常开发</title>
+<title>执行环境(作用域) | 日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,32 +15,12 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="box-shadow
-为元素的边框添加阴影效果
+    <meta name="description" content="👉 执行环境决定了 变量或 函数   访问数据的范围
 
-
-
-属性
-值
-
-
-
-
-h-shadow
-水平阴影大小 (可以为负值)
-
-
-v-shadow
-垂直阴影大小 (可以为负值)
-
-
-blur
-模糊程度(值越小，模糊程度越低)
-
-
-spread
-阴..." />
-    <meta name="keywords" content="css" />
+执行环境又分为 全局  和  函数
+在 Web 浏览器中，全局为 &quot;window&quot; ,  在 NODE 中， 全局为 &quot;global&quot;
+每个&..." />
+    <meta name="keywords" content="javascript" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
@@ -108,23 +88,23 @@ spread
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/Z4fDbT_D-.png');">
+          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-04-19"><i class="fa fa-calendar"></i><span class="lately">3 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-07-06"><i class="fa fa-calendar"></i><span class="lately">1 小时前</span></time>
               
-              <a href="https://yuyang0564.github.io/Z4fDbT_D-/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/Z4fDbT_D-/"> </span>
+              <a href="https://yuyang0564.github.io/X3aiegO5c/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/X3aiegO5c/"> </span>
               </a>
-              <span id="/Z4fDbT_D-/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/X3aiegO5c/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-0 ctag-LQTZpssFQ" aria-label="">css</a>
+                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-0 ctag-tgCHrWGK6" aria-label="">javascript</a>
                     
               </div>
-              <h1 class="title ularge white bold">css 盒子阴影</h1>
+              <h1 class="title ularge white bold">执行环境(作用域)</h1>
             </div>
           </div>
         </div>  
@@ -134,43 +114,27 @@ spread
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="box-shadow"><strong>box-shadow</strong></h1>
-<p>为元素的边框添加阴影效果</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">属性</th>
-<th style="text-align:center">值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">h-shadow</td>
-<td style="text-align:center">水平阴影大小 (可以为负值)</td>
-</tr>
-<tr>
-<td style="text-align:center">v-shadow</td>
-<td style="text-align:center">垂直阴影大小 (可以为负值)</td>
-</tr>
-<tr>
-<td style="text-align:center">blur</td>
-<td style="text-align:center">模糊程度(值越小，模糊程度越低)</td>
-</tr>
-<tr>
-<td style="text-align:center">spread</td>
-<td style="text-align:center">阴影范围的大小</td>
-</tr>
-<tr>
-<td style="text-align:center">color</td>
-<td style="text-align:center">has / rgb</td>
-</tr>
-</tbody>
-</table>
-<pre><code class="language-css">div {
-    box-shadow: 10px 10px 15px 5px #d0d0d0;
-}
+                  <h1 id="执行环境决定了-变量或-函数-访问数据的范围">👉 执行环境决定了 <code>变量</code>或 <code>函数</code>   访问数据的范围</h1>
+<ul>
+<li>执行环境又分为 <strong style="color: red;">全局</strong>  和  <strong style="color: red;">函数</strong></li>
+<li>在 Web 浏览器中，全局为 &quot;window&quot; ,  在 NODE 中， 全局为 &quot;global&quot;</li>
+<li>每个&quot;执行环境&quot; 都有一个  <strong style="color: red;">变量对象</strong> , 一个环境中的所有变量与函数都保存在这个对象中</li>
+</ul>
+<h2 id="当进入一个-环境-时会创建一个作用域链它的作用是确保从执行环境中正确的访问数据-作用域链的最前端是当前执行环境的变量对象">📌 当进入一个 &quot;环境&quot; 时，会创建一个作用域链，它的作用是确保从执行环境中正确的访问数据。作用域链的最前端是当前执行环境的&quot;变量对象&quot;.</h2>
+<ol>
+<li>如果当前执行的环境是 &quot;全局&quot; ，则&quot;变量对象&quot;为 <strong style="color: red;">window</strong></li>
+</ol>
+<pre><code class="language-js">[ window ]
 </code></pre>
-<figure data-type="image" tabindex="1"><img src="https://yuyang0564.github.io/post-images/1587281575600.png" alt="" loading="lazy"></figure>
+<ol start="2">
+<li>如果当前执行环境是 &quot;函数&quot; , 则最前端的&quot;变量对象&quot;为当前函数的 <strong style="color: red;">arguments</strong></li>
+</ol>
+<p>💡 ( 帮助理解，可以把&quot;作用域链&quot;想象成数组， 当前已激活作用域的 &quot;变量对象&quot;始终在数组的最前方，全局的&quot;变量对象&quot;在数组的最末尾 )</p>
+<pre><code class="language-js">[ arguments , arguments  ....... , window ]
+</code></pre>
+<ol start="3">
+<li>在一个环境中查找变量就是沿着这样一个 &quot; 作用域链 &quot; , 一级一级的向后搜索</li>
+</ol>
 
                 </div>
                 <div class="clear"></div>
@@ -180,26 +144,13 @@ spread
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/rimzBw6DU.png');"></div>
-                 <a href="https://yuyang0564.github.io/rimzBw6DU/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-04-19">2020-04-19</time>
-                  <h4 class="title white no-margin">css 盒模型</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/y8ek7idBn.png');"></div>
-                 <a href="https://yuyang0564.github.io/y8ek7idBn/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/tkbkLazjo/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-04-19">2020-04-19</time>
-                  <h4 class="title white no-margin">css border/outline</h4>
+                  <time datetime="2020-07-06">2020-07-06</time>
+                  <h4 class="title white no-margin">类型检测</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">

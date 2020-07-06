@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuyang0564.github.io</id>
     <title>日常开发</title>
-    <updated>2020-07-06T05:31:01.513Z</updated>
+    <updated>2020-07-06T08:55:49.252Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuyang0564.github.io"/>
     <link rel="self" href="https://yuyang0564.github.io/atom.xml"/>
@@ -10,6 +10,27 @@
     <logo>https://yuyang0564.github.io/images/avatar.png</logo>
     <icon>https://yuyang0564.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 日常开发</rights>
+    <entry>
+        <title type="html"><![CDATA[执行环境(作用域)]]></title>
+        <id>https://yuyang0564.github.io/X3aiegO5c/</id>
+        <link href="https://yuyang0564.github.io/X3aiegO5c/">
+        </link>
+        <updated>2020-07-06T08:02:06.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[类型检测]]></title>
+        <id>https://yuyang0564.github.io/tkbkLazjo/</id>
+        <link href="https://yuyang0564.github.io/tkbkLazjo/">
+        </link>
+        <updated>2020-07-06T07:02:05.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[switch 语句]]></title>
+        <id>https://yuyang0564.github.io/9HbicUlds/</id>
+        <link href="https://yuyang0564.github.io/9HbicUlds/">
+        </link>
+        <updated>2020-07-06T06:02:55.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[数值转换]]></title>
         <id>https://yuyang0564.github.io/FKgYxSmal/</id>
@@ -58,26 +79,5 @@
         <link href="https://yuyang0564.github.io/fAzNecyHB/">
         </link>
         <updated>2020-06-03T05:25:42.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[scss @extend]]></title>
-        <id>https://yuyang0564.github.io/5ztAe1rR9/</id>
-        <link href="https://yuyang0564.github.io/5ztAe1rR9/">
-        </link>
-        <updated>2020-06-01T09:18:03.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[scss  @mixin]]></title>
-        <id>https://yuyang0564.github.io/DyYlP5Spv/</id>
-        <link href="https://yuyang0564.github.io/DyYlP5Spv/">
-        </link>
-        <updated>2020-06-01T07:51:57.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[资源/工具]]></title>
-        <id>https://yuyang0564.github.io/jGofPocsp/</id>
-        <link href="https://yuyang0564.github.io/jGofPocsp/">
-        </link>
-        <updated>2020-06-01T06:21:54.000Z</updated>
     </entry>
 </feed>

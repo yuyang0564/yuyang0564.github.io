@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>css 盒子阴影 | 日常开发</title>
+<title>类型检测 | 日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,32 +15,27 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="box-shadow
-为元素的边框添加阴影效果
+    <meta name="description" content="👉  typeof 主要用来检测一个值是 基本类型 还是 引用类型
 
 
 
-属性
-值
+类型
+检测
 
 
 
 
-h-shadow
-水平阴影大小 (可以为负值)
+String
+&quot;string&quot;
 
 
-v-shadow
-垂直阴影大小 (可以为负值)
+Number
+&quot;number&quot;
 
 
-blur
-模糊程度(值越小，模糊程度越低)
-
-
-spread
-阴..." />
-    <meta name="keywords" content="css" />
+Boolean
+&quot;bo..." />
+    <meta name="keywords" content="javascript" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
@@ -108,23 +103,23 @@ spread
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/Z4fDbT_D-.png');">
+          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-04-19"><i class="fa fa-calendar"></i><span class="lately">3 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-07-06"><i class="fa fa-calendar"></i><span class="lately">2 小时前</span></time>
               
-              <a href="https://yuyang0564.github.io/Z4fDbT_D-/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/Z4fDbT_D-/"> </span>
+              <a href="https://yuyang0564.github.io/tkbkLazjo/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/tkbkLazjo/"> </span>
               </a>
-              <span id="/Z4fDbT_D-/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/tkbkLazjo/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-0 ctag-LQTZpssFQ" aria-label="">css</a>
+                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-0 ctag-tgCHrWGK6" aria-label="">javascript</a>
                     
               </div>
-              <h1 class="title ularge white bold">css 盒子阴影</h1>
+              <h1 class="title ularge white bold">类型检测</h1>
             </div>
           </div>
         </div>  
@@ -134,43 +129,47 @@ spread
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="box-shadow"><strong>box-shadow</strong></h1>
-<p>为元素的边框添加阴影效果</p>
+                  <h1 id="typeof-主要用来检测一个值是-基本类型-还是-引用类型">👉  typeof 主要用来检测一个值是 <code>基本类型</code> 还是 <code>引用类型</code></h1>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">属性</th>
-<th style="text-align:center">值</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">检测</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">h-shadow</td>
-<td style="text-align:center">水平阴影大小 (可以为负值)</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">&quot;string&quot;</td>
 </tr>
 <tr>
-<td style="text-align:center">v-shadow</td>
-<td style="text-align:center">垂直阴影大小 (可以为负值)</td>
+<td style="text-align:center">Number</td>
+<td style="text-align:center">&quot;number&quot;</td>
 </tr>
 <tr>
-<td style="text-align:center">blur</td>
-<td style="text-align:center">模糊程度(值越小，模糊程度越低)</td>
+<td style="text-align:center">Boolean</td>
+<td style="text-align:center">&quot;boolean&quot;</td>
 </tr>
 <tr>
-<td style="text-align:center">spread</td>
-<td style="text-align:center">阴影范围的大小</td>
-</tr>
-<tr>
-<td style="text-align:center">color</td>
-<td style="text-align:center">has / rgb</td>
+<td style="text-align:center">undefined</td>
+<td style="text-align:center">&quot;undefined&quot;</td>
 </tr>
 </tbody>
 </table>
-<pre><code class="language-css">div {
-    box-shadow: 10px 10px 15px 5px #d0d0d0;
-}
+<p>除了以上会返回对应的<code>基本类型</code> 表示的字符串，其余均返回 <strong style="color: red">&quot;object&quot;</strong></p>
+<p>📌 特殊： 对函数使用 <code>typeof</code> 会返回  <strong style="color: red;">&quot;function&quot;</strong></p>
+<h1 id="instanceof-确定对象的类型">👉  instanceof 确定对象的类型</h1>
+<p>由于所有<code>引用类型</code> 都是 <strong style="color: red;">Object</strong> 类型的实例，所以在检测所有&quot;引用类型&quot; 是不是 &quot;Object&quot; 类型的实例时，始终返回 true</p>
+<pre><code class="language-js">[ ] instanceof Object
+
+{ } instanceof Object
 </code></pre>
-<figure data-type="image" tabindex="1"><img src="https://yuyang0564.github.io/post-images/1587281575600.png" alt="" loading="lazy"></figure>
+<p>检测数组类型</p>
+<pre><code class="language-js">[] instanceof Array
+</code></pre>
+<p>检测正则类型</p>
+<pre><code class="language-js">\\ instanceof RegExp
+</code></pre>
 
                 </div>
                 <div class="clear"></div>
@@ -181,11 +180,11 @@ spread
             <section class="related section">
               
               <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/rimzBw6DU.png');"></div>
-                 <a href="https://yuyang0564.github.io/rimzBw6DU/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/X3aiegO5c/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-04-19">2020-04-19</time>
-                  <h4 class="title white no-margin">css 盒模型</h4>
+                  <time datetime="2020-07-06">2020-07-06</time>
+                  <h4 class="title white no-margin">执行环境(作用域)</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
@@ -195,11 +194,11 @@ spread
               
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/y8ek7idBn.png');"></div>
-                 <a href="https://yuyang0564.github.io/y8ek7idBn/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/9HbicUlds/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-04-19">2020-04-19</time>
-                  <h4 class="title white no-margin">css border/outline</h4>
+                  <time datetime="2020-07-06">2020-07-06</time>
+                  <h4 class="title white no-margin">switch 语句</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
