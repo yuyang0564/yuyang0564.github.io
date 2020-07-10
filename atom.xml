@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuyang0564.github.io</id>
-    <title>日常开发</title>
-    <updated>2020-07-10T07:06:16.680Z</updated>
+    <title>知识记录</title>
+    <updated>2020-07-10T07:34:22.320Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuyang0564.github.io"/>
     <link rel="self" href="https://yuyang0564.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
     <logo>https://yuyang0564.github.io/images/avatar.png</logo>
     <icon>https://yuyang0564.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 日常开发</rights>
+    <rights>All rights reserved 2020, 知识记录</rights>
     <entry>
         <title type="html"><![CDATA[DOM1 扩展]]></title>
         <id>https://yuyang0564.github.io/RVB9OZHPo/</id>

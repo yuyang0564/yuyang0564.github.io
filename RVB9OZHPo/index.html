@@ -2,8 +2,8 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>DOM1 扩展 | 日常开发</title>
-<meta name="description" content="温故而知新" />
+<title>DOM1 扩展 | 知识记录</title>
+<meta name="description" content="" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
 
@@ -16,11 +16,11 @@
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
     <meta name="description" content="元素选择器
-📌 querySelect( )
+querySelect( )
 根据 【css类名\id\元素名\元素属性】选择一个元素
-📌 querySelectAll( )
+querySelectAll( )
 根据 【css类名\id\元素名\元素属性】选择元素 , 返回 NodeList 对象集合
-..." />
+👉 元素遍..." />
     <meta name="keywords" content="javascript" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
@@ -34,7 +34,7 @@
         <div class="menu-wrapper">
           <div class="">
             <div class="logo">
-              <a href="https://yuyang0564.github.io"><img src="/media/images/logoo.png" alt=""></a>
+              <a href="https://yuyang0564.github.io"><img src="\media\images\custom-headerLogo.jpg" alt=""></a>
             </div>
             <!-- start: .main-nav -->
 
@@ -76,7 +76,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1594364652593" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1594366456754" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -116,49 +116,49 @@
               <section class="post-content">
                 <div class="text">
                   <h1 id="元素选择器">元素选择器</h1>
-<p>📌 <strong style="color: #3498db">querySelect( )</strong><br>
+<p><strong style="color: #3498db">querySelect( )</strong><br>
 根据 【css类名\id\元素名\元素属性】选择一个元素</p>
-<p>📌 <strong style="color: #3498db">querySelectAll( )</strong><br>
+<p><strong style="color: #3498db">querySelectAll( )</strong><br>
 根据 【css类名\id\元素名\元素属性】选择元素 , 返回 NodeList 对象集合</p>
 <h1 id="元素遍历">👉 元素遍历</h1>
 <p>由于DOM1 在元素遍历时，IE9之前的浏览器不会返回文本节点，而其他浏览器会包含文本节点，导致格式不统一，所以DOM1扩展提供了一些属性，可以直接获取元素节点</p>
-<p>🌈 <strong style="color: #2ecc71">children</strong><br>
+<p><strong style="color: #2ecc71">children</strong><br>
 返回所有<code>子元素节点</code> (HTMLCollection 对象集合)</p>
-<p>🌈 <strong style="color: #2ecc71">childElementCount</strong><br>
+<p><strong style="color: #2ecc71">childElementCount</strong><br>
 返回<code>子元素节点</code>的数量</p>
-<p>🌈 <strong style="color: #2ecc71">firstElementChild</strong><br>
+<p><strong style="color: #2ecc71">firstElementChild</strong><br>
 返回第一个<code>子元素节点</code></p>
-<p>🌈 <strong style="color: #2ecc71">lastElementChild</strong><br>
+<p><strong style="color: #2ecc71">lastElementChild</strong><br>
 返回最后一个<code>子元素节点</code></p>
-<p>🌈 <strong style="color: #2ecc71">previousElementSibling</strong><br>
+<p><strong style="color: #2ecc71">previousElementSibling</strong><br>
 返回前一个<code>同辈元素节点</code></p>
-<p>🌈 <strong style="color: #2ecc71">nextElementSibling</strong><br>
+<p><strong style="color: #2ecc71">nextElementSibling</strong><br>
 返回后一个<code>同辈元素节点</code></p>
 <h1 id="classlist-样式类操作">👉 classList  样式类操作</h1>
 <p>classList 返回了一个 <code>DOMTolenList</code> 集合对象，包含了元素的所有 class 类名</p>
 <figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2020/07/10/Uuge8H.png" alt="Uuge8H.png" loading="lazy"></figure>
-<p>🌈 <strong style="color: #2ecc71">length</strong> 属性<br>
+<p><strong style="color: #2ecc71">length</strong> 属性<br>
 返回类名的个数</p>
-<p>📌 <strong style="color: #3498db">item( index )</strong><br>
+<p><strong style="color: #3498db">item( index )</strong><br>
 获取第 N 个类名</p>
 <p>🗣 同样 <code>DOMTolenList</code> 也提供了一些方法来操作样式类</p>
-<p>📌 <strong style="color: #3498db">add( className )</strong><br>
+<p><strong style="color: #3498db">add( className )</strong><br>
 添加类名 ， 如果已经存在则忽略</p>
-<p>📌 <strong style="color: #3498db">remove( className )</strong><br>
+<p><strong style="color: #3498db">remove( className )</strong><br>
 删除类名</p>
-<p>📌 <strong style="color: #3498db">toggle( className )</strong><br>
+<p><strong style="color: #3498db">toggle( className )</strong><br>
 如果类名已存在则删除，如果不存在则添加</p>
 <h1 id="style-样式类操作">👉 style  样式类操作</h1>
 <p>元素节点拥有一个<strong style="color: #e74c3c">style</strong>对象，通过该对象提供的一些属性和方法可以控制元素在文档中的<code>行内样式</code></p>
-<p>🌈 <strong style="color: #2ecc71">cssText</strong> 属性<br>
+<p><strong style="color: #2ecc71">cssText</strong> 属性<br>
 可以读取/设置(覆盖写入)完整的 style 样式代码</p>
 <pre><code class="language-js">div.style.cssText = &quot;width: 200px; heigjt: 200px&quot;
 </code></pre>
-<p>📌 <strong style="color: #3498db">getPropertyValye( styleName )</strong><br>
+<p><strong style="color: #3498db">getPropertyValye( styleName )</strong><br>
 获取样式的值 , 如果查找的属性未设置则返回 &quot;空字符&quot;</p>
-<p>📌 <strong style="color: #3498db">setProperty( styleName , value )</strong><br>
+<p><strong style="color: #3498db">setProperty( styleName , value )</strong><br>
 追加行内样式</p>
-<p>📌 <strong style="color: #3498db">removeProperty( styleName  )</strong><br>
+<p><strong style="color: #3498db">removeProperty( styleName  )</strong><br>
 删除一个行内样式</p>
 
                 </div>
@@ -355,8 +355,8 @@
                     <a href="" class="translate-effect thumb"><span class="fullimage cover" style="background-image: url(https://yuyang0564.github.io/images/avatar.png);"></span></a>
                   </div>
                   <div class="info">
-                    <h4 class="title small author-name gradient-effect no-margin"><a href="">日常开发</a></h4>
-                    <p class="founder">温故而知新</p>
+                    <h4 class="title small author-name gradient-effect no-margin"><a href="">知识记录</a></h4>
+                    <p class="founder"></p>
                     <div class="social">
                       
                         
