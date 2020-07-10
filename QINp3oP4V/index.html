@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vue 指令 | 日常开发</title>
+<title>原型对象 | 日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,12 +15,12 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="Vue 指令以 v- 开头 ，它是一种特殊的属性，它的值为一个表达式
-&lt;span v-if=&quot;isTrue&quot;&gt;&lt;/span&gt;
-
-v-bind: 指令，用来动态的绑定属性
-&lt;span v-bi..." />
-    <meta name="keywords" content="vue2" />
+    <meta name="description" content="👉 原型对象
+每一个函数都有一个 prototype 属性，它引用了一个对象 ,  这个对象就被称为 原型对象 。
+原型对象的作用
+原型对象中可以包含共享的【属性】与【方法】（由这个函数创建的所有实例）
+🗣 &quot;原型对象&quo..." />
+    <meta name="keywords" content="javascript" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
@@ -88,23 +88,23 @@ v-bind: 指令，用来动态的绑定属性
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/gb9VgBmPf.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-05-14"><i class="fa fa-calendar"></i><span class="lately">2 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-07-07"><i class="fa fa-calendar"></i><span class="lately">3 天前</span></time>
               
-              <a href="https://yuyang0564.github.io/gb9VgBmPf/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/gb9VgBmPf/"> </span>
+              <a href="https://yuyang0564.github.io/QINp3oP4V/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/QINp3oP4V/"> </span>
               </a>
-              <span id="/gb9VgBmPf/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/QINp3oP4V/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-0 ctag-XZnOL5tqL" aria-label="">vue2</a>
+                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-0 ctag-tgCHrWGK6" aria-label="">javascript</a>
                     
               </div>
-              <h1 class="title ularge white bold">Vue 指令</h1>
+              <h1 class="title ularge white bold">原型对象</h1>
             </div>
           </div>
         </div>  
@@ -114,37 +114,25 @@ v-bind: 指令，用来动态的绑定属性
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="vue-指令以-v-开头-它是一种特殊的属性它的值为一个表达式">Vue 指令以 <code>v-</code> 开头 ，它是一种特殊的属性，它的值为一个表达式</h1>
-<pre><code class="language-html">&lt;span v-if=&quot;isTrue&quot;&gt;&lt;/span&gt;
+                  <h1 id="原型对象">👉 原型对象</h1>
+<p>每一个函数都有一个 <strong style="color:red;">prototype</strong> 属性，它引用了一个对象 ,  这个对象就被称为 <code>原型对象</code> 。</p>
+<h2 id="原型对象的作用">原型对象的作用</h2>
+<p>原型对象中可以包含<code>共享</code>的【属性】与【方法】（由这个函数创建的所有实例）</p>
+<p>🗣 &quot;原型对象&quot; 中初始只有一个 <code>constructor</code> 属性， 它指向 &quot;当前构造函数&quot;。</p>
+<p>🗣 通过该函数生成的实例中会包含一个&quot;<strong>proto</strong>&quot; 属性 ,  这个属性指向 &quot;构造函数&quot; 的原型对象</p>
+<p>🗣 由此得出结论， 【原型对象】 连接了 &quot;构造函数&quot; 和 &quot;实例&quot;</p>
+<h2 id="objectgetprototypeof-可以返回一个实例指向的-原型对象">📌 Object.getPrototypeOf( )  可以返回一个实例指向的 &quot;原型对象&quot;</h2>
+<pre><code class="language-js">let num = 1
+Object.getPrototypeOf( num )
 </code></pre>
-<h1 id="v-bind-指令用来动态的绑定属性">v-bind: 指令，用来动态的绑定属性</h1>
-<pre><code class="language-html">&lt;span v-bind:href=&quot;url&quot;&gt;&lt;/span&gt;
-</code></pre>
-<p>绑定一个 href 属性，它的值为 url 数据对象的值</p>
-<h1 id="动态参数">动态参数</h1>
-<pre><code class="language-html">&lt;span v-bind:[attribute]=&quot;url&quot;&gt;&lt;/span&gt;
-</code></pre>
-<p>针对<code>attribute</code> 求值后，作为属性使用<br>
-<code>注意： 不能使用 空格 和 引号</code></p>
-<pre><code class="language-html">&lt;span v-bind:[attribute + 'xxx' ]=&quot;url&quot;&gt; 错误示例 &lt;/span&gt;
-</code></pre>
-<h1 id="v-bind-简写">v-bind 简写</h1>
-<pre><code class="language-html">&lt;span :href=&quot;url&quot;&gt;&lt;/span&gt;
-</code></pre>
-<pre><code class="language-html">&lt;span :[attribute]=&quot;url&quot;&gt;&lt;/span&gt;
-</code></pre>
-<h1 id="v-on-指令-用来绑定事件">v-on: 指令 ,  用来绑定事件</h1>
-<pre><code class="language-html">&lt;button v-on:click=&quot;handleClick&quot;&gt;&lt;/button&gt;
-</code></pre>
-<p>为当前 button 绑定一个 click 事件， 事件处理方法为 &quot; handleClick&quot;</p>
-<h1 id="动态绑定事件">动态绑定事件</h1>
-<pre><code class="language-html">&lt;button v-on:[eventHandle]=&quot;handleClick&quot;&gt;&lt;/button&gt;
-</code></pre>
-<p>针对 <code>eventHandle</code> 求值后，作为事件名</p>
-<h1 id="v-on-简写">v-on 简写</h1>
-<pre><code class="language-html">&lt;span @click=&quot;handleClick&quot;&gt;&lt;/span&gt;
-</code></pre>
-<pre><code class="language-html">&lt;span @[attribute]=&quot;url&quot;&gt;&lt;/span&gt;
+<figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2020/07/08/UEGbqO.png" alt="UEGbqO.png" loading="lazy"></figure>
+<h2 id="属性方法的访问原则">属性/方法的访问原则</h2>
+<p>当访问一个实例的 属性/方法 时， 会优先从实例本身开始查找，如果实例中没有，则会去实例的 <strong>proto</strong> 所指向的 &quot;原型对象&quot; 中查找。</p>
+<h2 id="实例-属性方法的遮蔽性">实例 【属性/方法】的遮蔽性</h2>
+<p>如果实例存在与 &quot;原型对象&quot; 中同名的&quot;属性/方法&quot; ， 则会遮蔽对&quot;原型对象&quot;中同名&quot;属性/方法&quot;的访问。 只有通过 <strong style="color: red;">delete</strong> 删除实例中同名&quot;属性/方法&quot;，才能恢复对&quot;原型对象&quot;中同名&quot;属性/方法&quot;的访问</p>
+<h2 id="通过实例继承的-hasownproperty-可以确定一个属性是在实例还是原型对象中-它对存在于实例中的属性返回-true">📌 通过实例继承的 <code>hasOwnProperty( )</code> 可以确定一个属性是在实例还是&quot;原型对象&quot;中 , 它对存在于实例中的属性返回 true</h2>
+<pre><code class="language-js">let str = &quot; &quot;
+str.hasOwnProperty( constructor )   // false
 </code></pre>
 
                 </div>
@@ -156,11 +144,11 @@ v-bind: 指令，用来动态的绑定属性
             <section class="related section">
               
               <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/tOMZ6OxlC.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/tOMZ6OxlC/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/jNezF_qOD/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-05-15">2020-05-15</time>
-                  <h4 class="title white no-margin">Vue class 与 style 绑定</h4>
+                  <time datetime="2020-07-09">2020-07-09</time>
+                  <h4 class="title white no-margin">DOM1</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
@@ -170,11 +158,11 @@ v-bind: 指令，用来动态的绑定属性
               
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/5TNcrkqyR.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/5TNcrkqyR/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/X3aiegO5c/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-05-14">2020-05-14</time>
-                  <h4 class="title white no-margin">Vue2 模板语法</h4>
+                  <time datetime="2020-07-06">2020-07-06</time>
+                  <h4 class="title white no-margin">执行环境(作用域)</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">

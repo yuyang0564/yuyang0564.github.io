@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vue 指令 | 日常开发</title>
+<title>Document | 日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,12 +15,24 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="Vue 指令以 v- 开头 ，它是一种特殊的属性，它的值为一个表达式
-&lt;span v-if=&quot;isTrue&quot;&gt;&lt;/span&gt;
+    <meta name="description" content="👉 Document
+document 在浏览器中属于 window 的一个属性，用来表示整个文档
+👉 document 中内置了一些常用的属性
 
-v-bind: 指令，用来动态的绑定属性
-&lt;span v-bi..." />
-    <meta name="keywords" content="vue2" />
+
+
+属性
+说明
+
+
+
+
+body
+获得 body 的引用
+
+
+documentEleme..." />
+    <meta name="keywords" content="javascript" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
@@ -88,23 +100,23 @@ v-bind: 指令，用来动态的绑定属性
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/gb9VgBmPf.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-05-14"><i class="fa fa-calendar"></i><span class="lately">2 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-07-09"><i class="fa fa-calendar"></i><span class="lately">1 天前</span></time>
               
-              <a href="https://yuyang0564.github.io/gb9VgBmPf/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/gb9VgBmPf/"> </span>
+              <a href="https://yuyang0564.github.io/DTOTFy6VL/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/DTOTFy6VL/"> </span>
               </a>
-              <span id="/gb9VgBmPf/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/DTOTFy6VL/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-0 ctag-XZnOL5tqL" aria-label="">vue2</a>
+                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-0 ctag-tgCHrWGK6" aria-label="">javascript</a>
                     
               </div>
-              <h1 class="title ularge white bold">Vue 指令</h1>
+              <h1 class="title ularge white bold">Document</h1>
             </div>
           </div>
         </div>  
@@ -114,38 +126,50 @@ v-bind: 指令，用来动态的绑定属性
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="vue-指令以-v-开头-它是一种特殊的属性它的值为一个表达式">Vue 指令以 <code>v-</code> 开头 ，它是一种特殊的属性，它的值为一个表达式</h1>
-<pre><code class="language-html">&lt;span v-if=&quot;isTrue&quot;&gt;&lt;/span&gt;
+                  <h1 id="document">👉 Document</h1>
+<p>document 在浏览器中属于 <code>window</code> 的一个属性，用来表示整个文档</p>
+<h1 id="document-中内置了一些常用的属性">👉 document 中内置了一些常用的属性</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">body</td>
+<td style="text-align:center">获得 body 的引用</td>
+</tr>
+<tr>
+<td style="text-align:center">documentElement</td>
+<td style="text-align:center">获得 html 的引用</td>
+</tr>
+<tr>
+<td style="text-align:center">title</td>
+<td style="text-align:center">网页的标题( 可读/写)</td>
+</tr>
+<tr>
+<td style="text-align:center">URL</td>
+<td style="text-align:center">获得 url</td>
+</tr>
+</tbody>
+</table>
+<h1 id="document-常用的方法">👉 document 常用的方法</h1>
+<p>📌 getElementById( )<br>
+通过 &quot; id &quot; 属性名获取元素</p>
+<p>📌 getElementByTagName( tagName )<br>
+通过 &quot; 元素名 &quot; 获取元素, 返回一个 <code>HTMLCollection</code> 集合对象，它与 <code>NodeList</code> 相似<br>
+🗣  <code>HTMLCollection</code>  对象有一个 <strong style="color: #3498db;">namedItem( )</strong> 方法， 可以获得集合中指定 <strong style="color: #8e44ad;">name</strong>属性的元素, 如果多个元素有相同的 name 属性， 则获取排在首位的那个元素</p>
+<pre><code class="language-js">&lt;p&gt;&lt;/p&gt;
+&lt;p name=&quot;p2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+
+var collcation = document.getElementsByTagName(&quot;p&quot;)
+collcation.namedItem(&quot;p2&quot;)   //  &lt;p name=&quot;p2&quot;&gt;&lt;/p&gt;
 </code></pre>
-<h1 id="v-bind-指令用来动态的绑定属性">v-bind: 指令，用来动态的绑定属性</h1>
-<pre><code class="language-html">&lt;span v-bind:href=&quot;url&quot;&gt;&lt;/span&gt;
-</code></pre>
-<p>绑定一个 href 属性，它的值为 url 数据对象的值</p>
-<h1 id="动态参数">动态参数</h1>
-<pre><code class="language-html">&lt;span v-bind:[attribute]=&quot;url&quot;&gt;&lt;/span&gt;
-</code></pre>
-<p>针对<code>attribute</code> 求值后，作为属性使用<br>
-<code>注意： 不能使用 空格 和 引号</code></p>
-<pre><code class="language-html">&lt;span v-bind:[attribute + 'xxx' ]=&quot;url&quot;&gt; 错误示例 &lt;/span&gt;
-</code></pre>
-<h1 id="v-bind-简写">v-bind 简写</h1>
-<pre><code class="language-html">&lt;span :href=&quot;url&quot;&gt;&lt;/span&gt;
-</code></pre>
-<pre><code class="language-html">&lt;span :[attribute]=&quot;url&quot;&gt;&lt;/span&gt;
-</code></pre>
-<h1 id="v-on-指令-用来绑定事件">v-on: 指令 ,  用来绑定事件</h1>
-<pre><code class="language-html">&lt;button v-on:click=&quot;handleClick&quot;&gt;&lt;/button&gt;
-</code></pre>
-<p>为当前 button 绑定一个 click 事件， 事件处理方法为 &quot; handleClick&quot;</p>
-<h1 id="动态绑定事件">动态绑定事件</h1>
-<pre><code class="language-html">&lt;button v-on:[eventHandle]=&quot;handleClick&quot;&gt;&lt;/button&gt;
-</code></pre>
-<p>针对 <code>eventHandle</code> 求值后，作为事件名</p>
-<h1 id="v-on-简写">v-on 简写</h1>
-<pre><code class="language-html">&lt;span @click=&quot;handleClick&quot;&gt;&lt;/span&gt;
-</code></pre>
-<pre><code class="language-html">&lt;span @[attribute]=&quot;url&quot;&gt;&lt;/span&gt;
-</code></pre>
+<p>📌 <strong style="color: #3498db; ">createElement(  tabName )</strong>  创建一个元素 , 需要手动添加到文档中</p>
+<p>📌 <strong style="color: #3498db; ">createDocumentFragment(  tabName )</strong>  创建一个文档片段，它相当与一个仓库，可以用来保存即将要添加到文档中的元素节点 , 这个函数主要是用来优化。当需要向文档中添加大量节点的时候，可以把节点都暂存在文档片段中，然后一次性添加到文档中，避免逐个添加时导致浏览器频繁的重绘</p>
 
                 </div>
                 <div class="clear"></div>
@@ -156,11 +180,11 @@ v-bind: 指令，用来动态的绑定属性
             <section class="related section">
               
               <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/tOMZ6OxlC.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/tOMZ6OxlC/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/YbVoeZETF/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-05-15">2020-05-15</time>
-                  <h4 class="title white no-margin">Vue class 与 style 绑定</h4>
+                  <time datetime="2020-07-09">2020-07-09</time>
+                  <h4 class="title white no-margin">Element </h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
@@ -170,11 +194,11 @@ v-bind: 指令，用来动态的绑定属性
               
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/5TNcrkqyR.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/5TNcrkqyR/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/jNezF_qOD/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-05-14">2020-05-14</time>
-                  <h4 class="title white no-margin">Vue2 模板语法</h4>
+                  <time datetime="2020-07-09">2020-07-09</time>
+                  <h4 class="title white no-margin">DOM1</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">

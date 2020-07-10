@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vue 指令 | 日常开发</title>
+<title>DOM1 扩展 | 日常开发</title>
 <meta name="description" content="温故而知新" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,12 +15,13 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="Vue 指令以 v- 开头 ，它是一种特殊的属性，它的值为一个表达式
-&lt;span v-if=&quot;isTrue&quot;&gt;&lt;/span&gt;
-
-v-bind: 指令，用来动态的绑定属性
-&lt;span v-bi..." />
-    <meta name="keywords" content="vue2" />
+    <meta name="description" content="元素选择器
+📌 querySelect( )
+根据 【css类名\id\元素名\元素属性】选择一个元素
+📌 querySelectAll( )
+根据 【css类名\id\元素名\元素属性】选择元素 , 返回 NodeList 对象集合
+..." />
+    <meta name="keywords" content="javascript" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
@@ -88,23 +89,23 @@ v-bind: 指令，用来动态的绑定属性
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/gb9VgBmPf.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-05-14"><i class="fa fa-calendar"></i><span class="lately">2 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-07-10"><i class="fa fa-calendar"></i><span class="lately">5 小时前</span></time>
               
-              <a href="https://yuyang0564.github.io/gb9VgBmPf/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/gb9VgBmPf/"> </span>
+              <a href="https://yuyang0564.github.io/RVB9OZHPo/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/RVB9OZHPo/"> </span>
               </a>
-              <span id="/gb9VgBmPf/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/RVB9OZHPo/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-0 ctag-XZnOL5tqL" aria-label="">vue2</a>
+                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-0 ctag-tgCHrWGK6" aria-label="">javascript</a>
                     
               </div>
-              <h1 class="title ularge white bold">Vue 指令</h1>
+              <h1 class="title ularge white bold">DOM1 扩展</h1>
             </div>
           </div>
         </div>  
@@ -114,38 +115,51 @@ v-bind: 指令，用来动态的绑定属性
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="vue-指令以-v-开头-它是一种特殊的属性它的值为一个表达式">Vue 指令以 <code>v-</code> 开头 ，它是一种特殊的属性，它的值为一个表达式</h1>
-<pre><code class="language-html">&lt;span v-if=&quot;isTrue&quot;&gt;&lt;/span&gt;
+                  <h1 id="元素选择器">元素选择器</h1>
+<p>📌 <strong style="color: #3498db">querySelect( )</strong><br>
+根据 【css类名\id\元素名\元素属性】选择一个元素</p>
+<p>📌 <strong style="color: #3498db">querySelectAll( )</strong><br>
+根据 【css类名\id\元素名\元素属性】选择元素 , 返回 NodeList 对象集合</p>
+<h1 id="元素遍历">👉 元素遍历</h1>
+<p>由于DOM1 在元素遍历时，IE9之前的浏览器不会返回文本节点，而其他浏览器会包含文本节点，导致格式不统一，所以DOM1扩展提供了一些属性，可以直接获取元素节点</p>
+<p>🌈 <strong style="color: #2ecc71">children</strong><br>
+返回所有<code>子元素节点</code> (HTMLCollection 对象集合)</p>
+<p>🌈 <strong style="color: #2ecc71">childElementCount</strong><br>
+返回<code>子元素节点</code>的数量</p>
+<p>🌈 <strong style="color: #2ecc71">firstElementChild</strong><br>
+返回第一个<code>子元素节点</code></p>
+<p>🌈 <strong style="color: #2ecc71">lastElementChild</strong><br>
+返回最后一个<code>子元素节点</code></p>
+<p>🌈 <strong style="color: #2ecc71">previousElementSibling</strong><br>
+返回前一个<code>同辈元素节点</code></p>
+<p>🌈 <strong style="color: #2ecc71">nextElementSibling</strong><br>
+返回后一个<code>同辈元素节点</code></p>
+<h1 id="classlist-样式类操作">👉 classList  样式类操作</h1>
+<p>classList 返回了一个 <code>DOMTolenList</code> 集合对象，包含了元素的所有 class 类名</p>
+<figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2020/07/10/Uuge8H.png" alt="Uuge8H.png" loading="lazy"></figure>
+<p>🌈 <strong style="color: #2ecc71">length</strong> 属性<br>
+返回类名的个数</p>
+<p>📌 <strong style="color: #3498db">item( index )</strong><br>
+获取第 N 个类名</p>
+<p>🗣 同样 <code>DOMTolenList</code> 也提供了一些方法来操作样式类</p>
+<p>📌 <strong style="color: #3498db">add( className )</strong><br>
+添加类名 ， 如果已经存在则忽略</p>
+<p>📌 <strong style="color: #3498db">remove( className )</strong><br>
+删除类名</p>
+<p>📌 <strong style="color: #3498db">toggle( className )</strong><br>
+如果类名已存在则删除，如果不存在则添加</p>
+<h1 id="style-样式类操作">👉 style  样式类操作</h1>
+<p>元素节点拥有一个<strong style="color: #e74c3c">style</strong>对象，通过该对象提供的一些属性和方法可以控制元素在文档中的<code>行内样式</code></p>
+<p>🌈 <strong style="color: #2ecc71">cssText</strong> 属性<br>
+可以读取/设置(覆盖写入)完整的 style 样式代码</p>
+<pre><code class="language-js">div.style.cssText = &quot;width: 200px; heigjt: 200px&quot;
 </code></pre>
-<h1 id="v-bind-指令用来动态的绑定属性">v-bind: 指令，用来动态的绑定属性</h1>
-<pre><code class="language-html">&lt;span v-bind:href=&quot;url&quot;&gt;&lt;/span&gt;
-</code></pre>
-<p>绑定一个 href 属性，它的值为 url 数据对象的值</p>
-<h1 id="动态参数">动态参数</h1>
-<pre><code class="language-html">&lt;span v-bind:[attribute]=&quot;url&quot;&gt;&lt;/span&gt;
-</code></pre>
-<p>针对<code>attribute</code> 求值后，作为属性使用<br>
-<code>注意： 不能使用 空格 和 引号</code></p>
-<pre><code class="language-html">&lt;span v-bind:[attribute + 'xxx' ]=&quot;url&quot;&gt; 错误示例 &lt;/span&gt;
-</code></pre>
-<h1 id="v-bind-简写">v-bind 简写</h1>
-<pre><code class="language-html">&lt;span :href=&quot;url&quot;&gt;&lt;/span&gt;
-</code></pre>
-<pre><code class="language-html">&lt;span :[attribute]=&quot;url&quot;&gt;&lt;/span&gt;
-</code></pre>
-<h1 id="v-on-指令-用来绑定事件">v-on: 指令 ,  用来绑定事件</h1>
-<pre><code class="language-html">&lt;button v-on:click=&quot;handleClick&quot;&gt;&lt;/button&gt;
-</code></pre>
-<p>为当前 button 绑定一个 click 事件， 事件处理方法为 &quot; handleClick&quot;</p>
-<h1 id="动态绑定事件">动态绑定事件</h1>
-<pre><code class="language-html">&lt;button v-on:[eventHandle]=&quot;handleClick&quot;&gt;&lt;/button&gt;
-</code></pre>
-<p>针对 <code>eventHandle</code> 求值后，作为事件名</p>
-<h1 id="v-on-简写">v-on 简写</h1>
-<pre><code class="language-html">&lt;span @click=&quot;handleClick&quot;&gt;&lt;/span&gt;
-</code></pre>
-<pre><code class="language-html">&lt;span @[attribute]=&quot;url&quot;&gt;&lt;/span&gt;
-</code></pre>
+<p>📌 <strong style="color: #3498db">getPropertyValye( styleName )</strong><br>
+获取样式的值 , 如果查找的属性未设置则返回 &quot;空字符&quot;</p>
+<p>📌 <strong style="color: #3498db">setProperty( styleName , value )</strong><br>
+追加行内样式</p>
+<p>📌 <strong style="color: #3498db">removeProperty( styleName  )</strong><br>
+删除一个行内样式</p>
 
                 </div>
                 <div class="clear"></div>
@@ -155,26 +169,13 @@ v-bind: 指令，用来动态的绑定属性
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/tOMZ6OxlC.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/tOMZ6OxlC/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-05-15">2020-05-15</time>
-                  <h4 class="title white no-margin">Vue class 与 style 绑定</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/5TNcrkqyR.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/5TNcrkqyR/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/YbVoeZETF/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-05-14">2020-05-14</time>
-                  <h4 class="title white no-margin">Vue2 模板语法</h4>
+                  <time datetime="2020-07-09">2020-07-09</time>
+                  <h4 class="title white no-margin">Element </h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
