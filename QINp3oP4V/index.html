@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>原型对象 | 知识记录</title>
+<title>原型对象/原型链 | 知识记录</title>
 <meta name="description" content="" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -75,7 +75,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1594367041497" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1594782153763" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -90,7 +90,7 @@
         <div class="center content">
           <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-07-07"><i class="fa fa-calendar"></i><span class="lately">3 天前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-07-07"><i class="fa fa-calendar"></i><span class="lately">8 天前</span></time>
               
               <a href="https://yuyang0564.github.io/QINp3oP4V/#comments" class="comments meta-info" title="">
                 <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/QINp3oP4V/"> </span>
@@ -104,7 +104,7 @@
                       <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-0 ctag-tgCHrWGK6" aria-label="">javascript</a>
                     
               </div>
-              <h1 class="title ularge white bold">原型对象</h1>
+              <h1 class="title ularge white bold">原型对象/原型链</h1>
             </div>
           </div>
         </div>  
@@ -118,8 +118,8 @@
 <p>每一个函数都有一个 <strong style="color:red;">prototype</strong> 属性，它引用了一个对象 ,  这个对象就被称为 <code>原型对象</code> 。</p>
 <h2 id="原型对象的作用">原型对象的作用</h2>
 <p>原型对象中可以包含<code>共享</code>的【属性】与【方法】（由这个函数创建的所有实例）</p>
-<p>🗣 &quot;原型对象&quot; 中初始只有一个 <code>constructor</code> 属性， 它指向 &quot;当前构造函数&quot;。</p>
-<p>🗣 通过该函数生成的实例中会包含一个&quot;<strong>proto</strong>&quot; 属性 ,  这个属性指向 &quot;构造函数&quot; 的原型对象</p>
+<p>🗣 &quot;原型对象&quot; 中初始只有一个 <code>constructor</code> 属性， 它默认指向 &quot;当前构造函数&quot;。</p>
+<p>🗣 通过该函数生成的实例中会包含一个 【<em>proto</em>】 属性 ,  这个属性指向 &quot;构造函数&quot; 的原型对象</p>
 <p>🗣 由此得出结论， 【原型对象】 连接了 &quot;构造函数&quot; 和 &quot;实例&quot;</p>
 <h2 id="objectgetprototypeof-可以返回一个实例指向的-原型对象">📌 Object.getPrototypeOf( )  可以返回一个实例指向的 &quot;原型对象&quot;</h2>
 <pre><code class="language-js">let num = 1
@@ -127,13 +127,17 @@ Object.getPrototypeOf( num )
 </code></pre>
 <figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2020/07/08/UEGbqO.png" alt="UEGbqO.png" loading="lazy"></figure>
 <h2 id="属性方法的访问原则">属性/方法的访问原则</h2>
-<p>当访问一个实例的 属性/方法 时， 会优先从实例本身开始查找，如果实例中没有，则会去实例的 <strong>proto</strong> 所指向的 &quot;原型对象&quot; 中查找。</p>
+<p>当访问一个实例的 属性/方法 时， 会优先从实例本身开始查找，如果实例中没有，则会去实例的 _ <em>proto</em> _ 所指向的 &quot;原型对象&quot; 中查找。</p>
 <h2 id="实例-属性方法的遮蔽性">实例 【属性/方法】的遮蔽性</h2>
 <p>如果实例存在与 &quot;原型对象&quot; 中同名的&quot;属性/方法&quot; ， 则会遮蔽对&quot;原型对象&quot;中同名&quot;属性/方法&quot;的访问。 只有通过 <strong style="color: red;">delete</strong> 删除实例中同名&quot;属性/方法&quot;，才能恢复对&quot;原型对象&quot;中同名&quot;属性/方法&quot;的访问</p>
 <h2 id="通过实例继承的-hasownproperty-可以确定一个属性是在实例还是原型对象中-它对存在于实例中的属性返回-true">📌 通过实例继承的 <code>hasOwnProperty( )</code> 可以确定一个属性是在实例还是&quot;原型对象&quot;中 , 它对存在于实例中的属性返回 true</h2>
 <pre><code class="language-js">let str = &quot; &quot;
 str.hasOwnProperty( constructor )   // false
 </code></pre>
+<h1 id="原型链">👉 原型链</h1>
+<p>由于javascript 是基于原型的继承，任何一个对象都可以充当其他对象的原型，而对象本身又存在一个隐式原型【_ <em>proto</em> _】它也是一个对象指向它的原型对象，这样一直向上追溯就形成了类似链条一样的关系，这就是 &quot;原型链&quot; 。原型链会一直追溯到  <strong style="color: red;">Object.prototype</strong>  ,  而它的上层就是Null,也就是&quot;原型链&quot;的尽头</p>
+<h2 id="原型链的作用">👉 原型链的作用</h2>
+<p>&quot;原型链&quot;  实现了属性访问的规则，当访问一个 属性/方法 时， 会优先从实例本身开始查找，如果实例中没有，则会去实例的 _ <em>proto</em> _ 所指向的 &quot;原型对象&quot; 中查找 ， 依照这样的规则一直查找到 &quot;原型链&quot;的顶端 。如果未找到，则返回  <strong style="color: red;">undefined</strong></p>
 
                 </div>
                 <div class="clear"></div>
@@ -196,6 +200,21 @@ str.hasOwnProperty( constructor )   // false
                   
                   
                   <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://yuyang0564.github.io/1QYV9xp2Y/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-07-14">2020-07-14</time>
+                      <h4 class="title usmall">
+                        <a href="https://yuyang0564.github.io/1QYV9xp2Y/">事件</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
                     <a href="https://yuyang0564.github.io/RVB9OZHPo/" class="thumb hover-effect">
                       <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></span>
                     </a>
@@ -210,7 +229,7 @@ str.hasOwnProperty( constructor )   // false
                   
                   
                   
-                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
+                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
                     <a href="https://yuyang0564.github.io/YbVoeZETF/" class="thumb hover-effect">
                       <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></span>
                     </a>
@@ -224,19 +243,6 @@ str.hasOwnProperty( constructor )   // false
                   </article>
                   
                   
-                  
-                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
-                    <a href="https://yuyang0564.github.io/DTOTFy6VL/" class="thumb hover-effect">
-                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></span>
-                    </a>
-                    <div class="info gradient-effect">
-                      <time datetime="2020-07-09">2020-07-09</time>
-                      <h4 class="title usmall">
-                        <a href="https://yuyang0564.github.io/DTOTFy6VL/">Document</a>
-                      </h4>
-                    </div>
-                    <div class="clear"></div>
-                  </article>
                   
                   
                   
@@ -370,7 +376,7 @@ str.hasOwnProperty( constructor )   // false
           <a href="https://yuyang0564.github.io"><img src="/media/images/gridea.png" alt=""></a>
         </div>
         <p class="published border-effect">
-          ©2019 共 38 篇文章
+          ©2019 共 39 篇文章
           <br/>
           Theme <a href="https://gridea.dev/" target="_blank">「breek」</a> Powered by <a href="https://gridea.dev/" target="_blank">「Gridea」</a>
         </p>

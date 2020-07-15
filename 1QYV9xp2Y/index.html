@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ES5 数据类型 | 知识记录</title>
+<title>事件 | 知识记录</title>
 <meta name="description" content="" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,11 +15,12 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="👉 # 五种基本类型
-📌 Undefined
+    <meta name="description" content="👉 Event 事件对象
+浏览器提供了一个 Event 对象，所有的事件都是这个对象的实例 , 它本身是一个构造函数，用来生成新的事件实例
+let event = new Event( type , options )
 
-已声明但未赋值的变量默认值为 &quot; Undefined &quot;
-&quot; Undefined &quot; 是 &quot; Null &quot; 的子集，所以 und..." />
+
+type 参数..." />
     <meta name="keywords" content="javascript" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
@@ -90,12 +91,12 @@
         <div class="center content">
           <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-06-29"><i class="fa fa-calendar"></i><span class="lately">16 天前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-07-14"><i class="fa fa-calendar"></i><span class="lately">1 天前</span></time>
               
-              <a href="https://yuyang0564.github.io/5t5zxcYsk/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/5t5zxcYsk/"> </span>
+              <a href="https://yuyang0564.github.io/1QYV9xp2Y/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/1QYV9xp2Y/"> </span>
               </a>
-              <span id="/5t5zxcYsk/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/1QYV9xp2Y/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
@@ -104,7 +105,7 @@
                       <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-0 ctag-tgCHrWGK6" aria-label="">javascript</a>
                     
               </div>
-              <h1 class="title ularge white bold">ES5 数据类型</h1>
+              <h1 class="title ularge white bold">事件</h1>
             </div>
           </div>
         </div>  
@@ -114,180 +115,74 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <p>👉 # 五种基本类型</p>
-<h2 id="undefined">📌 Undefined</h2>
-<ul>
-<li>已声明但未赋值的变量默认值为 &quot; Undefined &quot;</li>
-<li>&quot; Undefined &quot; 是 &quot; Null &quot; 的子集，所以 undefined == null</li>
-</ul>
-<h2 id="null">📌 Null</h2>
-<ul>
-<li>表示一个空对象的指针</li>
-<li>null 只有一个值为它自身， 所以 null === null</li>
-</ul>
-<h2 id="boolean">📌 Boolean</h2>
-<ul>
-<li>只有 2 个字面值 true 和 false , 且区分大小写</li>
-<li>所有的数据类型都可以被 Boolean 转换</li>
-</ul>
+                  <h1 id="event-事件对象">👉 Event 事件对象</h1>
+<p>浏览器提供了一个 Event 对象，所有的事件都是这个对象的实例 , 它本身是一个构造函数，用来生成新的<code>事件实例</code></p>
+<pre><code class="language-js">let event = new Event( type , options )
+</code></pre>
+<ol>
+<li>type 参数为事件名</li>
+<li>options 是一个可选对象，有 2 个可选配置 （ 如果忽略默认会在“捕获”阶段触发 ）</li>
+</ol>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">数据类型</th>
-<th style="text-align:center">转换为 true</th>
-<th style="text-align:center">转换为 false</th>
+<th style="text-align:center">属性</th>
+<th style="text-align:center">值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">Boolean</td>
-<td style="text-align:center">true</td>
-<td style="text-align:center">false</td>
+<td style="text-align:center">bubbles</td>
+<td style="text-align:center">事件是否冒泡 true / false (默认)</td>
 </tr>
 <tr>
-<td style="text-align:center">String</td>
-<td style="text-align:center">非空字符串</td>
-<td style="text-align:center">&quot; &quot; , ' '</td>
-</tr>
-<tr>
-<td style="text-align:center">Number</td>
-<td style="text-align:center">非 0 数值</td>
-<td style="text-align:center">0 和 NaN</td>
-</tr>
-<tr>
-<td style="text-align:center">Undefined</td>
-<td style="text-align:center">x</td>
-<td style="text-align:center">undefined</td>
-</tr>
-<tr>
-<td style="text-align:center">Object</td>
-<td style="text-align:center">任何引用类型</td>
-<td style="text-align:center">null</td>
+<td style="text-align:center">cancelable</td>
+<td style="text-align:center">事件是否能被取消  true / false(默认)</td>
 </tr>
 </tbody>
 </table>
-<h2 id="number">📌 Number</h2>
-<ul>
-<li>表示 &quot;整数&quot; 和 &quot;浮点数&quot;</li>
-<li>在数值类型中， +0 和 -0 是相等的</li>
-<li>&quot; 浮点数 &quot;的最高精度是 17 位小数，但在进行算术计算时其精确度远远不如整数。例如，0.1+0.2<br>
-的结果不是 0.3，而是 0.30000000000000004</li>
-</ul>
-<h2 id="string">📌 String</h2>
-<p>由单引号 ( ' ) 或 双引号 ( &quot; ) 包裹的字符序列组成</p>
-<p>♻️ 任意类型转字符串只需要与 &quot; &quot;  相加 ( + )</p>
-<p>👀 转义字符 (非打印字符)</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">字面量</th>
-<th style="text-align:center">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">\r</td>
-<td style="text-align:center">回车</td>
-</tr>
-<tr>
-<td style="text-align:center">\n</td>
-<td style="text-align:center">换行</td>
-</tr>
-<tr>
-<td style="text-align:center">\t</td>
-<td style="text-align:center">制表符</td>
-</tr>
-<tr>
-<td style="text-align:center">\b</td>
-<td style="text-align:center">空格</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>toString() 方法<br>
-将任意类型转为字符串表示,  ❗️❗️注： &quot;null&quot;  和 &quot;undefined&quot; 没有此方法</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">数据类型</th>
-<th style="text-align:center">转换规则</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Boolean</td>
-<td style="text-align:center">&quot;true&quot; 和 &quot;false&quot;</td>
-</tr>
-<tr>
-<td style="text-align:center">Number</td>
-<td style="text-align:center">&quot;number&quot;</td>
-</tr>
-<tr>
-<td style="text-align:center">String</td>
-<td style="text-align:center">原样返回</td>
-</tr>
-<tr>
-<td style="text-align:center">Array</td>
-<td style="text-align:center">以 逗号 ( , ) 分隔的字符串(或空字符串)</td>
-</tr>
-<tr>
-<td style="text-align:center">Object</td>
-<td style="text-align:center">&quot;[object Object]&quot;</td>
-</tr>
-<tr>
-<td style="text-align:center">Function</td>
-<td style="text-align:center">函数体原样输出</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>String() 方法<br>
-转换规则与 &quot; toString()  &quot; 一致 <strong style="color: red;">唯一区别</strong>可以将 &quot; null &quot;  和 &quot;undefined&quot;  正确的转为字符串</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">类型</th>
-<th style="text-align:center">转换规则</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">null</td>
-<td style="text-align:center">&quot;null&quot;</td>
-</tr>
-<tr>
-<td style="text-align:center">undefined</td>
-<td style="text-align:center">&quot;undefined&quot;</td>
-</tr>
-</tbody>
-</table>
-<p>👉 # 一种引用类型</p>
-<h2 id="object">📌 Object</h2>
-<p>Object 类型是所有<code>实例</code> 最终的基类,所以绝大部分实例都继承了它公有的方法</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">方法</th>
-<th style="text-align:center">用途</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">hasOwnProperty()</td>
-<td style="text-align:center">检查一个属性是属于对象的实例还是原型</td>
-</tr>
-<tr>
-<td style="text-align:center">isPrototypeOf()</td>
-<td style="text-align:center">检查传入的对象是否是调用者的原型</td>
-</tr>
-<tr>
-<td style="text-align:center">toString()</td>
-<td style="text-align:center">该对象的字符串表示</td>
-</tr>
-</tbody>
-</table>
+<pre><code class="language-js">let event = new Event(&quot;click&quot;,{
+    bubbles: true,
+    canclelable: false
+})
+</code></pre>
+<h2 id="dispatchevent-用来触发一个事件">👉 dispatchEvent( ) 用来触发一个事件</h2>
+<pre><code class="language-js">let event = new Event(&quot;click&quot;)
+let  div = document.querySelect(&quot;div&quot;)
+div.dispatchEvent(event)  //  div 元素上触发一个 click 事件
+</code></pre>
+<h1 id="事件模型">👉 事件模型</h1>
+<ol>
+<li>DOM0 级事件模型</li>
+<li>DOM2 级事件模型</li>
+</ol>
+<h2 id="区别">区别</h2>
+<p>DOM0 级事件使用 <strong style="color: #ff6666">on</strong> 绑定</p>
+<pre><code class="language-js">elementObject.onclick = function() { ... }
+</code></pre>
+<p>🗣 定义的事件在传播时只能 “冒泡”<br>
+🗣 在一个对象上绑定多个相同的事件时，最后一个会覆盖之前的<br>
+🗣 解除事件时，需要把事件处理函数替换为 “null”</p>
+<pre><code class="language-js">elementObject.onclick = null
+</code></pre>
+<p>DOM2 级事件使用 <strong style="color: #3498db">addEventListener( )</strong> 绑定</p>
+<pre><code class="language-js">elementObject.addEventListener(&quot;click&quot;, function(){ ... }, false)
+</code></pre>
+<p>🗣 第三个参数默认为 false , 即以 “冒泡”的方式传播 。 设置为 true 时，以 “捕获”的方式传播<br>
+🗣 在一个对象上绑定多个相同的事件时，会按照绑定的顺序依次触发<br>
+🗣 解除事件时，需要通过  <strong style="color: #3498db">removeEventListener( )</strong> 。</p>
+<p>！！ 注： <strong style="color: #3498db">removeEventListener( )</strong> 只能解除 <strong style="color: #3498db">addEventListener( )</strong> 绑定的事件</p>
+<pre><code class="language-js">elementObject.removeEventListener(&quot;click&quot;, function(){ ... }, false)
+</code></pre>
+<h1 id="事件的传播机制">👉 事件的传播机制</h1>
+<p>DOM2 在定义事件时，规定一个事件的传播需经过 3个阶段</p>
+<ol>
+<li>从 window 对象开始逐步向下传播至目标节点 (“捕获阶段”)</li>
+<li>在“目标节点”上触发事件</li>
+<li>从“目标节点”向上传播回 window （“冒泡阶段”）</li>
+</ol>
+<h1 id="事件代理">👉 事件代理</h1>
+<p>基于事件传播的特性，把原本需要在子元素上响应的事件，委托给上级元素，由上级元素负责监听事件, 通过 event事件对象 中的target属性，判断触发事件的子元素</p>
 
                 </div>
                 <div class="clear"></div>
@@ -297,26 +192,13 @@
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/FKgYxSmal/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-06-29">2020-06-29</time>
-                  <h4 class="title white no-margin">数值转换</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/01/t84GkR.md.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/V__VfydC-/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/RVB9OZHPo/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-06-18">2020-06-18</time>
-                  <h4 class="title white no-margin">Vue slot</h4>
+                  <time datetime="2020-07-10">2020-07-10</time>
+                  <h4 class="title white no-margin">DOM1 扩展</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
