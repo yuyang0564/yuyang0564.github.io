@@ -2,13 +2,41 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuyang0564.github.io</id>
     <title>学习笔记</title>
-    <updated>2020-07-15T03:21:37.799Z</updated>
+    <updated>2020-07-21T08:01:25.923Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuyang0564.github.io"/>
     <link rel="self" href="https://yuyang0564.github.io/atom.xml"/>
     <logo>https://yuyang0564.github.io/images/avatar.png</logo>
     <icon>https://yuyang0564.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 学习笔记</rights>
+    <entry>
+        <title type="html"><![CDATA[函数]]></title>
+        <id>https://yuyang0564.github.io/2Q_MoE1s_/</id>
+        <link href="https://yuyang0564.github.io/2Q_MoE1s_/">
+        </link>
+        <updated>2020-07-21T05:28:24.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[字符串方法]]></title>
+        <id>https://yuyang0564.github.io/KtGrMaQWj/</id>
+        <link href="https://yuyang0564.github.io/KtGrMaQWj/">
+        </link>
+        <updated>2020-07-21T03:25:21.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[对象的解构赋值]]></title>
+        <id>https://yuyang0564.github.io/bjXvTm25k/</id>
+        <link href="https://yuyang0564.github.io/bjXvTm25k/">
+        </link>
+        <updated>2020-07-21T02:30:15.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[数组的解构赋值]]></title>
+        <id>https://yuyang0564.github.io/7diawi0BY/</id>
+        <link href="https://yuyang0564.github.io/7diawi0BY/">
+        </link>
+        <updated>2020-07-21T02:03:37.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[事件]]></title>
         <id>https://yuyang0564.github.io/1QYV9xp2Y/</id>
@@ -50,33 +78,5 @@
         <link href="https://yuyang0564.github.io/QINp3oP4V/">
         </link>
         <updated>2020-07-07T07:34:38.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[执行环境(作用域)]]></title>
-        <id>https://yuyang0564.github.io/X3aiegO5c/</id>
-        <link href="https://yuyang0564.github.io/X3aiegO5c/">
-        </link>
-        <updated>2020-07-06T08:02:06.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[类型检测]]></title>
-        <id>https://yuyang0564.github.io/tkbkLazjo/</id>
-        <link href="https://yuyang0564.github.io/tkbkLazjo/">
-        </link>
-        <updated>2020-07-06T07:02:05.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[switch 语句]]></title>
-        <id>https://yuyang0564.github.io/9HbicUlds/</id>
-        <link href="https://yuyang0564.github.io/9HbicUlds/">
-        </link>
-        <updated>2020-07-06T06:02:55.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[数值转换]]></title>
-        <id>https://yuyang0564.github.io/FKgYxSmal/</id>
-        <link href="https://yuyang0564.github.io/FKgYxSmal/">
-        </link>
-        <updated>2020-06-29T05:31:24.000Z</updated>
     </entry>
 </feed>

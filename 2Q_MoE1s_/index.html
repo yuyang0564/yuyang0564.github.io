@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>搜索结果 | 学习笔记</title>
+<title>函数 | 学习笔记</title>
 <meta name="description" content="" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -14,16 +14,20 @@
 <script src="https://yuyang0564.github.io/media/js/view-image.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
-    <script src="/media/gridea-search/fuse.js"></script>
-    <script src="/media/gridea-search/ejs.min.js"></script>
-    <script src="/media/gridea-search/gridea-search.js"></script>
-    <script src="/media/gridea-search/result-template.ejs" type="text/ejs"></script>
-</head>
+    <meta name="referrer" content="never">
+    <meta name="description" content="📌 参数默认值
+允许为参数指定一个默认值，当调用时没有传递具体的值时，将使用默认设置的值
+function fn(x = 1 , y = 2) {
+    return x + y
+}
 
+fn()        // 3
+fn(2,3) ..." />
+    <meta name="keywords" content="es6,javascript" />
+    <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
+  </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -84,22 +88,158 @@
         </div>
       </div>
 
-      <main id="home" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
-        <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
-          <div class="main-article post">
-            <div id="gridea-search-result">
-              <h2 class="searching">搜索中......</h2>
-              <h2 class="no-result" style="display:none">未搜索到相关文章</h2>
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/07/21/U5orPH.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-07-21"><i class="fa fa-calendar"></i><span class="lately">3 小时前</span></time>
+              
+              <a href="https://yuyang0564.github.io/2Q_MoE1s_/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/2Q_MoE1s_/"> </span>
+              </a>
+              <span id="/2Q_MoE1s_/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://yuyang0564.github.io/EXv-_I_8W/" class="ctag ctag-0 ctag-EXv-_I_8W" aria-label="">es6</a>
+                    
+                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-1 ctag-tgCHrWGK6" aria-label="">javascript</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">函数</h1>
             </div>
           </div>
+        </div>  
+
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h2 id="参数默认值">📌 参数默认值</h2>
+<p>允许为参数指定一个默认值，当调用时没有传递具体的值时，将使用默认设置的值</p>
+<pre><code class="language-js">function fn(x = 1 , y = 2) {
+    return x + y
+}
+
+fn()        // 3
+fn(2,3)  // 5  
+</code></pre>
+<p>🗣 不允许重复声明<br>
+函数的参数都是默认已声明的，所以不能在内部重复声明<br>
+错误示例:</p>
+<pre><code class="language-js">// 错误 
+function fn( x , y) {
+    let x  = 1
+}
+</code></pre>
+<p>🗣 参数的解构赋值的默认值<br>
+为解构的参数赋值一个空的对象</p>
+<pre><code class="language-js">function fn( {x = 1 , y = 2} = { } ) {
+    return x + y
+}
+</code></pre>
+<p>⚠️❗️  当为函数指定了默认值时，length 属性将失效</p>
+<pre><code class="language-js">function fn( {x = 1 , y = 2} = { } ) {
+    return x + y
+}
+
+fn.length  //  0
+</code></pre>
+<h2 id="rest-参数">📌  rest 参数</h2>
+<p>它用于获取函数的所有参数 ,  主要用来替换 ES5  的 <code>arguments</code> 对象 ,  rest 参数会把所有的剩余参数放入一个数组中</p>
+<pre><code class="language-js">function fn(...rest) {
+    let [num , str , obj] = rest
+    /*
+        num -&gt; 1
+        str -&gt; &quot;hello&quot;
+        obj -&gt; { a: 1, b: 2}
+    */
+}
+
+fn(1, &quot;hello&quot;, { a: 1, b: 2 })
+</code></pre>
+<p>⚠️❗️  注意： rest 参数只能为函数参数的最后一个 , 否则会报错</p>
+<pre><code class="language-js">// 错误示例
+function fn(x , ...rest , y) { }
+</code></pre>
+<h1 id="箭头函数">👉 箭头函数</h1>
+<p>🗣 基本写法</p>
+<pre><code class="language-js">let f = (arg1,arg2) =&gt; { 
+    return arg1 + arg2
+}
+
+// 类似于ES5
+function f( arg1 , arg2 ) {
+    return arg1 + arg2
+ }
+</code></pre>
+<p>🗣 箭头函数主要用来简化函数调用</p>
+<pre><code class="language-js">[1,2,3].map( x =&gt; x + x )
+</code></pre>
+<p>🗣 如果函数没有参数，则可以通过一个 “圆括号” 或  “_”和 “$” 代替参数部分</p>
+<pre><code class="language-js">let f = () =&gt; {}
+
+let f1 = _ =&gt; {}
+
+let f2 = $ =&gt;{}
+</code></pre>
+<p>🗣 如果只有一个参数, 则可以省略“括号”( )</p>
+<pre><code class="language-js">let f = arg =&gt; { }
+</code></pre>
+<p>🗣 如果函数体只有一条语句 ， 也可以省略 “{ }”</p>
+<pre><code class="language-js">let f = _ =&gt;  &quot;hello word!&quot;
+</code></pre>
+<h2 id="箭头函数与es5函数区别">箭头函数与ES5函数区别</h2>
+<ol>
+<li>箭头函数内的 <code>this</code> 是固定的 , 它只继承上一层作用域的 “this”, 并且无法通过 call 或 apply 改变</li>
+<li>箭头函数不可以当做 <code>构造函数</code></li>
+<li>箭头函数内部没有 <code>arguments</code> 对象</li>
+</ol>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/07/21/U5orPH.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/KtGrMaQWj/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-07-21">2020-07-21</time>
+                  <h4 class="title white no-margin">字符串方法</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
+            
+              <div id="comments" class="bg-white hosted ">
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+              </div>
+              <div class="clear"></div>
+            
+
+            </div>
           </div>
-        </div>
-        </div>
       </main>
 
-        <footer id="footer" class="grid-container">
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -307,6 +447,9 @@
     <div class="clear"></div>
 
         
+
+      
+    <script src="https://yuyang0564.github.io/media/js/functions-post.js"></script>
 
     </div>
     <!-- end: #wrapper -->
