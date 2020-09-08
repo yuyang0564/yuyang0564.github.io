@@ -17,28 +17,20 @@
     <meta name="referrer" content="never">
     <meta name="description" content="Vue
 
-
 vue响应式原理？过程
-
-
 vue的生命周期
 
 项目中有用到哪几个钩子函数
 
 
-
 为什么data要设置成函数
-
-
 v-model &amp; .sync
-
-
 v-show 和 v-if的区别
-
-
 Computed和Watch
+虚拟dom
 
-..." />
+
+虚拟d..." />
     <meta name="keywords" content="工具" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
@@ -94,7 +86,7 @@ Computed和Watch
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1599536499046" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1599542264058" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -109,7 +101,7 @@ Computed和Watch
         <div class="center content">
           <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/09/08/wMdJ6f.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-09-08"><i class="fa fa-calendar"></i><span class="lately">5 分钟前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-09-08"><i class="fa fa-calendar"></i><span class="lately">2 小时前</span></time>
               
               <a href="https://yuyang0564.github.io/XODQuwICr/#comments" class="comments meta-info" title="">
                 <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/XODQuwICr/"> </span>
@@ -135,73 +127,50 @@ Computed和Watch
                 <div class="text">
                   <h1 id="vue">Vue</h1>
 <ol>
-<li>
-<p>vue响应式原理？过程</p>
-</li>
-<li>
-<p>vue的生命周期</p>
+<li>vue响应式原理？过程</li>
+<li>vue的生命周期
 <ul>
 <li>项目中有用到哪几个钩子函数</li>
 </ul>
 </li>
-<li>
-<p>为什么data要设置成函数</p>
-</li>
-<li>
-<p>v-model &amp; .sync</p>
-</li>
-<li>
-<p>v-show 和 v-if的区别</p>
-</li>
-<li>
-<p>Computed和Watch</p>
-</li>
-<li>
-<p>虚拟dom</p>
+<li>为什么data要设置成函数</li>
+<li>v-model &amp; .sync</li>
+<li>v-show 和 v-if的区别</li>
+<li>Computed和Watch</li>
+<li>虚拟dom</li>
+</ol>
 <ul>
 <li>虚拟dom的实现原理</li>
 <li>虚拟dom的优缺点</li>
 </ul>
-</li>
-<li>
-<p>vue的diff运算</p>
-</li>
+<ol start="8">
+<li>vue的diff运算</li>
 </ol>
 <h1 id="vue-路由">Vue 路由</h1>
 <ol>
 <li>vue路由</li>
-</ol>
-<ul>
 <li>路由有哪几种</li>
 <li>几种路由的区别</li>
-</ul>
-<ol start="2">
 <li>路由的权限控制</li>
 </ol>
 <h1 id="vuex">Vuex</h1>
 <ol>
-<li>vuex
-<ul>
 <li>vuex有哪些属性 (5大属性)</li>
 <li>如果不用vuex有什么其它的替代方案</li>
 <li>vuex有哪些优势和缺点</li>
 <li>action和mutation的区别</li>
-</ul>
-</li>
 </ol>
 <h1 id="html-css3">HTML &amp; CSS3</h1>
 <ol>
-<li>
-<p>HTML5或者css3的新特性?</p>
+<li>HTML5或者css3的新特性?</li>
+</ol>
 <ul>
 <li>新特性主要包括哪几大块？</li>
 <li>用到哪些新标签?</li>
 <li>canvas</li>
 </ul>
-</li>
-<li>
-<p>响应式布局</p>
-</li>
+<ol start="2">
+<li>响应式布局</li>
 </ol>
 <ul>
 <li>哪几种响应式布局的方式</li>
@@ -209,80 +178,60 @@ Computed和Watch
 <li>rem的实现</li>
 </ul>
 <ol start="3">
-<li>
-<p>flex</p>
+<li>flex</li>
+</ol>
 <ul>
 <li>flex属性</li>
 <li>flex实现垂直居中</li>
 <li>flex九宫格布局</li>
 </ul>
-</li>
-<li>
-<p>块元素有哪些</p>
+<ol start="4">
+<li>块元素有哪些</li>
+</ol>
 <ul>
 <li>块元素和行内元素的区别和特点</li>
 <li>空元素 (类似于img这样的单标签元素)</li>
 </ul>
-</li>
-<li>
-<p>css中有哪些属性是可以继承的</p>
-</li>
-<li>
-<p>垂直居中</p>
-</li>
-<li>
-<p>css动画</p>
-</li>
+<ol start="5">
+<li>css中有哪些属性是可以继承的</li>
+<li>垂直居中</li>
+<li>css动画</li>
 </ol>
 <h1 id="js">JS</h1>
 <ol>
-<li>
-<p>作用域，闭包，原型链,this</p>
+<li>作用域，闭包，原型链,this</li>
+</ol>
 <ul>
 <li>闭包的使用场景</li>
 <li>原型链的使用场景</li>
 </ul>
-</li>
-<li>
-<p>es6</p>
+<ol start="2">
+<li>es6</li>
+</ol>
 <ul>
 <li>箭头函数?</li>
 <li>promise</li>
 </ul>
-</li>
-<li>
-<p>数组</p>
-</li>
+<ol start="3">
+<li>数组</li>
 </ol>
 <ul>
 <li>有用过数组的那些方法</li>
 <li>怎么实现数组去重</li>
 </ul>
 <ol start="4">
-<li>
-<p>深拷贝与浅拷贝的区别</p>
-</li>
-<li>
-<p>事件的执行机制</p>
-</li>
-<li>
-<p>事件的委托/代理</p>
-</li>
-<li>
-<p>内存泄露</p>
-</li>
+<li>深拷贝与浅拷贝的区别</li>
+<li>事件的执行机制</li>
+<li>事件的委托/代理</li>
+<li>内存泄露</li>
 </ol>
 <ul>
 <li>内存泄漏的场景</li>
 </ul>
 <h1 id="性能优化">性能优化</h1>
 <ol>
-<li>
-<p>重点优化...</p>
-</li>
-<li>
-<p>长列表优化</p>
-</li>
+<li>重点优化...</li>
+<li>长列表优化</li>
 </ol>
 <h1 id="浏览器">浏览器</h1>
 <ol>
@@ -315,15 +264,9 @@ Computed和Watch
 <li>常用请求头</li>
 </ul>
 <ol start="5">
-<li>
-<p>浏览器的渲染流程</p>
-</li>
-<li>
-<p>link标签和import标签的区别</p>
-</li>
-<li>
-<p>跨域</p>
-</li>
+<li>浏览器的渲染流程</li>
+<li>link标签和import标签的区别</li>
+<li>跨域</li>
 </ol>
 <ul>
 <li>解决方案</li>
