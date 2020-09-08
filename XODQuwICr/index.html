@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Element  | 学习笔记</title>
+<title>技术要点 | 学习笔记</title>
 <meta name="description" content="" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,36 +15,31 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="#👉 Element 类型定义了元素的类型与访问
-🗣 可以通过判断 nodeType 来确认一个节点是否为【元素节点】
+    <meta name="description" content="Vue
+
+
+vue响应式原理？过程
+
+
+vue的生命周期
+
+项目中有用到哪几个钩子函数
 
 
 
-nodeType
-类型
+为什么data要设置成函数
 
 
+v-model &amp; .sync
 
 
-1
-元素节点
+v-show 和 v-if的区别
 
 
-3
-文本节点
+Computed和Watch
 
-
-9
-body
-
-
-11
-文档片段
-
-
-
-�..." />
-    <meta name="keywords" content="javascript" />
+..." />
+    <meta name="keywords" content="工具" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
@@ -112,23 +107,23 @@ body
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/09/08/wMdJ6f.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-07-09"><i class="fa fa-calendar"></i><span class="lately">2 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-09-08"><i class="fa fa-calendar"></i><span class="lately">5 分钟前</span></time>
               
-              <a href="https://yuyang0564.github.io/YbVoeZETF/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/YbVoeZETF/"> </span>
+              <a href="https://yuyang0564.github.io/XODQuwICr/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/XODQuwICr/"> </span>
               </a>
-              <span id="/YbVoeZETF/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/XODQuwICr/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-0 ctag-tgCHrWGK6" aria-label="">javascript</a>
+                      <a href="https://yuyang0564.github.io/FwrXzFa9g/" class="ctag ctag-0 ctag-FwrXzFa9g" aria-label="">工具</a>
                     
               </div>
-              <h1 class="title ularge white bold">Element </h1>
+              <h1 class="title ularge white bold">技术要点</h1>
             </div>
           </div>
         </div>  
@@ -138,72 +133,207 @@ body
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <p>#👉 Element 类型定义了元素的类型与访问</p>
-<p>🗣 可以通过判断 <code>nodeType</code> 来确认一个节点是否为【元素节点】</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">nodeType</th>
-<th style="text-align:center">类型</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">元素节点</td>
-</tr>
-<tr>
-<td style="text-align:center">3</td>
-<td style="text-align:center">文本节点</td>
-</tr>
-<tr>
-<td style="text-align:center">9</td>
-<td style="text-align:center">body</td>
-</tr>
-<tr>
-<td style="text-align:center">11</td>
-<td style="text-align:center">文档片段</td>
-</tr>
-</tbody>
-</table>
-<p>🗣 通过 <code>tagName</code> 获取元素名 ( 注意： 返回的是大写 )</p>
-<pre><code class="language-js">if(document.body.tagName == &quot;BODY&quot;) { .... }
-</code></pre>
-<h1 id="所有元素节点共有的标准属性-可读可写">所有元素节点共有的标准属性 (可读，可写)</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">属性</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">id</td>
-<td style="text-align:center">唯一标识</td>
-</tr>
-<tr>
-<td style="text-align:center">title</td>
-<td style="text-align:center">鼠标移入的提示</td>
-</tr>
-<tr>
-<td style="text-align:center">className</td>
-<td style="text-align:center">类名</td>
-</tr>
-</tbody>
-</table>
-<p><strong style="color: #3498db; ">getAttribute( )</strong> 获取元素的 <code>html属性</code> 与 <code>自定义html属性</code> 。针对不存在的属性返回 <code>null</code></p>
-<p><strong style="color: #3498db; ">setAttribute( )</strong> 设置元素的 <code>html属性</code> 与 <code>自定义html属性</code> 。针对不存在的属性则会写入，已经存在的会替换</p>
-<p><strong style="color: #3498db; ">removeAttribute( )</strong> 删除元素的 <code>html属性</code> 与 <code>自定义html属性</code></p>
-<pre><code class="language-js">&lt;h1&gt;&lt;/h1&gt;
-
-var div = document.getElementByTagName(&quot;h1&quot;).item(0)
-
-h1.setAttribute(&quot;id&quot;,&quot;h1&quot;)
-h1.setAttribute(&quot;name&quot;,&quot;h1&quot;)
-h1.setAttribute(&quot;data-test&quot;,&quot;test&quot;)
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2020/07/09/UmTLA1.png" alt="UmTLA1.png" loading="lazy"></figure>
+                  <h1 id="vue">Vue</h1>
+<ol>
+<li>
+<p>vue响应式原理？过程</p>
+</li>
+<li>
+<p>vue的生命周期</p>
+<ul>
+<li>项目中有用到哪几个钩子函数</li>
+</ul>
+</li>
+<li>
+<p>为什么data要设置成函数</p>
+</li>
+<li>
+<p>v-model &amp; .sync</p>
+</li>
+<li>
+<p>v-show 和 v-if的区别</p>
+</li>
+<li>
+<p>Computed和Watch</p>
+</li>
+<li>
+<p>虚拟dom</p>
+<ul>
+<li>虚拟dom的实现原理</li>
+<li>虚拟dom的优缺点</li>
+</ul>
+</li>
+<li>
+<p>vue的diff运算</p>
+</li>
+</ol>
+<h1 id="vue-路由">Vue 路由</h1>
+<ol>
+<li>vue路由</li>
+</ol>
+<ul>
+<li>路由有哪几种</li>
+<li>几种路由的区别</li>
+</ul>
+<ol start="2">
+<li>路由的权限控制</li>
+</ol>
+<h1 id="vuex">Vuex</h1>
+<ol>
+<li>vuex
+<ul>
+<li>vuex有哪些属性 (5大属性)</li>
+<li>如果不用vuex有什么其它的替代方案</li>
+<li>vuex有哪些优势和缺点</li>
+<li>action和mutation的区别</li>
+</ul>
+</li>
+</ol>
+<h1 id="html-css3">HTML &amp; CSS3</h1>
+<ol>
+<li>
+<p>HTML5或者css3的新特性?</p>
+<ul>
+<li>新特性主要包括哪几大块？</li>
+<li>用到哪些新标签?</li>
+<li>canvas</li>
+</ul>
+</li>
+<li>
+<p>响应式布局</p>
+</li>
+</ol>
+<ul>
+<li>哪几种响应式布局的方式</li>
+<li>rem,em,px的区别</li>
+<li>rem的实现</li>
+</ul>
+<ol start="3">
+<li>
+<p>flex</p>
+<ul>
+<li>flex属性</li>
+<li>flex实现垂直居中</li>
+<li>flex九宫格布局</li>
+</ul>
+</li>
+<li>
+<p>块元素有哪些</p>
+<ul>
+<li>块元素和行内元素的区别和特点</li>
+<li>空元素 (类似于img这样的单标签元素)</li>
+</ul>
+</li>
+<li>
+<p>css中有哪些属性是可以继承的</p>
+</li>
+<li>
+<p>垂直居中</p>
+</li>
+<li>
+<p>css动画</p>
+</li>
+</ol>
+<h1 id="js">JS</h1>
+<ol>
+<li>
+<p>作用域，闭包，原型链,this</p>
+<ul>
+<li>闭包的使用场景</li>
+<li>原型链的使用场景</li>
+</ul>
+</li>
+<li>
+<p>es6</p>
+<ul>
+<li>箭头函数?</li>
+<li>promise</li>
+</ul>
+</li>
+<li>
+<p>数组</p>
+</li>
+</ol>
+<ul>
+<li>有用过数组的那些方法</li>
+<li>怎么实现数组去重</li>
+</ul>
+<ol start="4">
+<li>
+<p>深拷贝与浅拷贝的区别</p>
+</li>
+<li>
+<p>事件的执行机制</p>
+</li>
+<li>
+<p>事件的委托/代理</p>
+</li>
+<li>
+<p>内存泄露</p>
+</li>
+</ol>
+<ul>
+<li>内存泄漏的场景</li>
+</ul>
+<h1 id="性能优化">性能优化</h1>
+<ol>
+<li>
+<p>重点优化...</p>
+</li>
+<li>
+<p>长列表优化</p>
+</li>
+</ol>
+<h1 id="浏览器">浏览器</h1>
+<ol>
+<li>回流和重绘</li>
+</ol>
+<ul>
+<li>两者的区别</li>
+<li>什么场景会触发</li>
+</ul>
+<ol start="2">
+<li>socket通讯</li>
+</ol>
+<ul>
+<li>2个页面怎么进行通讯</li>
+<li>同域名的2个页面怎么通讯</li>
+<li>不同域的2个页面怎么通讯</li>
+</ul>
+<ol start="3">
+<li>存储</li>
+</ol>
+<ul>
+<li>浏览器的存储方式和区别</li>
+<li>强缓存和协商缓存</li>
+</ul>
+<ol start="4">
+<li>http</li>
+</ol>
+<ul>
+<li>常用的http状态码</li>
+<li>常用请求头</li>
+</ul>
+<ol start="5">
+<li>
+<p>浏览器的渲染流程</p>
+</li>
+<li>
+<p>link标签和import标签的区别</p>
+</li>
+<li>
+<p>跨域</p>
+</li>
+</ol>
+<ul>
+<li>解决方案</li>
+<li>vue开发怎么配置代理</li>
+<li>vue配置的代理属于正向代理还是反向代理</li>
+</ul>
+<h1 id="webpack">webpack</h1>
+<ol>
+<li>对webpack的了解</li>
+</ol>
 
                 </div>
                 <div class="clear"></div>
@@ -213,26 +343,13 @@ h1.setAttribute(&quot;data-test&quot;,&quot;test&quot;)
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/RVB9OZHPo/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-07-10">2020-07-10</time>
-                  <h4 class="title white no-margin">DOM1 扩展</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/DTOTFy6VL/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/07/21/U5orPH.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/zbajWO59n/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-07-09">2020-07-09</time>
-                  <h4 class="title white no-margin">Document</h4>
+                  <time datetime="2020-07-23">2020-07-23</time>
+                  <h4 class="title white no-margin">数组遍历</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">

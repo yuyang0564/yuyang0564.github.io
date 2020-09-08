@@ -2,13 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuyang0564.github.io</id>
     <title>学习笔记</title>
-    <updated>2020-07-21T08:01:25.923Z</updated>
+    <updated>2020-09-08T03:41:45.458Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuyang0564.github.io"/>
     <link rel="self" href="https://yuyang0564.github.io/atom.xml"/>
     <logo>https://yuyang0564.github.io/images/avatar.png</logo>
     <icon>https://yuyang0564.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 学习笔记</rights>
+    <entry>
+        <title type="html"><![CDATA[技术要点]]></title>
+        <id>https://yuyang0564.github.io/XODQuwICr/</id>
+        <link href="https://yuyang0564.github.io/XODQuwICr/">
+        </link>
+        <updated>2020-09-08T03:37:06.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[数组遍历]]></title>
+        <id>https://yuyang0564.github.io/zbajWO59n/</id>
+        <link href="https://yuyang0564.github.io/zbajWO59n/">
+        </link>
+        <updated>2020-07-23T01:31:44.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[函数]]></title>
         <id>https://yuyang0564.github.io/2Q_MoE1s_/</id>
@@ -64,19 +78,5 @@
         <link href="https://yuyang0564.github.io/DTOTFy6VL/">
         </link>
         <updated>2020-07-09T06:43:02.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[DOM1]]></title>
-        <id>https://yuyang0564.github.io/jNezF_qOD/</id>
-        <link href="https://yuyang0564.github.io/jNezF_qOD/">
-        </link>
-        <updated>2020-07-09T03:36:06.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[原型对象/原型链]]></title>
-        <id>https://yuyang0564.github.io/QINp3oP4V/</id>
-        <link href="https://yuyang0564.github.io/QINp3oP4V/">
-        </link>
-        <updated>2020-07-07T07:34:38.000Z</updated>
     </entry>
 </feed>
