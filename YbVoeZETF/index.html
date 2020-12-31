@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Element  | 学习笔记</title>
+<title>3.Element  | 学习笔记</title>
 <meta name="description" content="" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,7 +15,7 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="#👉 Element 类型定义了元素的类型与访问
+    <meta name="description" content="👉 Element 类型定义了元素的类型与访问
 🗣 可以通过判断 nodeType 来确认一个节点是否为【元素节点】
 
 
@@ -43,8 +43,8 @@ body
 
 
 
-�..." />
-    <meta name="keywords" content="javascript" />
+🗣..." />
+    <meta name="keywords" content="DOM" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
@@ -99,7 +99,7 @@ body
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1599542264058" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1609385268368" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -114,7 +114,7 @@ body
         <div class="center content">
           <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-07-09"><i class="fa fa-calendar"></i><span class="lately">2 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-07-09"><i class="fa fa-calendar"></i><span class="lately">6 个月前</span></time>
               
               <a href="https://yuyang0564.github.io/YbVoeZETF/#comments" class="comments meta-info" title="">
                 <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/YbVoeZETF/"> </span>
@@ -125,10 +125,10 @@ body
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-0 ctag-tgCHrWGK6" aria-label="">javascript</a>
+                      <a href="https://yuyang0564.github.io/_-SlRQFkE/" class="ctag ctag-0 ctag-_-SlRQFkE" aria-label="">DOM</a>
                     
               </div>
-              <h1 class="title ularge white bold">Element </h1>
+              <h1 class="title ularge white bold">3.Element </h1>
             </div>
           </div>
         </div>  
@@ -138,7 +138,7 @@ body
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <p>#👉 Element 类型定义了元素的类型与访问</p>
+                  <h1 id="element-类型定义了元素的类型与访问">👉 Element 类型定义了元素的类型与访问</h1>
 <p>🗣 可以通过判断 <code>nodeType</code> 来确认一个节点是否为【元素节点】</p>
 <table>
 <thead>
@@ -187,23 +187,101 @@ body
 <td style="text-align:center">鼠标移入的提示</td>
 </tr>
 <tr>
+<td style="text-align:center">name</td>
+<td style="text-align:center">为标签定义名称</td>
+</tr>
+<tr>
 <td style="text-align:center">className</td>
-<td style="text-align:center">类名</td>
+<td style="text-align:center">类名(由于class为系统关键字，所以使用className)</td>
 </tr>
 </tbody>
 </table>
-<p><strong style="color: #3498db; ">getAttribute( )</strong> 获取元素的 <code>html属性</code> 与 <code>自定义html属性</code> 。针对不存在的属性返回 <code>null</code></p>
-<p><strong style="color: #3498db; ">setAttribute( )</strong> 设置元素的 <code>html属性</code> 与 <code>自定义html属性</code> 。针对不存在的属性则会写入，已经存在的会替换</p>
-<p><strong style="color: #3498db; ">removeAttribute( )</strong> 删除元素的 <code>html属性</code> 与 <code>自定义html属性</code></p>
-<pre><code class="language-js">&lt;h1&gt;&lt;/h1&gt;
+<p>📌 <strong style="color: #3498db; ">getAttribute( )</strong> 获取元素的 <code>html属性</code> 与 <code>自定义html属性</code> 。针对不存在的属性返回 <code>null</code></p>
+<p>📌<strong style="color: #3498db; ">setAttribute( )</strong> 设置元素的 <code>html属性</code> 与 <code>自定义html属性</code> 。针对不存在的属性则会写入，已经存在的会替换</p>
+<p>📌<strong style="color: #3498db; ">removeAttribute( )</strong> 删除元素的 <code>html属性</code> 与 <code>自定义html属性</code></p>
+<pre><code class="language-js">&lt;h1 class=&quot;h1&quot;&gt;&lt;/h1&gt;
 
 var div = document.getElementByTagName(&quot;h1&quot;).item(0)
-
+h1.getAttribute(&quot;class&quot;)   // 获取class类名时，使用class
 h1.setAttribute(&quot;id&quot;,&quot;h1&quot;)
 h1.setAttribute(&quot;name&quot;,&quot;h1&quot;)
 h1.setAttribute(&quot;data-test&quot;,&quot;test&quot;)
 </code></pre>
 <figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2020/07/09/UmTLA1.png" alt="UmTLA1.png" loading="lazy"></figure>
+<h2 id="通过-getattribute-与-dom-对象属性-的方式访问属性主要存在2大区别">通过 <code>getAttribute()</code> 与 <code>DOM 对象属性</code> 的方式访问属性，主要存在2大区别：</h2>
+<ul>
+<li>元素的 style<br>
+1.通过 getAttribute() 获得的style，只返回字符串<br>
+2.通过 element.style 方式，返回 cssStyle 对象</li>
+<li>事件<br>
+1.通过 getAttribute() 读取事件，只返回字符串<br>
+2.通过element读取事件，返回具体的事件函数</li>
+</ul>
+<p>📌 <strong style="color: #3498db; ">element.innerHTML</strong><br>
+🗣 读取时，获取元素的所有后代，返回<code>HTML字符串</code></p>
+<pre><code class="language-js">&lt;ul&gt;
+    &lt;li&gt;
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+let ul = document.querySelect(&quot;ul&quot;)
+ul.innerHTML
+/*
+    &lt;li&gt;
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/li&gt;
+*/
+</code></pre>
+<p>🗣 设置时，设置的内容将替换该元素的所有后代</p>
+<pre><code class="language-js">&lt;ul&gt;
+    &lt;li&gt;
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+let ul = document.querySelect(&quot;ul&quot;)
+ul.innerHTML = &quot;&lt;li&gt;&lt;a&gt;&lt;/a&gt;&lt;/li&gt;&quot;
+/*
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+*/
+</code></pre>
+<p>📌 <strong style="color: #3498db; ">element.innerText</strong></p>
+<p>🗣 读取时，获取该元素所有后代元素的文本内容</p>
+<pre><code class="language-js">&lt;ul&gt;
+    &lt;li&gt;
+        a
+        &lt;div&gt;
+            b
+        &lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+let ul = document.querySelect(&quot;ul&quot;)
+ul.innerText
+/*
+    a
+    b
+*/
+</code></pre>
+<p>🗣 设置时，设置的内容将替换该元素的所有后代</p>
+<pre><code class="language-js">&lt;ul&gt;
+    &lt;li&gt;
+        a
+        &lt;div&gt;
+            b
+        &lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+let ul = document.querySelect(&quot;ul&quot;)
+ul.innerText = &quot;a&quot;
+/*
+   &lt;ul&gt; a  &lt;/ul&gt;
+*/
+</code></pre>
 
                 </div>
                 <div class="clear"></div>
@@ -215,10 +293,10 @@ h1.setAttribute(&quot;data-test&quot;,&quot;test&quot;)
               
               <article class="prev grid-50 tablet-grid-50 grid-parent">
                 <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/RVB9OZHPo/" class="full-link"></a>
+                 <a href="https://yuyang0564.github.io/1QYV9xp2Y/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-07-10">2020-07-10</time>
-                  <h4 class="title white no-margin">DOM1 扩展</h4>
+                  <time datetime="2020-07-14">2020-07-14</time>
+                  <h4 class="title white no-margin">事件</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
@@ -229,10 +307,10 @@ h1.setAttribute(&quot;data-test&quot;,&quot;test&quot;)
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
                 <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/DTOTFy6VL/" class="full-link"></a>
+                 <a href="https://yuyang0564.github.io/jNezF_qOD/" class="full-link"></a>
                  <div class="info">
                   <time datetime="2020-07-09">2020-07-09</time>
-                  <h4 class="title white no-margin">Document</h4>
+                  <h4 class="title white no-margin">1.DOM 节点</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
@@ -266,13 +344,13 @@ h1.setAttribute(&quot;data-test&quot;,&quot;test&quot;)
                   
                   
                   <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
-                    <a href="https://yuyang0564.github.io/XODQuwICr/" class="thumb hover-effect">
-                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/09/08/wMdJ6f.jpg');"></span>
+                    <a href="https://yuyang0564.github.io/JogPwQc-l/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></span>
                     </a>
                     <div class="info gradient-effect">
-                      <time datetime="2020-09-08">2020-09-08</time>
+                      <time datetime="2020-12-31">2020-12-31</time>
                       <h4 class="title usmall">
-                        <a href="https://yuyang0564.github.io/XODQuwICr/">技术要点</a>
+                        <a href="https://yuyang0564.github.io/JogPwQc-l/">5.JS盒子模型</a>
                       </h4>
                     </div>
                     <div class="clear"></div>
@@ -281,13 +359,13 @@ h1.setAttribute(&quot;data-test&quot;,&quot;test&quot;)
                   
                   
                   <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
-                    <a href="https://yuyang0564.github.io/zbajWO59n/" class="thumb hover-effect">
-                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/07/21/U5orPH.jpg');"></span>
+                    <a href="https://yuyang0564.github.io/017l4WcMs/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></span>
                     </a>
                     <div class="info gradient-effect">
-                      <time datetime="2020-07-23">2020-07-23</time>
+                      <time datetime="2020-12-30">2020-12-30</time>
                       <h4 class="title usmall">
-                        <a href="https://yuyang0564.github.io/zbajWO59n/">数组遍历</a>
+                        <a href="https://yuyang0564.github.io/017l4WcMs/">2.DOM 元素节点操作</a>
                       </h4>
                     </div>
                     <div class="clear"></div>
@@ -296,17 +374,19 @@ h1.setAttribute(&quot;data-test&quot;,&quot;test&quot;)
                   
                   
                   <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
-                    <a href="https://yuyang0564.github.io/2Q_MoE1s_/" class="thumb hover-effect">
-                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/07/21/U5orPH.jpg');"></span>
+                    <a href="https://yuyang0564.github.io/c-9qBEQuz/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></span>
                     </a>
                     <div class="info gradient-effect">
-                      <time datetime="2020-07-21">2020-07-21</time>
+                      <time datetime="2020-12-30">2020-12-30</time>
                       <h4 class="title usmall">
-                        <a href="https://yuyang0564.github.io/2Q_MoE1s_/">函数</a>
+                        <a href="https://yuyang0564.github.io/c-9qBEQuz/">4.DOM样式操作</a>
                       </h4>
                     </div>
                     <div class="clear"></div>
                   </article>
+                  
+                  
                   
                   
                   
@@ -402,19 +482,21 @@ h1.setAttribute(&quot;data-test&quot;,&quot;test&quot;)
                   <h4 class="widget-title title white bordered">标签云</h4>
                   <div class="tagcloud">
                     
-                      <a href="https://yuyang0564.github.io/FwrXzFa9g/" class="ctag ctag-0 ctag-FwrXzFa9g" aria-label="">工具</a>
+                      <a href="https://yuyang0564.github.io/_-SlRQFkE/" class="ctag ctag-0 ctag-_-SlRQFkE" aria-label="">DOM</a>
                     
-                      <a href="https://yuyang0564.github.io/EXv-_I_8W/" class="ctag ctag-1 ctag-EXv-_I_8W" aria-label="">es6</a>
+                      <a href="https://yuyang0564.github.io/FwrXzFa9g/" class="ctag ctag-1 ctag-FwrXzFa9g" aria-label="">工具</a>
                     
-                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-2 ctag-tgCHrWGK6" aria-label="">javascript</a>
+                      <a href="https://yuyang0564.github.io/EXv-_I_8W/" class="ctag ctag-2 ctag-EXv-_I_8W" aria-label="">es6</a>
                     
-                      <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-3 ctag-XZnOL5tqL" aria-label="">vue2</a>
+                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-3 ctag-tgCHrWGK6" aria-label="">javascript</a>
                     
-                      <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-4 ctag-LQTZpssFQ" aria-label="">css</a>
+                      <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-4 ctag-XZnOL5tqL" aria-label="">vue2</a>
                     
-                      <a href="https://yuyang0564.github.io/gLtCooV-x/" class="ctag ctag-5 ctag-gLtCooV-x" aria-label="">uni-app</a>
+                      <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-5 ctag-LQTZpssFQ" aria-label="">css</a>
                     
-                      <a href="https://yuyang0564.github.io/wPui5d2amF/" class="ctag ctag-6 ctag-wPui5d2amF" aria-label="">编码规范</a>
+                      <a href="https://yuyang0564.github.io/gLtCooV-x/" class="ctag ctag-6 ctag-gLtCooV-x" aria-label="">uni-app</a>
+                    
+                      <a href="https://yuyang0564.github.io/wPui5d2amF/" class="ctag ctag-7 ctag-wPui5d2amF" aria-label="">编码规范</a>
                     
                   </div>
                   <div class="clear"></div>
@@ -456,7 +538,7 @@ h1.setAttribute(&quot;data-test&quot;,&quot;test&quot;)
           <a href="https://yuyang0564.github.io"><img src="\media\images\custom-footerLogo.jpg" alt=""></a>
         </div>
         <p class="published border-effect">
-          ©2019 共 45 篇文章
+          ©2019 共 46 篇文章
           <br/>
            Powered by <a href="#">「Yu Yang」</a>
         </p>

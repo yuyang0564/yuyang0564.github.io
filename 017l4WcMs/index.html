@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>字符串方法 | 学习笔记</title>
+<title>2.DOM 元素节点操作 | 学习笔记</title>
 <meta name="description" content="" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,12 +15,10 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="📌  .includes( str, [index] )  查找字符串中是否包含指定的字符
-str :  指定的字符
-index:  从索引位置开始查找
-返回 true | false
-let str = &quot;hello word..." />
-    <meta name="keywords" content="es6,javascript" />
+    <meta name="description" content="👉 节点操作
+📌 document.createElement(  tabName )  创建一个元素节点。（创建的元素存在于文档之外，需要手动添加到文档节点中）
+📌 document.createDocumentFragment( ..." />
+    <meta name="keywords" content="DOM" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
@@ -88,25 +86,23 @@ let str = &quot;hello word..." />
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/07/21/U5orPH.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-07-21"><i class="fa fa-calendar"></i><span class="lately">5 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-12-30"><i class="fa fa-calendar"></i><span class="lately">21 小时前</span></time>
               
-              <a href="https://yuyang0564.github.io/KtGrMaQWj/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/KtGrMaQWj/"> </span>
+              <a href="https://yuyang0564.github.io/017l4WcMs/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/017l4WcMs/"> </span>
               </a>
-              <span id="/KtGrMaQWj/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/017l4WcMs/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://yuyang0564.github.io/EXv-_I_8W/" class="ctag ctag-0 ctag-EXv-_I_8W" aria-label="">es6</a>
-                    
-                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-1 ctag-tgCHrWGK6" aria-label="">javascript</a>
+                      <a href="https://yuyang0564.github.io/_-SlRQFkE/" class="ctag ctag-0 ctag-_-SlRQFkE" aria-label="">DOM</a>
                     
               </div>
-              <h1 class="title ularge white bold">字符串方法</h1>
+              <h1 class="title ularge white bold">2.DOM 元素节点操作</h1>
             </div>
           </div>
         </div>  
@@ -116,38 +112,39 @@ let str = &quot;hello word..." />
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h2 id="strong-stylecolor-3498db-includes-str-index-strong-查找字符串中是否包含指定的字符">📌 <strong style="color: #3498db"> .includes( str, [index] )</strong>  查找字符串中是否包含指定的字符</h2>
-<p>str :  指定的字符<br>
-index:  从索引位置开始查找<br>
-返回 true | false</p>
-<pre><code class="language-js">let str = &quot;hello word!&quot;
-str.includes(&quot;!&quot;)   //  true
-</code></pre>
-<h2 id="strong-stylecolor-3498db-startswith-str-index-strong-确认字符是否在字符串的开始位置">📌 <strong style="color: #3498db"> .startsWith( str, [index] )</strong>   确认字符是否在字符串的开始位置</h2>
-<pre><code class="language-js">let str = &quot;hello word!&quot;
-str.startsWith(&quot;!&quot;)   // false
-</code></pre>
-<h2 id="strong-stylecolor-3498db-endswith-str-index-strong-确认字符是否在字符串的结束位置">📌 <strong style="color: #3498db"> .endsWith( str, [index] )</strong>   确认字符是否在字符串的结束位置</h2>
-<pre><code class="language-js">let str = &quot;hello word!&quot;
-str.endsWith(&quot;!&quot;)   // true
-str.endsWith(&quot;word!&quot;)   // true
-</code></pre>
-<h2 id="strong-stylecolor-3498db-repeat-num-strong-字符串重复-n-次">📌 <strong style="color: #3498db"> .repeat( num )</strong>   字符串重复 n 次</h2>
+                  <h1 id="节点操作">👉 节点操作</h1>
+<p>📌 <strong style="color: #3498db; ">document.createElement(  tabName )</strong>  创建一个元素节点。（创建的元素存在于文档之外，需要手动添加到文档节点中）</p>
+<p>📌 <strong style="color: #3498db; ">document.createDocumentFragment(  tabName )</strong>  创建一个文档片段节点，它相当与一个仓库，可以用来保存即将要添加到文档中的元素节点 , 这个函数主要是用来优化。当需要向文档中添加大量节点的时候，可以把节点都暂存在文档片段中，然后一次性添加到文档，避免逐个添加时导致浏览器频繁的重绘</p>
+<p>📌 <strong style="color: #3498db; ">element.appendChild( )  </strong><br>
+将一个节点添加到 NodeList 的末尾，如果这个节点之前存在文档中，则会从之前的位置移除</p>
+<p>📌 <strong style="color: #3498db; ">element.insertBefore( 插入节点 , 参照节点 )</strong></p>
 <ul>
-<li>参数会自动取整 0 ~ -1 之间会取0 ， 但是 0 会返回  “ ”</li>
-<li>x.1 ~ x.9 之间会取 x</li>
-<li>负数 和 Infinity 无效，会导致报错</li>
-<li>如果是字符串会使用隐式转换，如果不能正确转换为数值，则使用 0</li>
+<li><code>参照节点</code>设置为 null , 则插入元素到末尾</li>
 </ul>
-<pre><code class="language-js">let str = &quot;a&quot;
-str.repeat(1)    // a
-str.repeat('2')  //  aa 
-str.repeat(undefined) // &quot; &quot;
-str.repeat(null) // &quot; &quot;
-str.repeat(NaN) // &quot; &quot;
-str.repeat(1.9) // a
-str.repeat(-5)  // &quot; &quot;
+<pre><code class="language-js">var div = document.createElement(&quot;div&quot;)
+body.insertBefore(div,null)
 </code></pre>
+<ul>
+<li>插入元素到指定的节点之前</li>
+</ul>
+<pre><code class="language-js">var meta = document.createElement(&quot;meta&quot;)
+var title = document.title
+head.insertBefore( meta , title )
+</code></pre>
+<p>📌 <strong style="color: #3498db; ">element.insertAdjacentElement(位置字符串,要插入的元素)</strong></p>
+<p><span style="color: red;">beforebegin </span>:再该元素之前插入</p>  
+<p ><span style="color: green;">afterend</span>:再该元素之后插入</p>  
+<p ><span style="color: blue;">afterbegin</span> : 插入到该元素中，作为第一个子元素</p>  
+<p><span >beforeend</span> : 插入到该元素中，作为最后一个子元素</p> 
+<p>📌 <strong style="color: #3498db; ">element.removeChild(  )</strong><br>
+从文档种移除一个节点</p>
+<p>📌 <strong style="color: #3498db; ">element.cloneNode( )</strong><br>
+复制节点 ,  返回复制节点的副本，需要手动添加到文档中<br>
+🗣 复制节点时，不会复制事件处理程序</p>
+<ul>
+<li>参数为 true 时， 复制整个节点树</li>
+<li>参数为 false 时， 只复制节点本身</li>
+</ul>
 
                 </div>
                 <div class="clear"></div>
@@ -158,11 +155,11 @@ str.repeat(-5)  // &quot; &quot;
             <section class="related section">
               
               <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/07/21/U5orPH.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/2Q_MoE1s_/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/JogPwQc-l/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-07-21">2020-07-21</time>
-                  <h4 class="title white no-margin">函数</h4>
+                  <time datetime="2020-12-31">2020-12-31</time>
+                  <h4 class="title white no-margin">5.JS盒子模型</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
@@ -172,11 +169,11 @@ str.repeat(-5)  // &quot; &quot;
               
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/07/21/U5orPH.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/bjXvTm25k/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/c-9qBEQuz/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-07-21">2020-07-21</time>
-                  <h4 class="title white no-margin">对象的解构赋值</h4>
+                  <time datetime="2020-12-30">2020-12-30</time>
+                  <h4 class="title white no-margin">4.DOM样式操作</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
