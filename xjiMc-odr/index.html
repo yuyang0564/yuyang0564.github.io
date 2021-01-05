@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>css 水平居中 | 学习笔记</title>
+<title>6.事件 | 学习笔记</title>
 <meta name="description" content="" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,11 +15,14 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="块元素水平居中1
-在块元素有固定宽度, 并且宽度非 100%时，可以通过左右的 margin 设置为 auto ， 来使块元素水平居中
- &lt;div class=&quot;con&quot;&gt;
-    &lt;div class..." />
-    <meta name="keywords" content="css" />
+    <meta name="description" content="DOM0 级事件
+
+🗣DOM0事件只会发生在冒泡阶段
+
+1.HTML属性内写事件
+&lt;button id=&quot;btn&quot; onclick=&quot;fn()&quot;&gt;点击事件&lt;/button&gt;
+..." />
+    <meta name="keywords" content="DOM,javascript" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
@@ -87,23 +90,25 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/SfWYj_E84.png');">
+          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-05-23"><i class="fa fa-calendar"></i><span class="lately">7 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2021-01-05"><i class="fa fa-calendar"></i><span class="lately">6 小时前</span></time>
               
-              <a href="https://yuyang0564.github.io/SfWYj_E84/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/SfWYj_E84/"> </span>
+              <a href="https://yuyang0564.github.io/xjiMc-odr/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/xjiMc-odr/"> </span>
               </a>
-              <span id="/SfWYj_E84/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/xjiMc-odr/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-0 ctag-LQTZpssFQ" aria-label="">css</a>
+                      <a href="https://yuyang0564.github.io/_-SlRQFkE/" class="ctag ctag-0 ctag-_-SlRQFkE" aria-label="">DOM</a>
+                    
+                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-1 ctag-tgCHrWGK6" aria-label="">javascript</a>
                     
               </div>
-              <h1 class="title ularge white bold">css 水平居中</h1>
+              <h1 class="title ularge white bold">6.事件</h1>
             </div>
           </div>
         </div>  
@@ -113,87 +118,127 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="块元素水平居中1">块元素水平居中1</h1>
-<p>在块元素有<code>固定宽度</code>, 并且<code>宽度非 100%</code>时，可以通过左右的 margin 设置为 auto ， 来使块元素水平居中</p>
-<pre><code class="language-html"> &lt;div class=&quot;con&quot;&gt;
-    &lt;div class=&quot;box1&quot;&gt;1&lt;/div&gt;
-  &lt;/div&gt;
+                  <h2 id="dom0-级事件">DOM0 级事件</h2>
+<blockquote>
+<p>🗣DOM0事件只会发生在冒泡阶段</p>
+</blockquote>
+<p>1.HTML属性内写事件</p>
+<pre><code class="language-html">&lt;button id=&quot;btn&quot; onclick=&quot;fn()&quot;&gt;点击事件&lt;/button&gt;
 </code></pre>
-<pre><code class="language-css">.box1 {
-  width: 50%;
-  margin: 100px auto;
-  text-align: center;
-}
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="https://yuyang0564.github.io/post-images/1590227601606.png" alt="" loading="lazy"></figure>
-<h1 id="块元素水平居中2">块元素水平居中2</h1>
-<ul>
-<li><code>父元素</code> 设置为 &quot;相对定位&quot;  ,  <code>子元素</code> 设置为 &quot;绝对定位&quot;</li>
-<li><code>子元素</code> 向左偏移 50%</li>
-<li><code>子元素</code> 有宽度时通过 &quot; margin-left &quot;  自身宽度的一半</li>
-</ul>
-<pre><code class="language-css">.con {
-  width: 100%;
-  height: 250px;
-  background-color: #fc5c5c;
-  position: relative;
-}
-.box1 {
-  width: 200px;
-  height: 200px;
-  background-color: #c6c6c6;
-  position: absolute;
-  left: 50%;
-  margin-left: -100px;
+<p>2.JS 方式写事件</p>
+<pre><code class="language-js">var btn = document.querySelect(&quot;#btn&quot;)
+btn.onclick = function(){
+    ...
 }
 </code></pre>
-<figure data-type="image" tabindex="2"><img src="https://yuyang0564.github.io/post-images/1590473213162.png" alt="" loading="lazy"></figure>
-<ul>
-<li><code>子元素</code> 未定义宽度时 ， 通过 transform: translateX  向 X 轴偏移 50%</li>
-</ul>
-<pre><code class="language-css">.con {
-  width: 100%;
-  height: 250px;
-  background-color: #fc5c5c;
-  position: relative;
-}
-.box1 {
-  background-color: #c6c6c6;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-</code></pre>
-<figure data-type="image" tabindex="3"><img src="https://yuyang0564.github.io/post-images/1590473213162.png" alt="" loading="lazy"></figure>
-<h1 id="元素转为-inline-block">元素转为 inline-block</h1>
-<p>在父元素是<code>块元素</code>时, 把<code>子元素</code>转为 <code>inline-block</code> 并通过设置 <code>text-align</code> 属性来使元素水平居中<br>
-需要注意的是， inline-block 之间的元素是有一定间隙的 ， 可以通过为 <code>包裹层</code> 设置 <code>font-size</code> 为 0 来解决元素之间有间隙的问题</p>
-<pre><code class="language-html">&lt;div class=&quot;con&quot;&gt;
-    &lt;div class=&quot;box1&quot;&gt;1&lt;/div&gt;
-    &lt;div class=&quot;box2&quot;&gt;1&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-<pre><code class="language-css">.con {
-  background: #fc5c5c;
-  text-align: center;
-  font-size: 0;
-}
-.box1,.box2 {
-  width: 50px;
-  height: 50px;
-  display: inline-block;
-  font-size: 16px;
-  background: #e0cd
-}
-</code></pre>
-<figure data-type="image" tabindex="4"><img src="https://yuyang0564.github.io/post-images/1590230177227.png" alt="" loading="lazy"></figure>
-<h1 id="通过-flex-设置任意元素的水平居中">通过 flex  设置任意元素的水平居中</h1>
-<pre><code class="language-css">.box1 {
-  background-color: #c6c6c6;
-  display: flex;
-  justify-content: center;
-}
-</code></pre>
+<h2 id="dom2-级事件">DOM2 级事件</h2>
+<blockquote>
+<p>🗣DOM2级事件会经过 3 个阶段</p>
+</blockquote>
+<ol>
+<li>捕获阶段</li>
+<li>到达事件源</li>
+<li>冒泡阶段</li>
+</ol>
+<blockquote>
+<p>📌 <strong style="color: #3498db; ">addEventListener( event , function [, useCapture] )</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">event</td>
+<td style="text-align:center">事件名</td>
+</tr>
+<tr>
+<td style="text-align:center">function</td>
+<td style="text-align:center">事件处理函数</td>
+</tr>
+<tr>
+<td style="text-align:center">useCapture</td>
+<td style="text-align:center">选择事件发生在冒泡阶段还是捕获阶段， 默认捕获阶段</td>
+</tr>
+</tbody>
+</table>
+<h3 id="鼠标事件">鼠标事件</h3>
+<ol>
+<li>点击事件</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">事件名</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">click</td>
+<td style="text-align:center">单击事件</td>
+</tr>
+<tr>
+<td style="text-align:center">dblclick</td>
+<td style="text-align:center">双击事件</td>
+</tr>
+<tr>
+<td style="text-align:center">mouseenter</td>
+<td style="text-align:center">鼠标从外部移入元素 (不冒泡)</td>
+</tr>
+<tr>
+<td style="text-align:center">mouselave</td>
+<td style="text-align:center">鼠标从元素移出到外部 (不冒泡)</td>
+</tr>
+<tr>
+<td style="text-align:center">mousemove</td>
+<td style="text-align:center">鼠标在元素上移动</td>
+</tr>
+<tr>
+<td style="text-align:center">mouseout</td>
+<td style="text-align:center">鼠标从触发事件的元素移动到另一个元素(可以是子元素)</td>
+</tr>
+<tr>
+<td style="text-align:center">mousewheel</td>
+<td style="text-align:center">鼠标滚轮滚动</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li>鼠标坐标信息</li>
+</ol>
+<blockquote>
+<p>🗣 鼠标的事件对象里保存了触发事件时，鼠标的坐标信息</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">clientX</td>
+<td style="text-align:center">鼠标相对于浏览器视口左侧的坐标 ( 不含页面滚动 )</td>
+</tr>
+<tr>
+<td style="text-align:center">clientY</td>
+<td style="text-align:center">鼠标相对于浏览器视口顶端的坐标 ( 不含页面滚动 )</td>
+</tr>
+<tr>
+<td style="text-align:center">pageX</td>
+<td style="text-align:center">鼠标的位置距离页面左侧的坐标 ( 包含页面滚动 )</td>
+</tr>
+<tr>
+<td style="text-align:center">pageY</td>
+<td style="text-align:center">鼠标的位置距离页面顶端的坐标  ( 包含页面滚动 )</td>
+</tr>
+</tbody>
+</table>
 
                 </div>
                 <div class="clear"></div>
@@ -203,26 +248,13 @@
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/HN4j53ksu.png');"></div>
-                 <a href="https://yuyang0564.github.io/HN4j53ksu/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-05-26">2020-05-26</time>
-                  <h4 class="title white no-margin">css 垂直居中</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/UPDgIH1zK.png');"></div>
-                 <a href="https://yuyang0564.github.io/UPDgIH1zK/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/JogPwQc-l/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-05-23">2020-05-23</time>
-                  <h4 class="title white no-margin">css position</h4>
+                  <time datetime="2020-12-31">2020-12-31</time>
+                  <h4 class="title white no-margin">5.JS盒子模型</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">

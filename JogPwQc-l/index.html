@@ -15,8 +15,12 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="1
-" />
+    <meta name="description" content="offsetWidth , offsetHeight
+标准盒模型包含 元素内容 + 内边距 + 边框
+border-box 时只包含计算过后的 宽或高
+
+clientWidth , clientHeight
+标准盒模型包含元素的元素内容 +..." />
     <meta name="keywords" content="DOM" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
@@ -72,7 +76,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1609385268368" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1609826343139" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -87,7 +91,7 @@
         <div class="center content">
           <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-12-31"><i class="fa fa-calendar"></i><span class="lately">4 小时前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-12-31"><i class="fa fa-calendar"></i><span class="lately">5 天前</span></time>
               
               <a href="https://yuyang0564.github.io/JogPwQc-l/#comments" class="comments meta-info" title="">
                 <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/JogPwQc-l/"> </span>
@@ -111,7 +115,30 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <p>1</p>
+                  <h2 id="offsetwidth-offsetheight">offsetWidth , offsetHeight</h2>
+<p>标准盒模型包含 <code>元素内容</code> + <code>内边距</code> + <code>边框</code><br>
+border-box 时只包含计算过后的 <code>宽或高</code><br>
+<a href="https://imgchr.com/i/sCv1m9"><img src="https://s3.ax1x.com/2021/01/04/sCv1m9.png" alt="sCv1m9.png" loading="lazy"></a></p>
+<h2 id="clientwidth-clientheight">clientWidth , clientHeight</h2>
+<p>标准盒模型包含元素的<code>元素内容</code> + <code>内边距</code> - <code>滚动条部分</code><br>
+border-box 时只包含计算过后的 <code>宽或高</code>  - <code>滚动条部分</code><br>
+<a href="https://imgchr.com/i/sPSL1f"><img src="https://s3.ax1x.com/2021/01/04/sPSL1f.png" alt="sPSL1f.png" loading="lazy"></a></p>
+<h2 id="scrollwidth-scrollheight">scrollWidth , scrollHeight</h2>
+<p>元素的<code>宽或高</code> + <code>内边距</code> + <code>滚动条隐藏的距离</code>  , 用于获取元素的<code>实际尺寸</code><br>
+<a href="https://imgchr.com/i/sPpF3V"><img src="https://s3.ax1x.com/2021/01/04/sPpF3V.png" alt="sPpF3V.png" loading="lazy"></a></p>
+<h2 id="offsettop">offsetTop</h2>
+<p>元素上边框,距离<code>包含元素</code>上边框的像素距离</p>
+<h2 id="offsetleft">offsetLeft</h2>
+<p>元素左边框,距离<code>包含元素</code>左边框的像素距离</p>
+<h2 id="offsettop-可设置">offsetTop (可设置)</h2>
+<p>滚动条距离顶部的距离</p>
+<h2 id="offsetleft-可设置">offsetLeft (可设置.)</h2>
+<p>滚动条距离左侧的距离</p>
+<h1 id="元素相对于视口顶端的位置信息-只读">👉 元素相对于视口顶端的位置信息 (只读)</h1>
+<p><strong style="color: #3498db">element.getBoundingClientRect(  )</strong><br>
+在标准盒子模型下，元素的尺寸等于 <code>width/height</code> + <code>padding</code> + <code>border</code>的总和<br>
+在border-box下，元素的尺寸等于 <code>width / height</code></p>
+<figure data-type="image" tabindex="1"><a href="https://imgchr.com/i/sP9lIs"><img src="https://s3.ax1x.com/2021/01/04/sP9lIs.png" alt="sP9lIs.png" loading="lazy"></a></figure>
 
                 </div>
                 <div class="clear"></div>
@@ -120,6 +147,19 @@
             <div class="clear"></div>
 
             <section class="related section">
+              
+              <article class="prev grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/xjiMc-odr/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2021-01-05">2021-01-05</time>
+                  <h4 class="title white no-margin">6.事件</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
               
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
@@ -161,6 +201,21 @@
                   
                   
                   <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://yuyang0564.github.io/xjiMc-odr/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2021-01-05">2021-01-05</time>
+                      <h4 class="title usmall">
+                        <a href="https://yuyang0564.github.io/xjiMc-odr/">6.事件</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
                     <a href="https://yuyang0564.github.io/JogPwQc-l/" class="thumb hover-effect">
                       <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></span>
                     </a>
@@ -175,7 +230,7 @@
                   
                   
                   
-                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
+                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
                     <a href="https://yuyang0564.github.io/017l4WcMs/" class="thumb hover-effect">
                       <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></span>
                     </a>
@@ -189,19 +244,6 @@
                   </article>
                   
                   
-                  
-                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
-                    <a href="https://yuyang0564.github.io/c-9qBEQuz/" class="thumb hover-effect">
-                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></span>
-                    </a>
-                    <div class="info gradient-effect">
-                      <time datetime="2020-12-30">2020-12-30</time>
-                      <h4 class="title usmall">
-                        <a href="https://yuyang0564.github.io/c-9qBEQuz/">4.DOM样式操作</a>
-                      </h4>
-                    </div>
-                    <div class="clear"></div>
-                  </article>
                   
                   
                   
@@ -301,11 +343,11 @@
                     
                       <a href="https://yuyang0564.github.io/_-SlRQFkE/" class="ctag ctag-0 ctag-_-SlRQFkE" aria-label="">DOM</a>
                     
-                      <a href="https://yuyang0564.github.io/FwrXzFa9g/" class="ctag ctag-1 ctag-FwrXzFa9g" aria-label="">工具</a>
+                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-1 ctag-tgCHrWGK6" aria-label="">javascript</a>
                     
-                      <a href="https://yuyang0564.github.io/EXv-_I_8W/" class="ctag ctag-2 ctag-EXv-_I_8W" aria-label="">es6</a>
+                      <a href="https://yuyang0564.github.io/FwrXzFa9g/" class="ctag ctag-2 ctag-FwrXzFa9g" aria-label="">工具</a>
                     
-                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-3 ctag-tgCHrWGK6" aria-label="">javascript</a>
+                      <a href="https://yuyang0564.github.io/EXv-_I_8W/" class="ctag ctag-3 ctag-EXv-_I_8W" aria-label="">es6</a>
                     
                       <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-4 ctag-XZnOL5tqL" aria-label="">vue2</a>
                     
@@ -355,7 +397,7 @@
           <a href="https://yuyang0564.github.io"><img src="\media\images\custom-footerLogo.jpg" alt=""></a>
         </div>
         <p class="published border-effect">
-          ©2019 共 46 篇文章
+          ©2019 共 47 篇文章
           <br/>
            Powered by <a href="#">「Yu Yang」</a>
         </p>
