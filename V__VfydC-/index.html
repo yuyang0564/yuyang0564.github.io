@@ -74,7 +74,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1609826343139" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1614935331618" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -89,7 +89,7 @@
         <div class="center content">
           <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/01/t84GkR.md.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-06-18"><i class="fa fa-calendar"></i><span class="lately">7 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-06-18"><i class="fa fa-calendar"></i><span class="lately">8 个月前</span></time>
               
               <a href="https://yuyang0564.github.io/V__VfydC-/#comments" class="comments meta-info" title="">
                 <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/V__VfydC-/"> </span>
@@ -154,6 +154,16 @@
         {{ num  }}
     &lt;/child-component&gt;
 &lt;/div&gt;
+
+/*
+...
+data() {
+    return {
+        num: 0
+    }
+}
+...
+*/
 </code></pre>
 <h3 id="具名-slot">👉 具名 slot</h3>
 <ul>
@@ -170,7 +180,7 @@
 &lt;slot name=&quot;default&quot;&gt;&lt;/slot&gt;
 </code></pre>
 <h3 id="替换具名-slot">👉 替换具名 slot</h3>
-<p>替换具名 slot ， 需要在 <strong style="color: red;">  <code>&lt;template&gt;</code>  </strong> 上使用 <code>v-slot:name</code> 标识需要替换的具名插槽的name名称,内容需要包裹在 <code>&lt;template&gt;</code> 中。<br>
+<p>替换具名 slot ， 需要在 <strong style="color: red;">  <code>&lt;template&gt;</code>  </strong> 上使用 <code>v-slot:name</code> , 根据插槽的名称替换 name。<br>
 🗣 v-slot:name  简写 <strong style="color: red;">#name</strong></p>
 <pre><code class="language-html">&lt;slot name=&quot;header&quot;&gt;...&lt;/slot&gt;
 
@@ -178,6 +188,80 @@
 &lt;template v-slot:header&gt;...&lt;/template&gt;
 &lt;!-- 简写 --&gt;
 &lt;template #header&gt;&lt;/template&gt;
+</code></pre>
+<h3 id="作用域插槽">👉 作用域插槽</h3>
+<p>当在父组件中替换插槽时，只能访问父组件中的数据</p>
+<pre><code class="language-html">// 父组件
+&lt;div&gt;
+    &lt;template #default&gt;
+            &lt;p&gt;{{ num }}&lt;/p&gt;
+    &lt;/template&gt;
+&lt;/div&gt;
+/*
+    ...
+    data() {
+        return {
+            num: 0
+        }
+    }
+    ...
+*/
+</code></pre>
+<p>但是我们可以把子组件中的某个数据绑定到插槽上,让父组件使用。通过 <code>v-bind:propname=&quot;prop&quot;</code></p>
+<pre><code class="language-html">// 子组件
+&lt;span&gt;
+    &lt;slot :time=&quot;time&quot;&gt;&lt;/slot&gt;
+&lt;/span&gt;
+/*
+...
+data() {
+    return {
+        time: '1990-01-01'
+    }
+}
+...
+*/
+</code></pre>
+<p>父组件访问插槽绑定的数据时, 通过 <code>v-slot:name=&quot;propname&quot;</code> , 其中 <code>propname</code> 的名称可以<code>自定义</code></p>
+<pre><code class="language-html">&lt;div&gt;
+    &lt;template v-slot:default=&quot;Obj&quot;&gt;
+        {{ Obj.time }}
+    &lt;/template&gt;
+&lt;/div&gt;
+
+// 简写
+&lt;div&gt;
+    &lt;template  #default=&quot;Obj&quot;&gt;
+        {{ Obj.time }}
+    &lt;/template&gt;
+&lt;/div&gt;
+</code></pre>
+<p>当然如果子组件绑定的数据是 map 类型，还可以解构出来</p>
+<pre><code class="language-html">// 子组件
+&lt;span&gt;
+    &lt;slot :user=&quot;&quot;&gt;&lt;/slot&gt;
+&lt;/span&gt;
+/*
+...
+data() {
+    return {
+        user: {
+            name: &quot;xx&quot;,
+            age: 10
+        }
+    }
+}
+...
+*/
+/*---------------------------------分隔线-------------------------------*/
+
+// 父组件
+&lt;div&gt;
+    &lt;template  #default=&quot;{user}&quot;&gt;
+        {{ user.name }}
+        {{ user.age }}
+    &lt;/template&gt;
+&lt;/div&gt;
 </code></pre>
 
                 </div>
@@ -241,6 +325,36 @@
                   
                   
                   <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://yuyang0564.github.io/2FfK03KOp/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s3.ax1x.com/2021/02/07/ytyZSx.png');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2021-02-07">2021-02-07</time>
+                      <h4 class="title usmall">
+                        <a href="https://yuyang0564.github.io/2FfK03KOp/">数组的length</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://yuyang0564.github.io/nk2wQc6PW/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s3.ax1x.com/2021/02/07/ytyZSx.png');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2021-02-07">2021-02-07</time>
+                      <h4 class="title usmall">
+                        <a href="https://yuyang0564.github.io/nk2wQc6PW/">数组的空位</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
                     <a href="https://yuyang0564.github.io/xjiMc-odr/" class="thumb hover-effect">
                       <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></span>
                     </a>
@@ -255,33 +369,7 @@
                   
                   
                   
-                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
-                    <a href="https://yuyang0564.github.io/JogPwQc-l/" class="thumb hover-effect">
-                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></span>
-                    </a>
-                    <div class="info gradient-effect">
-                      <time datetime="2020-12-31">2020-12-31</time>
-                      <h4 class="title usmall">
-                        <a href="https://yuyang0564.github.io/JogPwQc-l/">5.JS盒子模型</a>
-                      </h4>
-                    </div>
-                    <div class="clear"></div>
-                  </article>
                   
-                  
-                  
-                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
-                    <a href="https://yuyang0564.github.io/017l4WcMs/" class="thumb hover-effect">
-                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></span>
-                    </a>
-                    <div class="info gradient-effect">
-                      <time datetime="2020-12-30">2020-12-30</time>
-                      <h4 class="title usmall">
-                        <a href="https://yuyang0564.github.io/017l4WcMs/">2.DOM 元素节点操作</a>
-                      </h4>
-                    </div>
-                    <div class="clear"></div>
-                  </article>
                   
                   
                   
@@ -381,21 +469,23 @@
                   <h4 class="widget-title title white bordered">标签云</h4>
                   <div class="tagcloud">
                     
-                      <a href="https://yuyang0564.github.io/_-SlRQFkE/" class="ctag ctag-0 ctag-_-SlRQFkE" aria-label="">DOM</a>
+                      <a href="https://yuyang0564.github.io/s2x-Jul-G/" class="ctag ctag-0 ctag-s2x-Jul-G" aria-label="">Array</a>
                     
-                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-1 ctag-tgCHrWGK6" aria-label="">javascript</a>
+                      <a href="https://yuyang0564.github.io/_-SlRQFkE/" class="ctag ctag-1 ctag-_-SlRQFkE" aria-label="">DOM</a>
                     
-                      <a href="https://yuyang0564.github.io/FwrXzFa9g/" class="ctag ctag-2 ctag-FwrXzFa9g" aria-label="">工具</a>
+                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-2 ctag-tgCHrWGK6" aria-label="">javascript</a>
                     
-                      <a href="https://yuyang0564.github.io/EXv-_I_8W/" class="ctag ctag-3 ctag-EXv-_I_8W" aria-label="">es6</a>
+                      <a href="https://yuyang0564.github.io/FwrXzFa9g/" class="ctag ctag-3 ctag-FwrXzFa9g" aria-label="">工具</a>
                     
-                      <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-4 ctag-XZnOL5tqL" aria-label="">vue2</a>
+                      <a href="https://yuyang0564.github.io/EXv-_I_8W/" class="ctag ctag-4 ctag-EXv-_I_8W" aria-label="">es6</a>
                     
-                      <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-5 ctag-LQTZpssFQ" aria-label="">css</a>
+                      <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-5 ctag-XZnOL5tqL" aria-label="">vue2</a>
                     
-                      <a href="https://yuyang0564.github.io/gLtCooV-x/" class="ctag ctag-6 ctag-gLtCooV-x" aria-label="">uni-app</a>
+                      <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-6 ctag-LQTZpssFQ" aria-label="">css</a>
                     
-                      <a href="https://yuyang0564.github.io/wPui5d2amF/" class="ctag ctag-7 ctag-wPui5d2amF" aria-label="">编码规范</a>
+                      <a href="https://yuyang0564.github.io/gLtCooV-x/" class="ctag ctag-7 ctag-gLtCooV-x" aria-label="">uni-app</a>
+                    
+                      <a href="https://yuyang0564.github.io/wPui5d2amF/" class="ctag ctag-8 ctag-wPui5d2amF" aria-label="">编码规范</a>
                     
                   </div>
                   <div class="clear"></div>
@@ -437,7 +527,7 @@
           <a href="https://yuyang0564.github.io"><img src="\media\images\custom-footerLogo.jpg" alt=""></a>
         </div>
         <p class="published border-effect">
-          ©2019 共 47 篇文章
+          ©2019 共 49 篇文章
           <br/>
            Powered by <a href="#">「Yu Yang」</a>
         </p>

@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>es6 | 学习笔记</title>
+<title>数组的空位 | 学习笔记</title>
 <meta name="description" content="" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -14,11 +14,17 @@
 <script src="https://yuyang0564.github.io/media/js/view-image.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
+    <meta name="referrer" content="never">
+    <meta name="description" content="在创建数组时，可以使用字面量和 数组的构造函数初始化
+💡  Tip: 构造函数new Array( ) 和 Array( ) 是一样的效果
+let arr1 = []
+let arr2 = new Array()
+let arr3 = A..." />
+    <meta name="keywords" content="Array" />
+    <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -79,97 +85,147 @@
         </div>
       </div>
 
-      <main id="home" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
-        <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
-                
-            <!-- start: .articles -->
-            <div class="main-article post">
-  <h2 class="year"># es6</h2>
-    
-      <article class="item default grid-33 tablet-grid-50 np-mobile">
-        <a href="https://yuyang0564.github.io/zbajWO59n/" class="thumb hover-effect">
-          <span class="fullimage cover" style="display: block;background-image: url('https://s1.ax1x.com/2020/07/21/U5orPH.jpg');"></span>
-        </a>
-        <div class="info gradient-effect">
-          <time datetime="2020-07-23">2020-07-23</time>
-          <h4 class="title usmall">
-            <a href="https://yuyang0564.github.io/zbajWO59n/">数组遍历</a>
-          </h4>
-        </div>
-      </article>
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
-    
-      <article class="item default grid-33 tablet-grid-50 np-mobile">
-        <a href="https://yuyang0564.github.io/2Q_MoE1s_/" class="thumb hover-effect">
-          <span class="fullimage cover" style="display: block;background-image: url('https://s1.ax1x.com/2020/07/21/U5orPH.jpg');"></span>
-        </a>
-        <div class="info gradient-effect">
-          <time datetime="2020-07-21">2020-07-21</time>
-          <h4 class="title usmall">
-            <a href="https://yuyang0564.github.io/2Q_MoE1s_/">函数</a>
-          </h4>
-        </div>
-      </article>
-
-    
-      <article class="item default grid-33 tablet-grid-50 np-mobile">
-        <a href="https://yuyang0564.github.io/KtGrMaQWj/" class="thumb hover-effect">
-          <span class="fullimage cover" style="display: block;background-image: url('https://s1.ax1x.com/2020/07/21/U5orPH.jpg');"></span>
-        </a>
-        <div class="info gradient-effect">
-          <time datetime="2020-07-21">2020-07-21</time>
-          <h4 class="title usmall">
-            <a href="https://yuyang0564.github.io/KtGrMaQWj/">字符串方法</a>
-          </h4>
-        </div>
-      </article>
-
-    
-      <article class="item default grid-33 tablet-grid-50 np-mobile">
-        <a href="https://yuyang0564.github.io/bjXvTm25k/" class="thumb hover-effect">
-          <span class="fullimage cover" style="display: block;background-image: url('https://s1.ax1x.com/2020/07/21/U5orPH.jpg');"></span>
-        </a>
-        <div class="info gradient-effect">
-          <time datetime="2020-07-21">2020-07-21</time>
-          <h4 class="title usmall">
-            <a href="https://yuyang0564.github.io/bjXvTm25k/">对象的解构赋值</a>
-          </h4>
-        </div>
-      </article>
-
-    
-      <article class="item default grid-33 tablet-grid-50 np-mobile">
-        <a href="https://yuyang0564.github.io/7diawi0BY/" class="thumb hover-effect">
-          <span class="fullimage cover" style="display: block;background-image: url('https://s1.ax1x.com/2020/07/21/U5orPH.jpg');"></span>
-        </a>
-        <div class="info gradient-effect">
-          <time datetime="2020-07-21">2020-07-21</time>
-          <h4 class="title usmall">
-            <a href="https://yuyang0564.github.io/7diawi0BY/">数组的解构赋值</a>
-          </h4>
-        </div>
-      </article>
-
-    
-    <div class="clear"></div>
-</div>
-            <!-- end: .articles -->
-            
-                        <div class="epcl-pagination section">
-              <div class="nav">
-                
-                
-              </div>
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://s3.ax1x.com/2021/02/07/ytyZSx.png');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2021-02-07"><i class="fa fa-calendar"></i><span class="lately">1 个月前</span></time>
+              
+              <a href="https://yuyang0564.github.io/nk2wQc6PW/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/nk2wQc6PW/"> </span>
+              </a>
+              <span id="/nk2wQc6PW/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
             </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://yuyang0564.github.io/s2x-Jul-G/" class="ctag ctag-0 ctag-s2x-Jul-G" aria-label="">Array</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">数组的空位</h1>
+            </div>
+          </div>
+        </div>  
+
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h3 id="在创建数组时可以使用字面量和-数组的构造函数初始化">在创建数组时，可以使用<code>字面量</code>和 数组的<code>构造函数</code>初始化</h3>
+<p>💡  Tip: 构造函数<code>new Array( )</code> 和 <code>Array( )</code> 是一样的效果</p>
+<pre><code class="language-js">let arr1 = []
+let arr2 = new Array()
+let arr3 = Array()
+</code></pre>
+<p>ES6 新增方法 <code>Array.of( )</code> 也可以创建一个数组。传入的参数将作为数组的成员</p>
+<pre><code class="language-js">Array.of()  // [ ]
+Array.of(1,2,3) // [ 1, 2, 3 ]
+</code></pre>
+<h3 id="new-array-与-arrayof-的区别">new Array( ) 与 Array.of( ) 的区别</h3>
+<ul>
+<li>new Array( ) 接收一个<code>数值参数</code> 时，它所创建的是一个拥有数值长度的数组，但所有位置均是<code>空位</code></li>
+</ul>
+<pre><code class="language-js">let arr = new Array( 5 )   //  [ empty x 5 ]
+arr.length                          //   5
+</code></pre>
+<ul>
+<li>new Array( ) 接收一个<code>非数值参数</code>  或  多个<code>数值参数</code> 时，其表现正常</li>
+</ul>
+<pre><code class="language-js">let arr = new Array(&quot;a&quot;)                //  [ &quot;a&quot; ]
+let arr = new Array(1,2,3,4)        //   [ 1, 2, 3, 4 ]
+</code></pre>
+<ul>
+<li>Array.of( ) 修正了<code>new Array( )</code> 接收<code>1个数值时</code>会创建空位数组的问题, 其他情况下表现一致</li>
+</ul>
+<pre><code class="language-js">let arr = Array.of( 5 )                   //   [ 5 ]
+</code></pre>
+<h3 id="数组遍历时对空位-的处理">数组遍历时对<code>空位</code> 的处理</h3>
+<p>在ES6 新增的几个方法中，能够正确识别数组的<code>空位</code>, 并把它当做 <code>undefined</code> 处理</p>
+<ul>
+<li><code>for of</code></li>
+</ul>
+<pre><code class="language-js">let arr = Array( 5 )
+for(let i of arr) {
+    if( i == undefined ) {
+        ....
+    }
+}
+</code></pre>
+<ul>
+<li><code>Array.from()</code></li>
+</ul>
+<pre><code class="language-js">let arr = Array( 5 )
+Array.from(arr,item=&gt;{
+    if( item == undefined) {
+        ....
+    }
+})
+</code></pre>
+<ul>
+<li><code>Array.of()</code></li>
+</ul>
+<pre><code class="language-js">let arr = Array( 5 )
+Array.of( ...arr )
+</code></pre>
+<p>其余 ES5 的方法均会直接跳过 <code>空位</code><br>
+<code>forEach</code> 、 <code>map</code> 、 <code>some</code> 、 <code>filter</code> 、 <code>every</code> ....</p>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              <article class="prev grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s3.ax1x.com/2021/02/07/ytyZSx.png');"></div>
+                 <a href="https://yuyang0564.github.io/2FfK03KOp/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2021-02-07">2021-02-07</time>
+                  <h4 class="title white no-margin">数组的length</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/xjiMc-odr/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2021-01-05">2021-01-05</time>
+                  <h4 class="title white no-margin">6.事件</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
             
+              <div id="comments" class="bg-white hosted ">
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+              </div>
+              <div class="clear"></div>
+            
+
+            </div>
           </div>
-          </div>
-        </div>
       </main>
 
-        <footer id="footer" class="grid-container">
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -393,6 +449,9 @@
     <div class="clear"></div>
 
         
+
+      
+    <script src="https://yuyang0564.github.io/media/js/functions-post.js"></script>
 
     </div>
     <!-- end: #wrapper -->
