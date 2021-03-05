@@ -74,7 +74,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1614935331618" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1614935602738" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -222,12 +222,19 @@ data() {
 ...
 */
 </code></pre>
-<p>父组件访问插槽绑定的数据时, 通过 <code>v-slot:name=&quot;propname&quot;</code> , 其中 <code>propname</code> 的名称可以<code>自定义</code></p>
+<p>父组件访问插槽绑定的数据时, 通过 <code>v-slot:name=&quot;propname&quot;</code> , 其中 <code>propname</code> 的名称可以<code>自定义</code> ,</p>
 <pre><code class="language-html">&lt;div&gt;
     &lt;template v-slot:default=&quot;Obj&quot;&gt;
         {{ Obj.time }}
     &lt;/template&gt;
 &lt;/div&gt;
+
+/*
+    父组件的自定义 propname 相当于 
+    propname = {
+        time: 'xxx'
+    }
+*/
 
 // 简写
 &lt;div&gt;
