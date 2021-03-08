@@ -2,13 +2,20 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuyang0564.github.io</id>
     <title>学习笔记</title>
-    <updated>2021-03-08T02:29:37.989Z</updated>
+    <updated>2021-03-08T09:05:18.473Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuyang0564.github.io"/>
     <link rel="self" href="https://yuyang0564.github.io/atom.xml"/>
     <logo>https://yuyang0564.github.io/images/avatar.png</logo>
     <icon>https://yuyang0564.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 学习笔记</rights>
+    <entry>
+        <title type="html"><![CDATA[flex 布局]]></title>
+        <id>https://yuyang0564.github.io/l9UKVN6al/</id>
+        <link href="https://yuyang0564.github.io/l9UKVN6al/">
+        </link>
+        <updated>2021-03-08T05:44:48.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[数组的length]]></title>
         <id>https://yuyang0564.github.io/2FfK03KOp/</id>
@@ -71,12 +78,5 @@
         <link href="https://yuyang0564.github.io/2Q_MoE1s_/">
         </link>
         <updated>2020-07-21T05:28:24.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[字符串方法]]></title>
-        <id>https://yuyang0564.github.io/KtGrMaQWj/</id>
-        <link href="https://yuyang0564.github.io/KtGrMaQWj/">
-        </link>
-        <updated>2020-07-21T03:25:21.000Z</updated>
     </entry>
 </feed>

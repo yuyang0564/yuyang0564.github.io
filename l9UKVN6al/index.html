@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>uni-app 条件编译 | 学习笔记</title>
+<title>flex 布局 | 学习笔记</title>
 <meta name="description" content="" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,33 +15,13 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="条件编译通过注释的写法，区分不同的环境
-✍️  语法
-#ifdef %PLATFORM%
+    <meta name="description" content="基本概念
+flexbox  是一维布局模型 ,  它通过 2 根轴线决定成员的排列方式 。 被设置为 flexbox 的元素被称为容器 ,  容器的子元素被称为flex成员
+主轴、交叉轴
+flexbox 的默认主轴为横向排列，即从左至右
 
-#endif
-
-👓  %PLATFORM% 常用可选值
-
-
-
-值
-平台
-
-
-
-
-APP-PLUS
-APP
-
-
-H5
-H5
-
-
-MP-WEIXIN
 ..." />
-    <meta name="keywords" content="uni-app" />
+    <meta name="keywords" content="css" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
@@ -109,23 +89,23 @@ MP-WEIXIN
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/uni-app-tiao-jian-bian-yi.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://s3.ax1x.com/2021/03/08/6Q4sdP.png');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-04-10"><i class="fa fa-calendar"></i><span class="lately">1 年前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2021-03-08"><i class="fa fa-calendar"></i><span class="lately">3 小时前</span></time>
               
-              <a href="https://yuyang0564.github.io/uni-app-tiao-jian-bian-yi/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/uni-app-tiao-jian-bian-yi/"> </span>
+              <a href="https://yuyang0564.github.io/l9UKVN6al/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/l9UKVN6al/"> </span>
               </a>
-              <span id="/uni-app-tiao-jian-bian-yi/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/l9UKVN6al/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://yuyang0564.github.io/gLtCooV-x/" class="ctag ctag-0 ctag-gLtCooV-x" aria-label="">uni-app</a>
+                      <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-0 ctag-LQTZpssFQ" aria-label="">css</a>
                     
               </div>
-              <h1 class="title ularge white bold">uni-app 条件编译</h1>
+              <h1 class="title ularge white bold">flex 布局</h1>
             </div>
           </div>
         </div>  
@@ -135,53 +115,101 @@ MP-WEIXIN
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h2 id="条件编译通过注释的写法区分不同的环境">条件编译通过<code>注释</code>的写法，区分不同的环境</h2>
-<h3 id="️-语法">✍️  语法</h3>
-<pre><code class="language-js">#ifdef %PLATFORM%
-
-#endif
+                  <h1 id="基本概念">基本概念</h1>
+<p>flexbox  是一维布局模型 ,  它通过 2 根轴线决定成员的排列方式 。 被设置为 flexbox 的元素被称为<code>容器</code> ,  容器的子元素被称为<code>flex成员</code></p>
+<h1 id="主轴-交叉轴">主轴、交叉轴</h1>
+<p>flexbox 的<code>默认主轴</code>为横向排列，即从左至右<br>
+<a href="https://imgtu.com/i/6QTNTI"><img src="https://s3.ax1x.com/2021/03/08/6QTNTI.png" alt="6QTNTI.png" loading="lazy"></a><br>
+而 <code>默认交叉轴</code> 则为<code>从上至下</code></p>
+<h2 id="通过-flex-direction-改变主轴的方向">通过 <code>flex-direction</code> 改变主轴的方向</h2>
+<h5 id="row-默认主轴横向从左至右">row 默认主轴，横向从左至右</h5>
+<h5 id="row-reverse-横向反方向">row-reverse  横向,反方向</h5>
+<figure data-type="image" tabindex="1"><a href="https://imgtu.com/i/6QHvOe"><img src="https://s3.ax1x.com/2021/03/08/6QHvOe.png" alt="6QHvOe.png" loading="lazy"></a></figure>
+<h5 id="column-纵向-从上至下">column  纵向, 从上至下</h5>
+<figure data-type="image" tabindex="2"><a href="https://imgtu.com/i/6QbVOg"><img src="https://s3.ax1x.com/2021/03/08/6QbVOg.png" alt="6QbVOg.png" loading="lazy"></a></figure>
+<h5 id="column-reverse-纵向从下至上">column-reverse 纵向,从下至上</h5>
+<figure data-type="image" tabindex="3"><a href="https://imgtu.com/i/6QbsXD"><img src="https://s3.ax1x.com/2021/03/08/6QbsXD.png" alt="6QbsXD.png" loading="lazy"></a></figure>
+<h1 id="创建容器">创建容器</h1>
+<p>通过为一个元素设置 <code>display</code> 属性为 <code>flex</code> 或 <code>inline-flex</code>，即将该元素创建为<code>容器</code>。容器的直接子元素都会成为 flex成员。</p>
+<pre><code class="language-css">display: flex;
+display: inline-flex;
 </code></pre>
-<h3 id="platform-常用可选值">👓  <code>%PLATFORM%</code> 常用可选值</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">值</th>
-<th style="text-align:center">平台</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">APP-PLUS</td>
-<td style="text-align:center">APP</td>
-</tr>
-<tr>
-<td style="text-align:center">H5</td>
-<td style="text-align:center">H5</td>
-</tr>
-<tr>
-<td style="text-align:center">MP-WEIXIN</td>
-<td style="text-align:center">微信小程序</td>
-</tr>
-</tbody>
-</table>
-<h3 id="js">js</h3>
-<pre><code class="language-js">// #ifdef APP-PLUS
-
-// #endif
+<h3 id="flex成员默认具有如下特征">flex成员默认具有如下特征:</h3>
+<ul>
+<li>按照主轴的方向依次排列</li>
+<li>成员不会在主轴方向拉伸和换行，但是在容器剩余空间不足时，会缩小。当有太多成员超出容器大小时，会溢出容器<br>
+<a href="https://imgtu.com/i/6QXYgx"><img src="https://s3.ax1x.com/2021/03/08/6QXYgx.png" alt="6QXYgx.png" loading="lazy"></a></li>
+<li>横向排列时，当成员没有设置高度时,会在交叉轴上拉伸，填充交叉轴。(纵向排列时为宽度)<br>
+<a href="https://imgtu.com/i/6Qjj6P"><img src="https://s3.ax1x.com/2021/03/08/6Qjj6P.png" alt="6Qjj6P.png" loading="lazy"></a><br>
+<a href="https://imgtu.com/i/6QjIeO"><img src="https://s3.ax1x.com/2021/03/08/6QjIeO.png" alt="6QjIeO.png" loading="lazy"></a></li>
+<li>横向排列时，当某个成员的高度超出容器的高度，则会溢出(纵向排列时为宽度)<br>
+<a href="https://imgtu.com/i/6lSaAU"><img src="https://s3.ax1x.com/2021/03/08/6lSaAU.png" alt="6lSaAU.png" loading="lazy"></a></li>
+</ul>
+<h1 id="多行-flex容器">多行 flex容器</h1>
+<p>通过为容器设置 <code>flex-wrap</code> 来决定容器是否启用换行。即成员不会等分容器的宽度，而是根据自身的宽度排列，超出容器时换行排列</p>
+<pre><code class="language-css">flex-wrap: wrap;   // 换行
+flex-wrap: nowrap; // 不换行   
 </code></pre>
-<h3 id="css">css</h3>
-<pre><code class="language-css">/* #ifdef  APP-PLUS */
-
-/* #endif */
+<p>可以将 <code>flex-direction</code> 和 <code>flex-wrap</code> 合并成简写属性 <code>flex-flow</code>, 第一个值为 flex-direction , 第二个值为 flex-wrap</p>
+<pre><code class="language-css">flex-flow: row wrap;
+flex-flow: column nowrap;
 </code></pre>
-<h3 id="pagesjson">pages.json</h3>
-<p>// #ifdef <code>APP-PLUS</code></p>
-<p>// #endif</p>
-<h3 id="template">template</h3>
-<pre><code class="language-html">&lt;!--  #ifdef  APP-PLUS--&gt;
-
-&lt;!--  #endif --&gt;
+<h1 id="justify-content">justify-content</h1>
+<p>成员在主轴上的<code>对齐</code>方式, 初始值为 <code>flex-start</code>, 从容器的起始点开始排列</p>
+<h3 id="可选值">可选值:</h3>
+<ul>
+<li>flex-start (默认) 左对齐</li>
+<li>flex-end  右对齐</li>
+<li>center 居中</li>
+<li>space-around 每个成员左右相等,但相邻的间距会合并<br>
+<a href="https://imgtu.com/i/6lk5Ix"><img src="https://s3.ax1x.com/2021/03/08/6lk5Ix.png" alt="6lk5Ix.png" loading="lazy"></a></li>
+<li>space-between 左右两端对齐,成员之间间距相等<br>
+<a href="https://imgtu.com/i/6lAPSS"><img src="https://s3.ax1x.com/2021/03/08/6lAPSS.png" alt="6lAPSS.png" loading="lazy"></a></li>
+<li>space-evenly 等分<br>
+<a href="https://imgtu.com/i/6lANY6"><img src="https://s3.ax1x.com/2021/03/08/6lANY6.png" alt="6lANY6.png" loading="lazy"></a></li>
+</ul>
+<h1 id="align-items">align-items</h1>
+<p>成员在交叉轴上的<code>对齐</code>方式, 初始值为 <code>stretch</code></p>
+<ul>
+<li>stretch 成员没有设置&quot;高度/宽度&quot;或&quot;高度/宽度&quot;为auto时,则拉伸至整个容器的&quot;高度/宽度&quot;<br>
+<a href="https://imgtu.com/i/6Qjj6P"><img src="https://s3.ax1x.com/2021/03/08/6Qjj6P.png" alt="6Qjj6P.png" loading="lazy"></a></li>
+<li>flex-start 在横向排列时，成员的顶部紧贴容器的顶部,不会拉伸高度<br>
+<a href="https://imgtu.com/i/6lupHe"><img src="https://s3.ax1x.com/2021/03/08/6lupHe.png" alt="6lupHe.png" loading="lazy"></a></li>
+<li>flex-start 在纵向排列时,成员的左侧紧贴容器的左侧,不会拉伸宽度<br>
+<a href="https://imgtu.com/i/6lKMqO"><img src="https://s3.ax1x.com/2021/03/08/6lKMqO.png" alt="6lKMqO.png" loading="lazy"></a></li>
+<li>flex-end 与 flex-start 相反</li>
+<li>flex-center 居中</li>
+<li>baseline 让成员的对齐方式以第一行文字的基线为参照</li>
+</ul>
+<h1 id="成员属性">成员属性</h1>
+<p>成员属性定义在flex容器的成员身上</p>
+<ul>
+<li>order <code>默认值 0</code>,该值决定了成员的排序，数值越小越靠前</li>
+</ul>
+<pre><code class="language-css">order: 0
 </code></pre>
+<ul>
+<li>flex-grow <code>默认值 0</code>，在容器还有剩余空间的情况下是否放大（无视固定宽高）, 被放大的成员会尽可能的撑满整个容器<br>
+<a href="https://imgtu.com/i/6lllZT"><img src="https://s3.ax1x.com/2021/03/08/6lllZT.png" alt="6lllZT.png" loading="lazy"></a></li>
+</ul>
+<pre><code class="language-css">flex-grow: 0
+</code></pre>
+<ul>
+<li>flex-shrink <code>默认值 1</code>, 在容器剩余空间不足时，是否缩小成员 (无视固定宽高) , 0 不缩小</li>
+</ul>
+<pre><code class="language-css">flex-shrink: 1
+</code></pre>
+<ul>
+<li>flex-basis <code>默认值 auto</code> , 设置成员的宽度, 当和 width 一起使用时，权重比width高，会覆盖width</li>
+</ul>
+<pre><code class="language-css">flex-basis: auto
+</code></pre>
+<ul>
+<li>align-self <code>默认值 auto</code>, 默认继承容器的对齐方式。可单独设置某个成员在容器中的对齐方式</li>
+</ul>
+<pre><code class="language-css">align-self: flex-start;
+</code></pre>
+<figure data-type="image" tabindex="4"><a href="https://imgtu.com/i/6l3dUO"><img src="https://s3.ax1x.com/2021/03/08/6l3dUO.png" alt="6l3dUO.png" loading="lazy"></a></figure>
 
                 </div>
                 <div class="clear"></div>
@@ -191,26 +219,13 @@ MP-WEIXIN
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/uni-app-wu-fa-da-kai-wei-xin-kai-fa-zhe-gong-ju.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/uni-app-wu-fa-da-kai-wei-xin-kai-fa-zhe-gong-ju/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-04-10">2020-04-10</time>
-                  <h4 class="title white no-margin">uni-app  无法打开微信开发者工具</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/uni-app-chai-yi-hua-zhu-yi-shi-xiang.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/uni-app-chai-yi-hua-zhu-yi-shi-xiang/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s3.ax1x.com/2021/02/07/ytyZSx.png');"></div>
+                 <a href="https://yuyang0564.github.io/2FfK03KOp/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-04-10">2020-04-10</time>
-                  <h4 class="title white no-margin">uni-app 差异化注意事项</h4>
+                  <time datetime="2021-02-07">2021-02-07</time>
+                  <h4 class="title white no-margin">数组的length</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
