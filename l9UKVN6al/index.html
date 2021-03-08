@@ -76,7 +76,7 @@ flexbox 的默认主轴为横向排列，即从左至右
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1615194340550" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1615194696326" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -122,13 +122,15 @@ flexbox 的默认主轴为横向排列，即从左至右
 <a href="https://imgtu.com/i/6QTNTI"><img src="https://s3.ax1x.com/2021/03/08/6QTNTI.png" alt="6QTNTI.png" loading="lazy"></a><br>
 而 <code>默认交叉轴</code> 则为<code>从上至下</code></p>
 <h2 id="通过-flex-direction-改变主轴的方向">通过 <code>flex-direction</code> 改变主轴的方向</h2>
-<h5 id="row-默认主轴横向从左至右">row 默认主轴，横向从左至右</h5>
-<h5 id="row-reverse-横向反方向">row-reverse  横向,反方向</h5>
-<figure data-type="image" tabindex="1"><a href="https://imgtu.com/i/6QHvOe"><img src="https://s3.ax1x.com/2021/03/08/6QHvOe.png" alt="6QHvOe.png" loading="lazy"></a></figure>
-<h5 id="column-纵向-从上至下">column  纵向, 从上至下</h5>
-<figure data-type="image" tabindex="2"><a href="https://imgtu.com/i/6QbVOg"><img src="https://s3.ax1x.com/2021/03/08/6QbVOg.png" alt="6QbVOg.png" loading="lazy"></a></figure>
-<h5 id="column-reverse-纵向从下至上">column-reverse 纵向,从下至上</h5>
-<figure data-type="image" tabindex="3"><a href="https://imgtu.com/i/6QbsXD"><img src="https://s3.ax1x.com/2021/03/08/6QbsXD.png" alt="6QbsXD.png" loading="lazy"></a></figure>
+<ul>
+<li><code>row</code> 默认主轴，横向从左至右</li>
+<li><code>row-reverse</code>  横向,反方向<br>
+<a href="https://imgtu.com/i/6QHvOe"><img src="https://s3.ax1x.com/2021/03/08/6QHvOe.png" alt="6QHvOe.png" loading="lazy"></a></li>
+<li><code>column</code>  纵向, 从上至下<br>
+<a href="https://imgtu.com/i/6QbVOg"><img src="https://s3.ax1x.com/2021/03/08/6QbVOg.png" alt="6QbVOg.png" loading="lazy"></a></li>
+<li><code>column-reverse</code> 纵向,从下至上<br>
+<a href="https://imgtu.com/i/6QbsXD"><img src="https://s3.ax1x.com/2021/03/08/6QbsXD.png" alt="6QbsXD.png" loading="lazy"></a></li>
+</ul>
 <h1 id="创建容器">创建容器</h1>
 <p>通过为一个元素设置 <code>display</code> 属性为 <code>flex</code> 或 <code>inline-flex</code>，即将该元素创建为<code>容器</code>。容器的直接子元素都会成为 flex成员。</p>
 <pre><code class="language-css">display: flex;
@@ -184,32 +186,32 @@ flex-flow: column nowrap;
 <h1 id="成员属性">成员属性</h1>
 <p>成员属性定义在flex容器的成员身上</p>
 <ul>
-<li>order <code>默认值 0</code>,该值决定了成员的排序，数值越小越靠前</li>
+<li><code>order</code> 默认值 0,该值决定了成员的排序，数值越小越靠前</li>
 </ul>
 <pre><code class="language-css">order: 0
 </code></pre>
 <ul>
-<li>flex-grow <code>默认值 0</code>，在容器还有剩余空间的情况下是否放大（无视固定宽高）, 被放大的成员会尽可能的撑满整个容器<br>
+<li><code>flex-grow</code> 默认值 0，在容器还有剩余空间的情况下是否放大（无视固定宽高）, 被放大的成员会尽可能的撑满整个容器<br>
 <a href="https://imgtu.com/i/6lllZT"><img src="https://s3.ax1x.com/2021/03/08/6lllZT.png" alt="6lllZT.png" loading="lazy"></a></li>
 </ul>
 <pre><code class="language-css">flex-grow: 0
 </code></pre>
 <ul>
-<li>flex-shrink <code>默认值 1</code>, 在容器剩余空间不足时，是否缩小成员 (无视固定宽高) , 0 不缩小</li>
+<li><code>flex-shrink</code> 默认值 1, 在容器剩余空间不足时，是否缩小成员 (无视固定宽高) , 0 不缩小</li>
 </ul>
 <pre><code class="language-css">flex-shrink: 1
 </code></pre>
 <ul>
-<li>flex-basis <code>默认值 auto</code> , 设置成员的宽度, 当和 width 一起使用时，权重比width高，会覆盖width</li>
+<li><code>flex-basis</code> 默认值 auto , 设置成员的宽度, 当和 width 一起使用时，权重比width高，会覆盖width</li>
 </ul>
 <pre><code class="language-css">flex-basis: auto
 </code></pre>
 <ul>
-<li>align-self <code>默认值 auto</code>, 默认继承容器的对齐方式。可单独设置某个成员在容器中的对齐方式</li>
+<li><code>align-self</code> 默认值 auto, 默认继承容器的对齐方式。可单独设置某个成员在容器中的对齐方式</li>
 </ul>
 <pre><code class="language-css">align-self: flex-start;
 </code></pre>
-<figure data-type="image" tabindex="4"><a href="https://imgtu.com/i/6l3dUO"><img src="https://s3.ax1x.com/2021/03/08/6l3dUO.png" alt="6l3dUO.png" loading="lazy"></a></figure>
+<figure data-type="image" tabindex="1"><a href="https://imgtu.com/i/6l3dUO"><img src="https://s3.ax1x.com/2021/03/08/6l3dUO.png" alt="6l3dUO.png" loading="lazy"></a></figure>
 
                 </div>
                 <div class="clear"></div>
