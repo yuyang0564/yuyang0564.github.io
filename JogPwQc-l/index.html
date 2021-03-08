@@ -16,11 +16,11 @@
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
     <meta name="description" content="offsetWidth , offsetHeight
-标准盒模型包含 元素内容 + 内边距 + 边框
+标准盒模型包含 元素宽高 + 内边距 + 边框
 border-box 时只包含计算过后的 宽或高
 
 clientWidth , clientHeight
-标准盒模型包含元素的元素内容 +..." />
+标准盒模型包含元素的元素宽高 +..." />
     <meta name="keywords" content="DOM" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
@@ -76,7 +76,7 @@ clientWidth , clientHeight
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1614937569263" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1615169461696" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -116,11 +116,11 @@ clientWidth , clientHeight
               <section class="post-content">
                 <div class="text">
                   <h2 id="offsetwidth-offsetheight">offsetWidth , offsetHeight</h2>
-<p>标准盒模型包含 <code>元素内容</code> + <code>内边距</code> + <code>边框</code><br>
+<p>标准盒模型包含 <code>元素宽高</code> + <code>内边距</code> + <code>边框</code><br>
 border-box 时只包含计算过后的 <code>宽或高</code><br>
 <a href="https://imgchr.com/i/sCv1m9"><img src="https://s3.ax1x.com/2021/01/04/sCv1m9.png" alt="sCv1m9.png" loading="lazy"></a></p>
 <h2 id="clientwidth-clientheight">clientWidth , clientHeight</h2>
-<p>标准盒模型包含元素的<code>元素内容</code> + <code>内边距</code> - <code>滚动条部分</code><br>
+<p>标准盒模型包含元素的<code>元素宽高</code> + <code>内边距</code> - <code>滚动条部分</code><br>
 border-box 时只包含计算过后的 <code>宽或高</code>  - <code>滚动条部分</code><br>
 <a href="https://imgchr.com/i/sPSL1f"><img src="https://s3.ax1x.com/2021/01/04/sPSL1f.png" alt="sPSL1f.png" loading="lazy"></a></p>
 <h2 id="scrollwidth-scrollheight">scrollWidth , scrollHeight</h2>
@@ -130,9 +130,9 @@ border-box 时只包含计算过后的 <code>宽或高</code>  - <code>滚动条
 <p>元素上边框,距离<code>包含元素</code>上边框的像素距离</p>
 <h2 id="offsetleft">offsetLeft</h2>
 <p>元素左边框,距离<code>包含元素</code>左边框的像素距离</p>
-<h2 id="offsettop-可设置">offsetTop (可设置)</h2>
+<h2 id="scrolltop-可设置">scrollTop (可设置)</h2>
 <p>滚动条距离顶部的距离</p>
-<h2 id="offsetleft-可设置">offsetLeft (可设置.)</h2>
+<h2 id="scrollleft-可设置">scrollLeft (可设置.)</h2>
 <p>滚动条距离左侧的距离</p>
 <h1 id="元素相对于视口顶端的位置信息-只读">👉 元素相对于视口顶端的位置信息 (只读)</h1>
 <p><strong style="color: #3498db">element.getBoundingClientRect(  )</strong><br>
