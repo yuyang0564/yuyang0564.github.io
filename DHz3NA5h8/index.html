@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>uni-app 差异化注意事项 | 学习笔记</title>
+<title>Promise | 学习笔记</title>
 <meta name="description" content="" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,10 +15,11 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="🌈      1. 不要把 js,css,scss 等文件直接放入 static 文件中，因为此文件是不会进行编译的
-🌈      2. 在css中和组件中引入样式，只能通过相对路径的方式
-@import url(&quot;../....." />
-    <meta name="keywords" content="uni-app" />
+    <meta name="description" content="Promise
+从ES6开始，新增了一个Promise的引用类型,它完善了promise/A+的规范,现已成为异步编程的主要技术手段,其最主要的功能是可以知道一个异步代码是否执行完毕，并解决了传统异步编程中回调地狱的问题
+基础
+通过 new..." />
+    <meta name="keywords" content="es6" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
@@ -86,23 +87,23 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/uni-app-chai-yi-hua-zhu-yi-shi-xiang.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/07/21/U5orPH.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-04-10"><i class="fa fa-calendar"></i><span class="lately">1 年前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2021-03-11"><i class="fa fa-calendar"></i><span class="lately">3 分钟前</span></time>
               
-              <a href="https://yuyang0564.github.io/uni-app-chai-yi-hua-zhu-yi-shi-xiang/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/uni-app-chai-yi-hua-zhu-yi-shi-xiang/"> </span>
+              <a href="https://yuyang0564.github.io/DHz3NA5h8/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/DHz3NA5h8/"> </span>
               </a>
-              <span id="/uni-app-chai-yi-hua-zhu-yi-shi-xiang/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/DHz3NA5h8/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://yuyang0564.github.io/gLtCooV-x/" class="ctag ctag-0 ctag-gLtCooV-x" aria-label="">uni-app</a>
+                      <a href="https://yuyang0564.github.io/EXv-_I_8W/" class="ctag ctag-0 ctag-EXv-_I_8W" aria-label="">es6</a>
                     
               </div>
-              <h1 class="title ularge white bold">uni-app 差异化注意事项</h1>
+              <h1 class="title ularge white bold">Promise</h1>
             </div>
           </div>
         </div>  
@@ -112,31 +113,232 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <p>🌈      1. 不要把 <code>js,css,scss</code> 等文件直接放入 <strong>static</strong> 文件中，因为此文件是不会进行编译的</p>
-<p>🌈      2. 在<strong>css中</strong>和<strong>组件中</strong>引入样式，只能通过<code>相对路径</code>的方式</p>
-<pre><code class="language-css">@import url(&quot;../../xx.css&quot;);
+                  <h1 id="promise">Promise</h1>
+<p>从ES6开始，新增了一个<code>Promise</code>的引用类型,它完善了<code>promise/A+</code>的规范,现已成为异步编程的主要技术手段,其最主要的功能是可以知道一个异步代码是否执行完毕，并解决了传统异步编程中<code>回调地狱</code>的问题</p>
+<h1 id="基础">基础</h1>
+<p>通过 <code>new</code> Promise 初始化，构造函数接收一个<code>函数</code>参数作为执行器，如果参数是非函数则会报出 <code>SyntaxError</code> 语法错误</p>
+<br/>
+<br/>
+<h2 id="一-状态执行函数">一、状态/执行函数</h2>
+<p>Promise 类型的实例是一个有状态的对象，它有3种状态</p>
+<pre><code class="language-js">pending     //待定
+fulfilled   //解决
+rejected    //拒绝
 </code></pre>
-<pre><code class="language-html">&lt;style&gt;
-    @import &quot;../../xxx.css&quot;
-&lt;/style&gt;
+<p>待定(pending) 为<b>默认初始状态</b>,在待定状态下可以让 <code>promise实例</code> 变更为 (fulfilled) 或者 (rejected)，<b>状态只能改变一次 , 一旦 promise 的状态发生改变, 状态就固定了并且不可逆</b></p>
+<pre><code class="language-js">const p1 = new Promise((resolve,reject)=&gt;{
+  resolve()   
+  reject()  // 静默失败,状态已经 fulfilled
+})
 </code></pre>
-<p>🌈      3. 使用<code>rpx</code> 作为尺寸单位， 默认根据 750px 的宽度计算</p>
-<p>🌈      4. <strong>背景图片</strong> 不支持本地图片，可以转为<code>base64</code> , 注意源文件不要大于 <strong>40Kb</strong></p>
-<p>🌈      5.  不支持 vue 的 classObject 的方式绑定样式</p>
-<pre><code class="language-html">    &lt;div :class=&quot;classObject&quot;&gt;&lt;/div&gt;
-    &lt;script&gt;
-        data: {
-            classObject: {
-                color: &quot;#fff&quot;,
-                fontSize: &quot;16px&quot;
-            }
-        }
-    &lt;/script&gt;
+<br/>
+<p>传入 Promise构造函数的 <code>执行函数</code> 会接收 2 个 函数参数, <code>resolve()</code> 和 <code>reject()</code>，调用 resolve 会把 pending 状态变更为 <b style="color:#2ed573">解决(fulfilled)</b>, 调用 reject 会把 pending 状态变更为<b style="color:#ff4757">拒绝(rejected) 并抛出一个异步错误</b></p>
+<blockquote>
+<p><b style="color:#ff4757">注意</b>： reject 抛出的异步错误,无法用 try/catch 捕获，因为他们不在同步代码的线程里</p>
+</blockquote>
+<pre><code class="language-js">const p1 = new Promise((resolve,reject)=&gt; resolve())  // fulfilled
+
+const p2 = new Promise((resolve,reject)=&gt; reject()) // rejected
 </code></pre>
-<p>🌈      6. 不支持在自定义组件上使用 <code>class</code> 和 <code>style</code> 绑定</p>
-<pre><code class="language-html">    &lt;v-component :class=&quot;classStyle&quot; /&gt;
+<blockquote>
+<p><b style="color:#1e90ff">提示</b>： 传入 Promise 构造函数的 <code>执行函数</code> 是同步执行的,但是<b style="color:#ff4757">状态变更函数是异步执行的</b></p>
+</blockquote>
+<pre><code class="language-js">const p = new Promise((resolve,reject)=&gt;{
+    console.log(1);
+    setTimeout(console.log,0,2)
+    resolve(3)
+    console.log(4)
+})
+console.log(5)
+p.then(res=&gt;{
+  console.log(res);
+})
+setTimeout(console.log,0,6)
+
+// 输出 1 4 5 3 2 6
 </code></pre>
-<p>🌈      7. 事件修饰符只支持 <code>.stop</code> 阻止事件冒泡 ， 其他修饰符只在 <code>H5</code> 端有效</p>
+<br/>
+<h4 id="注意以下特殊情况">注意以下特殊情况:</h4>
+<ol>
+<li>如果没有向状态变更函数传递参数，则状态返回的值为 <code>undefined</code></li>
+<li>如果没有调用状态变更函数，则返回的任意值都会被忽略, 状态依旧是 <code>pending</code>,</li>
+</ol>
+<pre><code class="language-js">// 1
+const p = new Promise((resolve,reject)=&gt;{
+    resolve()
+})
+
+// 2
+const p = new Promise((resolve,reject)=&gt;{
+    return true
+})
+</code></pre>
+<br/>
+<br/>
+<h2 id="二-静态函数">二、 静态函数</h2>
+<p>Promise实例的状态并非一定需要从 pending 状态开始，然后再通过执行函数转换为其他状态。Promise 提供了2个静态函数<code>resolve()</code>和<code>reject()</code>可以直接实例化一个<b style="color:#2ed573">解决(fulfilled)</b>和<b style="color:#ff4757">拒绝(rejected)</b>的对象</p>
+<pre><code class="language-js">const p1 = Promise.resolve()   // fulfilled
+
+const p2 = Promise.reject()    // rejected
+</code></pre>
+<ul>
+<li>resolve 静态方法接收一个参数<code>(多余的会被忽略)</code>,可以把传入的任意值包装成一个新的(fulfilled)Promise对象返回,如果传入的值本身就是一个promise类型,则会原样返回</li>
+</ul>
+<pre><code class="language-js">const p1 = Promise.resolve(1)
+
+const p2 = Promise.resolve(&quot;1&quot;)
+
+const p3 = Promise.resolve(true)
+
+const p4 = Promise.resolve(()=&gt;{})
+
+const p5 = Promise.resolve(null)
+
+const p6 = Promise.resolve(Promise.resolve(1))
+</code></pre>
+<ul>
+<li>reject 静态方法与resolve在使用上一致,可以把传入的任意值包装成(rejected)Promise对象返回<b style="color:#ff4757">并抛出一个异步错误</b></li>
+</ul>
+<br/>
+<br/>
+<h2 id="三-promise-实例的方法">三、 Promise 实例的方法</h2>
+<br/>
+<h4 id="第一个实例方法-then">第一个实例方法 <code>then</code></h4>
+<pre><code class="language-js">Promise.prototype.then()
+</code></pre>
+<p>Promise 原型对象上有一个 <code>then</code> 方法, 它接收2个可选的函数参数,第一个是在状态变更为 (fulfilled)时的处理函数,第二个是在状态变更为(rejected)时的处理函数。这两个处理函数是互斥的，也就是说始终只会有一个函数执行</p>
+<pre><code class="language-js">const p1 = Promise.resolve(1)
+
+p1.then(
+  function(res) {
+    // fulfilled 时执行
+  },
+  function(rej) {
+    // rejected 时执行
+  }
+)
+
+</code></pre>
+<blockquote>
+<p><b style="color:#ff4757">注意</b>： then 函数接收的是非函数类型时会被忽略</p>
+</blockquote>
+<pre><code class="language-js">p1.then(&quot;good&quot;)   // 错误处理方式
+</code></pre>
+<p>then 方法也会返回一个新的 Promise对象</p>
+<pre><code class="language-js">const p1 = new Promise((resolve,reject)=&gt;{
+  resolve(&quot;good&quot;)
+})
+const p2 = p1.then()
+</code></pre>
+<p>如果调用then时没有传入处理函数，则源状态会原样向后传</p>
+<pre><code class="language-js">const p1 = new Promise((resolve,reject)=&gt;{
+  reject(&quot;err&quot;)
+})
+const p2 = p1.then()    //  &quot;rejected&quot;, &quot;err&quot;
+const p3 = p2.then()   //  &quot;rejected&quot;,  &quot;err&quot;
+</code></pre>
+<br/>
+<br/>
+<h4 id="第二个实例方法catch">第二个实例方法<code>catch</code></h4>
+<pre><code class="language-js">Promise.prototype.catch()
+</code></pre>
+<p>它只接受一个参数: <code>reject 处理方法</code>,这个方法就是一个语法糖，与Promise.prototype.then(null,reject) 等价 , 其行为也与 then 一致</p>
+<pre><code class="language-js">// 等同于
+Promise.prototype.then(null,reject)
+</code></pre>
+<blockquote>
+<p><b style="color:#ff4757">注意</b>： then 和 catch 均会等待当前线程中同步方法执行完毕后再执行</p>
+</blockquote>
+<pre><code class="language-js">let syncFunc,
+    p = new Promise(resolve =&gt; {
+      syncFunc = function () {
+        console.log(1)
+        resolve()
+        console.log(2)
+      }
+    })
+  
+  p.then(()=&gt;{
+    console.log(3)
+  })
+  
+  syncFunc()
+
+  console.log(4)
+
+
+// 1 2 4 3
+</code></pre>
+<br/>
+<h2 id="四-拒绝rejectedpromise的处理">四、 拒绝(rejected)Promise的处理</h2>
+<p>无论是使用 Promise.reject( ) 或在Promise 执行函数中使用 throw 都会生成一个 <code>rejected Promise对象</code></p>
+<pre><code class="language-js">const p1 = new Promise((resolve,reject)=&gt;{reject(&quot;err&quot;)})
+
+const p2 = new Promise((resolve,reject)=&gt;{throw &quot;err&quot;})
+
+const p3 = Promise.reject(&quot;err&quot;)
+
+const p4 = Promise.reject(Error(&quot;err&quot;))
+</code></pre>
+<p>如上文所说&quot;异步程序的异常错误不能使用 try/catch 捕获&quot;, 转而应该使用 Promise.prototype.catch() 或者 Promise.prototype.then(null,reject)</p>
+<br/>
+<h2 id="五-其余静态方法">五、 其余静态方法</h2>
+<h4 id="1-将一组-promise-合并到一起串行执行">1. 将一组 Promise 合并到一起串行执行</h4>
+<pre><code class="language-js">Promise.all()
+</code></pre>
+<p>接收一个数组参数,数组中的每一项都会经过 <code>Promise.resolve</code> 转换为 Promise对象</p>
+<pre><code class="language-js">const p = Promise.all([
+  1,
+  '1',
+  true,
+  function(){},
+  null,
+  Promise.resolve()
+])
+</code></pre>
+<p>如果所有的Promise状态都变更为了 <code>fulfilled</code>, 则 Promise.all 的状态才能变为fulfilled , 返回的值就是所有 Promise 执行后的返回值组成的数组</p>
+<pre><code class="language-js">function fn() {
+    return Promise.resolve(2)
+}
+
+Promise.all([
+  Promise.resolve(1),
+  fn(),
+  Promise.resolve(3)
+]).then(res=&gt;{
+  console.log(res);
+})
+
+// [1,2,3]
+</code></pre>
+<p>只要有一个 Promise 的状态变为了 <code>rejected</code>, 则 Promise.all 的状态就会变为 rejected , 返回第一个状态变更为rejected的返回的值</p>
+<pre><code class="language-js">function fn() {
+    return Promise.reject(2)
+}
+
+Promise.all([
+  Promise.resolve(1),
+  fn(),
+  Promise.resolve(3),
+  Promise.reject(4)
+]).catch(err=&gt;{
+  console.log(err);
+})
+
+// 2
+</code></pre>
+<p>导致 Promise.all 状态变更为 <code>rejected</code>时，并不会影响到其他 Promise 的执行</p>
+<pre><code class="language-js">Promise.all([
+  Promise.resolve(console.log(1)),
+  Promise.resolve(console.log(2)),
+  Promise.reject(3),
+  Promise.resolve(console.log(4))
+]).catch(err=&gt;{
+  console.log(err);
+})
+
+// 1 2 4 3
+</code></pre>
 
                 </div>
                 <div class="clear"></div>
@@ -146,19 +348,19 @@
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/uni-app-tiao-jian-bian-yi.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/uni-app-tiao-jian-bian-yi/" class="full-link"></a>
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s3.ax1x.com/2021/03/08/6Q4sdP.png');"></div>
+                 <a href="https://yuyang0564.github.io/l9UKVN6al/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-04-10">2020-04-10</time>
-                  <h4 class="title white no-margin">uni-app 条件编译</h4>
+                  <time datetime="2021-03-08">2021-03-08</time>
+                  <h4 class="title white no-margin">flex 布局</h4>
                 </div>
                  <span class="epcl-button red">
-                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
+                  <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
                 </span>
                 <div class="overlay"></div>
               </article>
-              
               
 
                 <div class="clear"></div>

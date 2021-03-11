@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>uni-app 差异化注意事项 | 学习笔记</title>
+<title>文章归档 | 学习笔记</title>
 <meta name="description" content="" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -14,15 +14,11 @@
 <script src="https://yuyang0564.github.io/media/js/view-image.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
-    <meta name="referrer" content="never">
-    <meta name="description" content="🌈      1. 不要把 js,css,scss 等文件直接放入 static 文件中，因为此文件是不会进行编译的
-🌈      2. 在css中和组件中引入样式，只能通过相对路径的方式
-@import url(&quot;../....." />
-    <meta name="keywords" content="uni-app" />
-    <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
-    <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
   <body>
+    <!-- start: #wrapper -->
+    <div class="wrapper">
+      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -83,101 +79,54 @@
         </div>
       </div>
 
-      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
-
-        <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://yuyang0564.github.io/post-images/uni-app-chai-yi-hua-zhu-yi-shi-xiang.jpg');">
-            <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-04-10"><i class="fa fa-calendar"></i><span class="lately">1 年前</span></time>
-              
-              <a href="https://yuyang0564.github.io/uni-app-chai-yi-hua-zhu-yi-shi-xiang/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/uni-app-chai-yi-hua-zhu-yi-shi-xiang/"> </span>
-              </a>
-              <span id="/uni-app-chai-yi-hua-zhu-yi-shi-xiang/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
-              
-            </div>
-            <div class="info">
-              <div class="tags ">
-                
-                      <a href="https://yuyang0564.github.io/gLtCooV-x/" class="ctag ctag-0 ctag-gLtCooV-x" aria-label="">uni-app</a>
-                    
-              </div>
-              <h1 class="title ularge white bold">uni-app 差异化注意事项</h1>
-            </div>
-          </div>
-        </div>  
-
+      <main id="home" class="main fullcover no-sidebar content">
+        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
         <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile">
-            <article class="main-article post">
-              <section class="post-content">
-                <div class="text">
-                  <p>🌈      1. 不要把 <code>js,css,scss</code> 等文件直接放入 <strong>static</strong> 文件中，因为此文件是不会进行编译的</p>
-<p>🌈      2. 在<strong>css中</strong>和<strong>组件中</strong>引入样式，只能通过<code>相对路径</code>的方式</p>
-<pre><code class="language-css">@import url(&quot;../../xx.css&quot;);
-</code></pre>
-<pre><code class="language-html">&lt;style&gt;
-    @import &quot;../../xxx.css&quot;
-&lt;/style&gt;
-</code></pre>
-<p>🌈      3. 使用<code>rpx</code> 作为尺寸单位， 默认根据 750px 的宽度计算</p>
-<p>🌈      4. <strong>背景图片</strong> 不支持本地图片，可以转为<code>base64</code> , 注意源文件不要大于 <strong>40Kb</strong></p>
-<p>🌈      5.  不支持 vue 的 classObject 的方式绑定样式</p>
-<pre><code class="language-html">    &lt;div :class=&quot;classObject&quot;&gt;&lt;/div&gt;
-    &lt;script&gt;
-        data: {
-            classObject: {
-                color: &quot;#fff&quot;,
-                fontSize: &quot;16px&quot;
-            }
-        }
-    &lt;/script&gt;
-</code></pre>
-<p>🌈      6. 不支持在自定义组件上使用 <code>class</code> 和 <code>style</code> 绑定</p>
-<pre><code class="language-html">    &lt;v-component :class=&quot;classStyle&quot; /&gt;
-</code></pre>
-<p>🌈      7. 事件修饰符只支持 <code>.stop</code> 阻止事件冒泡 ， 其他修饰符只在 <code>H5</code> 端有效</p>
-
-                </div>
-                <div class="clear"></div>
-              </section>
-            </article>
-            <div class="clear"></div>
-
-            <section class="related section">
-              
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://yuyang0564.github.io/post-images/uni-app-tiao-jian-bian-yi.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/uni-app-tiao-jian-bian-yi/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-04-10">2020-04-10</time>
-                  <h4 class="title white no-margin">uni-app 条件编译</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
-              
-
-                <div class="clear"></div>
-            </section>
-
-              <div class="clear"></div>
-              
+          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
+                
+            <!-- start: .articles -->
             
-              <div id="comments" class="bg-white hosted ">
-                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+
+
+<div class="main-article post">
+  <h2 class="year">共 51 篇文章</h2>
+
+    <h2 class="year">2020</h2>
+    
+      
+      <article class="item default grid-33 tablet-grid-50 np-mobile">
+        <a href="https://yuyang0564.github.io/uni-app-chai-yi-hua-zhu-yi-shi-xiang/" class="thumb hover-effect">
+          <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://yuyang0564.github.io/post-images/uni-app-chai-yi-hua-zhu-yi-shi-xiang.jpg');"></span>
+        </a>
+        <div class="info gradient-effect">
+          <time datetime="2020-04-10">1 年前</time>
+          <h4 class="title usmall">
+            <a href="https://yuyang0564.github.io/uni-app-chai-yi-hua-zhu-yi-shi-xiang/">uni-app 差异化注意事项</a>
+          </h4>
+        </div>
+      </article>
+      
+    
+    <div class="clear"></div>
+
+</div>
+            <!-- end: .articles -->
+            
+                        <div class="epcl-pagination section">
+              <div class="nav">
+                
+                  <a href="https://yuyang0564.github.io/archives/" class="prev button red">上一页</a>
+                
+                
               </div>
-              <div class="clear"></div>
-            
-
             </div>
+            
           </div>
+          </div>
+        </div>
       </main>
 
-          <footer id="footer" class="grid-container">
+        <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -405,9 +354,6 @@
     <div class="clear"></div>
 
         
-
-      
-    <script src="https://yuyang0564.github.io/media/js/functions-post.js"></script>
 
     </div>
     <!-- end: #wrapper -->
