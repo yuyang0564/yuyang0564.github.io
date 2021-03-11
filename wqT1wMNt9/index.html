@@ -1,8 +1,8 @@
 <html>
   <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>标签列表 | 学习笔记</title>
+<title>async/await 异步函数 | 学习笔记</title>
 <meta name="description" content="" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -14,11 +14,17 @@
 <script src="https://yuyang0564.github.io/media/js/view-image.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
+    <meta name="referrer" content="never">
+    <meta name="description" content="基础
+async/await 是ES8新增的一组规范, 它可以让我们以同步方式书写的代码,以异步的方式执行
+1. async 关键字
+async 用来声明一个异步函数,它可以使用在 函数声明,函数表达式,箭头函数
+async functio..." />
+    <meta name="keywords" content="es6" />
+    <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -79,40 +85,132 @@
         </div>
       </div>
 
-      <main id="tags" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/07/21/U5orPH.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2021-03-11"><i class="fa fa-calendar"></i><span class="lately">2 小时前</span></time>
+              
+              <a href="https://yuyang0564.github.io/wqT1wMNt9/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/wqT1wMNt9/"> </span>
+              </a>
+              <span id="/wqT1wMNt9/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://yuyang0564.github.io/EXv-_I_8W/" class="ctag ctag-0 ctag-EXv-_I_8W" aria-label="">es6</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">async/await 异步函数</h1>
+            </div>
+          </div>
+        </div>  
+
         <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h1 id="基础">基础</h1>
+<p><code>async/await</code> 是ES8新增的一组规范, 它可以让我们以同步方式书写的代码,以异步的方式执行</p>
+<h3 id="1-async-关键字">1. async 关键字</h3>
+<p>async 用来声明一个异步函数,它可以使用在 <code>函数声明</code>,<code>函数表达式</code>,<code>箭头函数</code></p>
+<pre><code class="language-js">async function fn() {}              
 
-          <div class="widget_tag_cloud tagcloud">
-            
-              <a href="https://yuyang0564.github.io/EXv-_I_8W/" class="ctag ctag-0 ctag-EXv-_I_8W" aria-label="">es6</a>
-            
-              <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-1 ctag-LQTZpssFQ" aria-label="">css</a>
-            
-              <a href="https://yuyang0564.github.io/s2x-Jul-G/" class="ctag ctag-2 ctag-s2x-Jul-G" aria-label="">Array</a>
-            
-              <a href="https://yuyang0564.github.io/_-SlRQFkE/" class="ctag ctag-3 ctag-_-SlRQFkE" aria-label="">DOM</a>
-            
-              <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-4 ctag-tgCHrWGK6" aria-label="">javascript</a>
-            
-              <a href="https://yuyang0564.github.io/FwrXzFa9g/" class="ctag ctag-5 ctag-FwrXzFa9g" aria-label="">工具</a>
-            
-              <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-6 ctag-XZnOL5tqL" aria-label="">vue2</a>
-            
-              <a href="https://yuyang0564.github.io/gLtCooV-x/" class="ctag ctag-7 ctag-gLtCooV-x" aria-label="">uni-app</a>
-            
-              <a href="https://yuyang0564.github.io/wPui5d2amF/" class="ctag ctag-8 ctag-wPui5d2amF" aria-label="">编码规范</a>
-            
-          </div>
-        </div>
+let fn = async function() {}
 
-        </div>
+class NewClass {
+  async fn() {}
+}
+
+let fn = async () =&gt; {}
+</code></pre>
+<blockquote>
+<p><b style="color:#1e90ff">提示:</b> 声明为 async 的函数还是会同步执行的。 不过在 <code>return</code> 时, 返回值会经过 <code>Promise.resolve</code> 包装</p>
+</blockquote>
+<pre><code class="language-js">console.log(1);
+fn().then(console.log)
+async function fn() {
+  console.log(2);
+  return 4
+}  
+console.log(3);
+
+
+// 1 2 3 4
+</code></pre>
+<h3 id="2-await-关键字">2. await 关键字</h3>
+<p><code>await</code> 只能使用在 async 标识的函数中, 单独使用会报错。 它会<b>暂停异步函数的执行</b>， 让出执行线程，优先执行异步函数之外的同步代码,之后再回到第一个 await 处，恢复执行</p>
+<pre><code class="language-js">async function foo() {
+  console.log(1);
+  let p = new Promise((resolve,reject)=&gt;{setTimeout(resolve,1000,3)})
+  console.log(2);
+  console.log(await p);
+  console.log(4); 
+}
+foo()
+console.log(5);
+
+// 1 2 5 3 4
+</code></pre>
+<p>当 await 遇到抛出错误或状态变为rejected，会停止执行之后的代码</p>
+<pre><code class="language-js">async function foo() {
+  console.log(1);
+  let p = new Promise((resolve,reject)=&gt;{setTimeout(reject,1000,3)})
+  console.log(2);
+  console.log(await p);
+  console.log(4); 
+}
+foo()
+console.log(5);
+
+
+// 1 2 5 
+</code></pre>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/07/21/U5orPH.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/DHz3NA5h8/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2021-03-11">2021-03-11</time>
+                  <h4 class="title white no-margin">Promise</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
+            
+              <div id="comments" class="bg-white hosted ">
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+              </div>
+              <div class="clear"></div>
+            
+
+            </div>
           </div>
-        </div>
       </main>
 
-        <footer id="footer" class="grid-container">
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -342,6 +440,9 @@
     <div class="clear"></div>
 
         
+
+      
+    <script src="https://yuyang0564.github.io/media/js/functions-post.js"></script>
 
     </div>
     <!-- end: #wrapper -->
