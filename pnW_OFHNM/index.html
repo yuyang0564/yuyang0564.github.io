@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>switch 语句 | 学习笔记</title>
+<title>3.2 innerText/outerText | 学习笔记</title>
 <meta name="description" content="" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,16 +15,16 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="switch 属于流程控制语句
-switch (expression) { 
- case value: 
-    statement 
- break; 
- case value: 
-    statement 
- break; 
- defa..." />
-    <meta name="keywords" content="javascript" />
+    <meta name="description" content="innerText
+1. 读取
+获取该元素所有后代元素的文本内容
+&lt;ul&gt;
+    &lt;li&gt;
+        a
+        &lt;div&gt;
+            b
+        &lt;/div&..." />
+    <meta name="keywords" content="DOM" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
@@ -94,21 +94,21 @@ switch (expression) {
         <div class="center content">
           <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-07-06"><i class="fa fa-calendar"></i><span class="lately">8 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2021-03-11"><i class="fa fa-calendar"></i><span class="lately">几秒前</span></time>
               
-              <a href="https://yuyang0564.github.io/9HbicUlds/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/9HbicUlds/"> </span>
+              <a href="https://yuyang0564.github.io/pnW_OFHNM/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/pnW_OFHNM/"> </span>
               </a>
-              <span id="/9HbicUlds/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/pnW_OFHNM/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-0 ctag-tgCHrWGK6" aria-label="">javascript</a>
+                      <a href="https://yuyang0564.github.io/_-SlRQFkE/" class="ctag ctag-0 ctag-_-SlRQFkE" aria-label="">DOM</a>
                     
               </div>
-              <h1 class="title ularge white bold">switch 语句</h1>
+              <h1 class="title ularge white bold">3.2 innerText/outerText</h1>
             </div>
           </div>
         </div>  
@@ -118,27 +118,67 @@ switch (expression) {
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="switch-属于流程控制语句">switch 属于流程控制语句</h1>
-<pre><code class="language-js">switch (expression) { 
- case value: 
-    statement 
- break; 
- case value: 
-    statement 
- break; 
- default: statement 
-}
+                  <h1 id="innertext">innerText</h1>
+<h3 id="1-读取">1. 读取</h3>
+<p>获取该元素所有后代元素的文本内容</p>
+<pre><code class="language-js">&lt;ul&gt;
+    &lt;li&gt;
+        a
+        &lt;div&gt;
+            b
+        &lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+let ul = document.querySelect(&quot;ul&quot;)
+ul.innerText
+/*
+    a
+    b
+*/
 </code></pre>
-<h2 id="说明">👉 说明</h2>
-<ul>
-<li>switch 语句中的每一个 case 的含义是：“如果表达式等于这个值（value），则执行后面的<br>
-语句（statement）”。</li>
-<li>通过 <code>break</code> 关键字跳出 switch 语句。</li>
-<li>如果省略 break 关键字，就会再执行完当前 case 后，继续执行下一个 case。</li>
-<li><code>default</code> 关键字则用于在表达式不匹配前面任何一个case时候，执行的默认代码</li>
-</ul>
-<h2 id="️-️-特别注意">❗️ ❗️ 特别注意</h2>
-<p><code>case</code> 不会发生隐式转换，它默认使用<strong style="red">全等( === ) </strong>操作符与 switch 的值进行比较</p>
+<h3 id="2-写入">2. 写入</h3>
+<p>设置的内容将替换该元素的所有后代</p>
+<pre><code class="language-js">&lt;ul&gt;
+    &lt;li&gt;
+        a
+        &lt;div&gt;
+            b
+        &lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+let ul = document.querySelect(&quot;ul&quot;)
+ul.innerText = &quot;a&quot;
+/*
+   &lt;ul&gt; a  &lt;/ul&gt;
+*/
+</code></pre>
+<blockquote>
+<p><b style="color: #ff4757">注意</b>: 如果设置的内容中存在 HTML 的语法字符，则会被转义 (包括 “小于号、大于号、引号及和号”)</p>
+</blockquote>
+<pre><code class="language-html">&lt;div&gt;
+  &lt;p&gt;子节点&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  ...
+  div.innerText = &quot;Hello &amp; welcome, &lt;b&gt;\&quot;reader\&quot;!&lt;/b&gt;&quot;;
+
+
+  // 会被转义为
+  /*
+    &lt;div&gt;
+      Hello &amp;amp; welcome, &amp;lt;b&amp;gt;&amp;quot;reader&amp;quot;!&amp;lt;/b&amp;gt;
+    &lt;/div&gt;
+  */
+&lt;/script&gt;
+</code></pre>
+<h1 id="outertext">outerText</h1>
+<h3 id="1-读取-2">1. 读取</h3>
+<p>与 innerText 功能一致</p>
+<h3 id="2-写入-2">2. 写入</h3>
+<p>写入时它会连同调用的元素节点一同替换</p>
 
                 </div>
                 <div class="clear"></div>
@@ -148,26 +188,13 @@ switch (expression) {
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/tkbkLazjo/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-07-06">2020-07-06</time>
-                  <h4 class="title white no-margin">类型检测</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
                 <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/FKgYxSmal/" class="full-link"></a>
+                 <a href="https://yuyang0564.github.io/-ok0OSKyp/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-06-29">2020-06-29</time>
-                  <h4 class="title white no-margin">数值转换</h4>
+                  <time datetime="2021-03-11">2021-03-11</time>
+                  <h4 class="title white no-margin">3.1 innerHTML/outerHTML</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
