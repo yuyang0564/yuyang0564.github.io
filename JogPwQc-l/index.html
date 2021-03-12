@@ -15,9 +15,11 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="window.innerWidth\innerHeight , window.outerWidth\outerHeight
-outer*  用来获取浏览器的宽\高 , 包含浏览器边框和滚动条
-inner*   用来获取浏览器当前视口的宽\高..." />
+    <meta name="description" content="👉 classList  样式类操作
+element.classList 返回了一个 DOMToKenList 集合对象，包含了元素的所有 class 类名,通过一系列方法可以实现，添加、删除、替换类名
+
+📌 length 属性
+返回类..." />
     <meta name="keywords" content="DOM" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
@@ -73,7 +75,7 @@ inner*   用来获取浏览器当前视口的宽\高..." />
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1615526972988" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1615527426185" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -112,33 +114,79 @@ inner*   用来获取浏览器当前视口的宽\高..." />
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h2 id="windowinnerwidthinnerheight-windowouterwidthouterheight">window.innerWidth\innerHeight , window.outerWidth\outerHeight</h2>
-<p>outer*  用来获取浏览器的宽\高 , 包含浏览器边框和滚动条<br>
-inner*   用来获取浏览器当前视口的宽\高 , 不含浏览器边框和滚动条</p>
-<h2 id="offsetwidth-offsetheight">offsetWidth , offsetHeight</h2>
-<p>标准盒模型包含 <code>元素宽高</code> + <code>内边距</code> + <code>边框</code><br>
-border-box 时只包含计算过后的 <code>宽或高</code><br>
-<a href="https://imgchr.com/i/sCv1m9"><img src="https://s3.ax1x.com/2021/01/04/sCv1m9.png" alt="sCv1m9.png" loading="lazy"></a></p>
-<h2 id="clientwidth-clientheight">clientWidth , clientHeight</h2>
-<p>标准盒模型包含元素的<code>元素宽高</code> + <code>内边距</code> - <code>滚动条部分</code><br>
-border-box 时只包含计算过后的 <code>宽或高</code>  - <code>滚动条部分</code><br>
-<a href="https://imgchr.com/i/sPSL1f"><img src="https://s3.ax1x.com/2021/01/04/sPSL1f.png" alt="sPSL1f.png" loading="lazy"></a></p>
-<h2 id="scrollwidth-scrollheight">scrollWidth , scrollHeight</h2>
-<p>元素的<code>宽或高</code> + <code>内边距</code> + <code>滚动条隐藏的距离</code>  , 用于获取元素的<code>实际尺寸</code><br>
-<a href="https://imgchr.com/i/sPpF3V"><img src="https://s3.ax1x.com/2021/01/04/sPpF3V.png" alt="sPpF3V.png" loading="lazy"></a></p>
-<h2 id="offsettop">offsetTop</h2>
-<p>元素上边框,距离<code>包含元素</code>上边框的像素距离</p>
-<h2 id="offsetleft">offsetLeft</h2>
-<p>元素左边框,距离<code>包含元素</code>左边框的像素距离</p>
-<h2 id="scrolltop-可设置">scrollTop (可设置)</h2>
-<p>被卷去的内容的顶部，距离元素顶部的距离</p>
-<h2 id="scrollleft-可设置">scrollLeft (可设置)</h2>
-<p>被卷去的内容的顶部，距离元素左侧的距离</p>
-<h1 id="元素相对于视口顶端的位置信息-只读">👉 元素相对于视口顶端的位置信息 (只读)</h1>
-<p><strong style="color: #3498db">element.getBoundingClientRect(  )</strong><br>
-在标准盒子模型下，元素的尺寸等于 <code>width/height</code> + <code>padding</code> + <code>border</code>的总和<br>
-在border-box下，元素的尺寸等于 <code>width / height</code></p>
-<figure data-type="image" tabindex="1"><a href="https://imgchr.com/i/sP9lIs"><img src="https://s3.ax1x.com/2021/01/04/sP9lIs.png" alt="sP9lIs.png" loading="lazy"></a></figure>
+                  <h1 id="classlist-样式类操作">👉 classList  样式类操作</h1>
+<p>element.classList 返回了一个 <code>DOMToKenList</code> 集合对象，包含了元素的所有 class 类名,通过一系列方法可以实现，添加、删除、替换类名</p>
+<figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2020/07/10/Uuge8H.png" alt="Uuge8H.png" loading="lazy"></figure>
+<p>📌 <strong style="color: #2ecc71">length</strong> 属性<br>
+返回类名的个数</p>
+<p>📌 <strong style="color: #3498db">contains( className )</strong><br>
+验证类名是否存在</p>
+<p>📌 <strong style="color: #3498db">item( index )</strong><br>
+获取第 N 个类名</p>
+<p>📌 <strong style="color: #3498db">add( className )</strong><br>
+添加类名 ， 如果已经存在则忽略</p>
+<p>📌 <strong style="color: #3498db">remove( className )</strong><br>
+删除类名</p>
+<p>📌 <strong style="color: #3498db">toggle( className )</strong><br>
+如果类名已存在则删除，如果不存在则添加</p>
+<h1 id="style-样式操作">👉 style  样式操作</h1>
+<p>任何支持<code>style</code>的元素节点都拥有一个<b style="color: #e74c3c">style</b>对象，该对象包含通过style为元素设置的样式</p>
+<blockquote>
+<p><b style="color:#e74c3c">注意</b>: 不包括css类中的样式</p>
+</blockquote>
+<ol>
+<li>设置样式（设置样式时需要加上<code>单位</code>,否则在标准模式下会被忽略）</li>
+</ol>
+<pre><code class="language-js">div.style.width = &quot;20px&quot;
+</code></pre>
+<ol start="2">
+<li>读取样式</li>
+</ol>
+<pre><code class="language-js">div.style.width
+</code></pre>
+<p>📌 <strong style="color: #2ecc71">cssText</strong> 属性<br>
+可以读取/<code>设置(覆盖写入)</code>完整的 style 样式代码,就像在HTML中设置style一样</p>
+<ol>
+<li>设置</li>
+</ol>
+<pre><code class="language-js">div.style.cssText = &quot;width: 200px; heigjt: 200px&quot;
+</code></pre>
+<ol start="2">
+<li>读取</li>
+</ol>
+<figure data-type="image" tabindex="2"><a href="https://imgtu.com/i/6UPeAg"><img src="https://s3.ax1x.com/2021/03/12/6UPeAg.png" alt="6UPeAg.png" loading="lazy"></a></figure>
+<p>📌 <b style="color: #2ecc71">length</b> 返回元素 style 的数量</p>
+<pre><code class="language-js">div.style.length
+</code></pre>
+<p>📌 <strong style="color: #3498db">item( styleName )</strong><br>
+获取对应索引的样式名<code>(样式索引从0开始)</code>，通常与 length 结合使用</p>
+<pre><code class="language-js">let len = div.style.length
+for(let i = 0; i &lt; len; i++) {
+  div.style.item(i)
+}
+
+/*
+  color
+  width
+  font-size
+*/
+</code></pre>
+<p>📌 <strong style="color: #3498db">getPropertyValue( styleName )</strong><br>
+通过样式名获取样式的值</p>
+<p>📌 <strong style="color: #3498db">setProperty( styleName , value )</strong><br>
+追加行内样式</p>
+<p>📌 <strong style="color: #3498db">removeProperty( styleName  )</strong><br>
+删除一个行内样式</p>
+<h1 id="元素的尺寸与位置">👉 元素的尺寸与位置</h1>
+<p>每个节点元素都有一个 <code>getBoundingClientRect()</code> 方法，它返回一个DOMRect 对象，包含了元素相对于视口的 <code>width</code>、<code>height</code>、<code>left</code>、<code>top</code>、<code>bottom</code> 属性<br>
+<a href="https://imgtu.com/i/6U1Yy8"><img src="https://s3.ax1x.com/2021/03/12/6U1Yy8.png" alt="6U1Yy8.png" loading="lazy"></a></p>
+<pre><code class="language-js">div.getBoundingClientRect()
+</code></pre>
+<figure data-type="image" tabindex="3"><a href="https://imgtu.com/i/6U1oSx"><img src="https://s3.ax1x.com/2021/03/12/6U1oSx.png" alt="6U1oSx.png" loading="lazy"></a></figure>
+<h1 id="应用在元素上的最终样式-只读">👉 应用在元素上的最终样式 (只读)</h1>
+<p><strong style="color: #3498db">window.getComputedStyle( tag )</strong><br>
+返回一个 <code>CSSStyleDeclaration</code> 集合对象，包含了当前该元素在文档中最终生效的所有样式。</p>
+<figure data-type="image" tabindex="4"><img src="https://s1.ax1x.com/2020/07/10/UKUqXD.png" alt="样式片段" loading="lazy"></figure>
 
                 </div>
                 <div class="clear"></div>
