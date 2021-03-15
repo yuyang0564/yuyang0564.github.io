@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>6.事件 | 学习笔记</title>
+<title>7.事件 | 学习笔记</title>
 <meta name="description" content="" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,13 +15,13 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="DOM0 级事件
-
-🗣DOM0事件只会发生在冒泡阶段
-
-1.HTML属性内写事件
-&lt;button id=&quot;btn&quot; onclick=&quot;fn()&quot;&gt;点击事件&lt;/button&gt;
-..." />
+    <meta name="description" content="事件流
+事件流用于描述页面接收事件的顺序,一共有2种分别为事件冒泡与事件捕获
+1. 事件冒泡
+事件从触发的元素开始逐级向上传播,一直到传播到 window
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt; 
+  &lt..." />
     <meta name="keywords" content="DOM,javascript" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
@@ -77,7 +77,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1615527426185" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1615796882995" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -108,7 +108,7 @@
                       <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-1 ctag-tgCHrWGK6" aria-label="">javascript</a>
                     
               </div>
-              <h1 class="title ularge white bold">6.事件</h1>
+              <h1 class="title ularge white bold">7.事件</h1>
             </div>
           </div>
         </div>  
@@ -118,7 +118,25 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h2 id="dom0-级事件">DOM0 级事件</h2>
+                  <h1 id="事件流">事件流</h1>
+<p>事件流用于描述页面接收事件的顺序,一共有2种分别为<code>事件冒泡</code>与<code>事件捕获</code></p>
+<h3 id="1-事件冒泡">1. 事件冒泡</h3>
+<p>事件<b>从触发的元素开始</b>逐级向上传播,一直到传播到 window</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt; 
+&lt;html&gt; 
+  &lt;head&gt; 
+  &lt;title&gt;Event Bubbling Example&lt;/title&gt; 
+  &lt;/head&gt; 
+  &lt;body&gt; 
+  &lt;div onclick=&quot;clickMe&quot;&gt;Click Me&lt;/div&gt; 
+  &lt;/body&gt; 
+&lt;/html&gt;
+</code></pre>
+<p>例: 此例中 div 的点击事件传播顺序为  div &gt; body &gt; html &gt; document &gt; window</p>
+<h3 id="2-事件捕获">2. 事件捕获</h3>
+<p>事件捕获正好与事件冒泡相反,它会从 window 开始最先触发事件,然后逐级下传播到具体触发事件的元素<br>
+window &gt; document &gt; html &gt; body &gt; div</p>
+<h1 id="dom0-级事件">DOM0 级事件</h1>
 <blockquote>
 <p>🗣DOM0事件只会发生在冒泡阶段</p>
 </blockquote>
@@ -130,19 +148,13 @@
 btn.onclick = function(){
     ...
 }
+
+
+// 移除事件
+btn.onclick = null
 </code></pre>
-<h2 id="dom2-级事件">DOM2 级事件</h2>
-<blockquote>
-<p>🗣DOM2级事件会经过 3 个阶段</p>
-</blockquote>
-<ol>
-<li>捕获阶段</li>
-<li>到达事件源</li>
-<li>冒泡阶段</li>
-</ol>
-<blockquote>
-<p>📌 <strong style="color: #3498db; ">addEventListener( event , function [, useCapture] )</strong></p>
-</blockquote>
+<h1 id="dom2-级事件">DOM2 级事件</h1>
+<p><b style="color: #3498db; ">addEventListener( event , function [, useCapture] )</b></p>
 <table>
 <thead>
 <tr>
@@ -161,11 +173,23 @@ btn.onclick = function(){
 </tr>
 <tr>
 <td style="text-align:center">useCapture</td>
-<td style="text-align:center">选择事件发生在冒泡阶段还是捕获阶段， 默认捕获阶段</td>
+<td style="text-align:center">（默认）false,事件发生在冒泡阶段。</td>
 </tr>
 </tbody>
 </table>
-<h3 id="鼠标事件">鼠标事件</h3>
+<b/>
+<h4 id="dom2级事件的好处可以为同一个事件添加多个事件处理程序它们会按照顺序触发">DOM2级事件的好处可以为同一个事件添加多个事件处理程序，它们会按照顺序触发</h4>
+<pre><code class="language-js">btn.addEventListener(&quot;click&quot;,()=&gt;{
+    console.log(1);
+})
+
+btn.addEventListener(&quot;click&quot;,()=&gt;{
+  console.log(2);
+})
+</code></pre>
+<p><b style="color: #3498db; ">removeEventListener( event , function [, useCapture] )</b><br>
+DOM2级事件只能使用配套的方法来删除,并且需要与设置时的参数一致</p>
+<h1 id="鼠标事件">鼠标事件</h1>
 <ol>
 <li>点击事件</li>
 </ol>
@@ -205,6 +229,10 @@ btn.onclick = function(){
 <td style="text-align:center">mousewheel</td>
 <td style="text-align:center">鼠标滚轮滚动</td>
 </tr>
+<tr>
+<td style="text-align:center">mouseup</td>
+<td style="text-align:center">松开鼠标按键</td>
+</tr>
 </tbody>
 </table>
 <ol start="2">
@@ -239,6 +267,31 @@ btn.onclick = function(){
 </tr>
 </tbody>
 </table>
+<h1 id="触摸事件">触摸事件</h1>
+<p><b style="color: #27ae60; ">touchstart</b> 手指放在屏幕上<br>
+<b style="color: #27ae60; ">touchmove</b> 手指放在屏幕上移动,连续触发。在事件中调用 <code>preventDefault()</code> 可以阻止页面滚动<br>
+<b style="color: #27ae60; ">touchend</b> 手指离开屏幕</p>
+<h1 id="事件优化">事件优化</h1>
+<p>事件处理程序的数量与页面整体的性能有直接的关系</p>
+<h3 id="1-事件委托">1. 事件委托</h3>
+<p>主要解决为多个DOM设置相同的一类事件而占用内存</p>
+<blockquote>
+<p>原理: 通过为<code>所有需要设置事件的元素</code>他们共同的祖先，绑定事件处理程序,当事件触发时，通过事件对象的 <code>target</code> 属性,判断当前事件触发时所在的元素</p>
+</blockquote>
+<pre><code class="language-html">&lt;ul id=&quot;list&quot;&gt;
+  &lt;li&gt;1&lt;/li&gt;
+  &lt;li&gt;2&lt;/li&gt;
+  &lt;li&gt;3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+  const ul = document.querySelect(&quot;#list&quot;)
+  ul.addEventListener(&quot;click&quot;,(e)=&gt;{
+    e.target  // 通过 target 判断当前触发事件时所在的元素
+  })
+
+&lt;/script&gt;
+</code></pre>
+<h3 id="2-及时删除事件处理程序">2. 及时删除事件处理程序</h3>
 
                 </div>
                 <div class="clear"></div>
