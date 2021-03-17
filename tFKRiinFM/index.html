@@ -15,9 +15,9 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="v-model 用来在表单类型中创建双向数据绑定
+    <meta name="description" content="在表单类型中可以通过 v-model  来创建双向数据绑定
 它会忽略表单元素 value 、 selected 、 checked 的初始值 ，而使用 v-model 绑定的数据作为初始值
-&lt;input  v-model=&quot;input..." />
+&lt;input  v-model=&quot;..." />
     <meta name="keywords" content="vue2" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
@@ -73,7 +73,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1615970196737" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1615972517492" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -112,7 +112,7 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="v-model-用来在表单类型中创建双向数据绑定">v-model 用来在表单类型中创建双向数据绑定</h1>
+                  <h1 id="在表单类型中可以通过-v-model-来创建双向数据绑定">在表单类型中可以通过 v-model  来创建双向数据绑定</h1>
 <p>它会忽略表单元素 <code>value</code> 、 <code>selected</code> 、 <code>checked</code> 的初始值 ，而使用 v-model 绑定的数据作为初始值</p>
 <pre><code class="language-html">&lt;input  v-model=&quot;inputValue&quot; /&gt;
 </code></pre>
@@ -126,9 +126,9 @@
 </code></pre>
 <h1 id="v-model-是一个语法糖实际上它在底层监听用户的输入事件并更新数据">v-model 是一个语法糖🍡，实际上它在底层监听用户的输入事件并更新数据</h1>
 <ul>
-<li>针对 <code>text</code>  和  <code>textarea</code>  的 input，监听 <strong style="color: red">input</strong> 事件， 同步 value 属性</li>
-<li>针对  <code>checkbox</code> 和 <code>radio</code> 的 input , 监听 <strong style="color: red">change</strong> 事件 , 同步 checked 属性</li>
-<li>针对 <code>select</code> 元素 , 监听 <code>change</code>事件 ， 同步 value 属性</li>
+<li>针对 <code>text</code>  和  <code>textarea</code>  的 input，监听 <b style="color: red">input</b> 事件， 同步 value 属性</li>
+<li>针对  <code>checkbox</code> 和 <code>radio</code> 的 input , 监听 <b style="color: red">change</b> 事件 , 同步 checked 属性</li>
+<li>针对 <code>select</code> 元素 , 监听 <b style="color: red">change</b>事件 ， 同步 value 属性</li>
 </ul>
 <h2 id="checkbox-️">checkbox  ☕️</h2>
 <pre><code class="language-html">&lt;div&gt;

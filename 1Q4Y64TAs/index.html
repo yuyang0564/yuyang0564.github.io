@@ -15,10 +15,12 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="通过 v-on 监听DOM事件 , 并设置方法名, 当事件触发时，会调用指定的方法
-&lt;div v-on:click=&quot;handleClick&quot;&gt;点击事件&lt;/div&gt;
+    <meta name="description" content="v-on 用于监听事件， 简写 @
+v-on:click=&quot;事件处理函数&quot;
 
-可以在事件处理方法中接收一个..." />
+@click=&quot;事件处理函数&quot;
+
+&lt;div v-on:click=&quot;handleClick&quot;&g..." />
     <meta name="keywords" content="vue2" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
@@ -74,7 +76,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1615970196737" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1615972517492" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -113,24 +115,36 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="通过-v-on-监听dom事件-并设置方法名-当事件触发时会调用指定的方法">通过 v-on 监听DOM事件 , 并设置方法名, 当事件触发时，会调用指定的方法</h1>
+                  <h1 id="v-on-用于监听事件-简写">v-on 用于监听事件， 简写 @</h1>
+<pre><code class="language-js">v-on:click=&quot;事件处理函数&quot;
+
+@click=&quot;事件处理函数&quot;
+</code></pre>
 <pre><code class="language-html">&lt;div v-on:click=&quot;handleClick&quot;&gt;点击事件&lt;/div&gt;
 </code></pre>
-<p>可以在事件处理方法中接收一个默认参数为“原生事件对象”</p>
+<p>事件处理函数接收一个默认参数为“原生事件对象”</p>
 <pre><code class="language-js">handleClick(event) {...}
 </code></pre>
-<h1 id="为事件处理方法传递参数">为事件处理方法传递参数</h1>
+<h1 id="为事件传递参数">为事件传递参数</h1>
 <pre><code class="language-html">&lt;div v-on:click=&quot;handleClick('attribute')&quot;&gt;点击事件&lt;/div&gt;
 </code></pre>
-<h1 id="同时传递-event-事件对象-通过特殊的变量-event">同时传递 event 事件对象 ， 通过特殊的变量 $event</h1>
+<h2 id="同时传递-event-事件对象-通过特殊的变量-event">同时传递 event 事件对象 ， 通过特殊的变量 $event</h2>
 <pre><code class="language-html">  &lt;div v-on:click=&quot;handleClick('attribute',$event)&quot;&gt;点击事件&lt;/div&gt;
 </code></pre>
+<h2 id="执行多个事件处理函数">执行多个事件处理函数</h2>
+<pre><code class="language-html">  &lt;div 
+  @:click=&quot;handleClick('attribute',$event),handleClick2('attribute',$event)&quot;
+  &gt;点击事件&lt;/div&gt;
+</code></pre>
+<blockquote>
+<p><b style="color: #e74c3c">注意</b>： 执行多个事件处理函数时,必须显式的传入参数,没有默认 event 参数</p>
+</blockquote>
 <h1 id="事件修饰符">事件修饰符</h1>
 <ul>
 <li>.stop   阻止事件冒泡</li>
 <li>.prevent    阻止事件默认行为</li>
 <li>.capture    事件使用捕获</li>
-<li>.self   只有再触发事件的元素为自身时</li>
+<li>.self   只有再触发事件的元素为自身时才调用处理函数</li>
 <li>.once   只触发一次就销毁事件</li>
 </ul>
 
