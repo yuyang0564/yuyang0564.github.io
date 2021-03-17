@@ -75,7 +75,7 @@ Ajax 通信的主要限制就是跨域的安全策略,它要求发起请求的�
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1615969724144" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1615970196737" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -125,7 +125,7 @@ Ajax 通信的主要限制就是跨域的安全策略,它要求发起请求的�
 &quot;https://www.baidu.com&quot;  &quot;https://www.baidu.cn&quot;  // 域名不同导致跨域
 </code></pre>
 <h2 id="cros">CROS</h2>
-<p>“跨域资源共享”,它的基本思路就是使用自定义的HTTP头部允许浏览器与服务器之间相互了解</p>
+<p>浏览器通过“跨域资源共享”解决跨域问题 , 它的基本思路就是使用自定义的HTTP头部允许浏览器与服务器之间相互了解</p>
 <h3 id="简单请求-get-post">简单请求: GET 、 POST</h3>
 <p>当没有自定义请求头,请求类型为<code>text/plain</code>时，浏览器会发送一个额外的请求头 <code>Origin</code>, 它包含了发送请求页面的[协议,域名,端口] , 用来让服务器确定是否为其提供响应</p>
 <figure data-type="image" tabindex="1"><a href="https://imgtu.com/i/66Wo90"><img src="https://s3.ax1x.com/2021/03/17/66Wo90.png" alt="66Wo90.png" loading="lazy"></a></figure>
