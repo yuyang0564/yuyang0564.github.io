@@ -81,7 +81,7 @@ export default {
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1615972551349" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1615974970809" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -150,9 +150,6 @@ data = {
 </code></pre>
 <pre><code class="language-html">&lt;child-component   v-bind=&quot;data&quot; /&gt;
 </code></pre>
-<h1 id="单向数据流">单向数据流</h1>
-<p>父子之间通过 prop 形成了一个单向下行绑定。<br>
-父级的数据更新时会自动同步到所有的子组件中，但是不能直接在子组件中直接修改 prop 数据。这样会导致其他用到此数据的组件也发生改变</p>
 <h1 id="prop-验证">Prop 验证</h1>
 <p>可以通过为prop定义类型验证,当传入的值不满足要求时,浏览器会再控制台中提示错误信息</p>
 <ol>
@@ -192,6 +189,29 @@ data = {
 </code></pre>
 <p>👶 子组件未定义props 接收此数据时，会被渲染为</p>
 <pre><code class="language-html"> &lt;div num=&quot;10&quot;&gt; ... &lt;/div&gt;
+</code></pre>
+<h1 id="单向数据流">单向数据流</h1>
+<p>父子之间通过 prop 形成了一个单向下行绑定。<br>
+父级的数据更新时会自动同步到所有的子组件中，但是不能直接在子组件中直接修改 prop 数据。这样会导致其他用到此数据的组件也发生改变</p>
+<h2 id="使用-emit-事件">使用 <code>$emit()</code> 事件</h2>
+<p>当需要改变父组件通过 Prop 传递进来的某个值时，需要通过向外发送一个事件，父组件通过监听这个事件来拿到子组件传递的数据</p>
+<p>👶 子组件通过<code>$emit()</code>向外发送事件,第一个参数即为<code>事件名</code>,第二个参数可以抛出一个值</p>
+<pre><code class="language-html"> &lt;button @click=&quot;handle&quot;&gt;Click&lt;/button&gt;
+ &lt;script&gt;
+ ...
+ handle() {
+   this.$emit(&quot;click-handle&quot;, param )
+ }
+ &lt;/script&gt;
+</code></pre>
+<p>👨 父组件监听 emit 发送的事件,通过自定义处理函数来处理事件</p>
+<pre><code class="language-html">&lt;child-component  @click-handle=&quot;handle&quot;  /&gt;
+&lt;script&gt;
+  ...
+  handle( param ) { 
+    /***/ 
+  }
+&lt;/script&gt;
 </code></pre>
 
                 </div>
