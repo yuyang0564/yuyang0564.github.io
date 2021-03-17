@@ -1,8 +1,8 @@
 <html>
   <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>我的朋友们 | 学习笔记</title>
+<title>CROS | 学习笔记</title>
 <meta name="description" content="" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -14,11 +14,17 @@
 <script src="https://yuyang0564.github.io/media/js/view-image.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
+    <meta name="referrer" content="never">
+    <meta name="description" content="跨域
+Ajax 通信的主要限制就是跨域的安全策略,它要求发起请求的域名必须与接收请求的域名必须是同源的，属于浏览器保护资源的一种行为
+同源策略
+同源策略是指: 协议、域名、端口 必须严格一致
+&quot;http://www.baidu.c..." />
+    <meta name="keywords" content="javascript" />
+    <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
   </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -79,24 +85,109 @@
         </div>
       </div>
 
-      <main id="friends" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2021-03-17"><i class="fa fa-calendar"></i><span class="lately">1 小时前</span></time>
+              
+              <a href="https://yuyang0564.github.io/Q9Jq_SO1i/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/Q9Jq_SO1i/"> </span>
+              </a>
+              <span id="/Q9Jq_SO1i/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-0 ctag-tgCHrWGK6" aria-label="">javascript</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">CROS</h1>
+            </div>
+          </div>
+        </div>  
+
         <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h1 id="跨域">跨域</h1>
+<p>Ajax 通信的主要限制就是跨域的安全策略,它要求发起请求的域名必须与接收请求的域名必须是<code>同源的</code>，属于浏览器保护资源的一种行为</p>
+<h2 id="同源策略">同源策略</h2>
+<p>同源策略是指: <code>协议</code>、<code>域名</code>、<code>端口</code> 必须严格一致</p>
+<pre><code class="language-js">&quot;http://www.baidu.com&quot;  &quot;https://www.baidu.com&quot;  // 协议不同导致跨域   
 
-          <div class="widget_tag_cloud tagcloud">
-          
+&quot;http://www.baidu.com:8080&quot;  &quot;https://www.baidu.com&quot;  // 端口不同导致跨域
+
+&quot;https://www.baidu.com&quot;  &quot;https://www.baidu.cn&quot;  // 域名不同导致跨域
+</code></pre>
+<h2 id="cros">CROS</h2>
+<p>“跨域资源共享”,它的基本思路就是使用自定义的HTTP头部允许浏览器与服务器之间相互了解</p>
+<h3 id="简单请求-get-post">简单请求: GET 、 POST</h3>
+<p>当没有自定义请求头,请求类型为<code>text/plain</code>时，浏览器会发送一个额外的请求头 <code>Origin</code>, 它包含了发送请求页面的[协议,域名,端口] , 用来让服务器确定是否为其提供响应</p>
+<figure data-type="image" tabindex="1"><a href="https://imgtu.com/i/66Wo90"><img src="https://s3.ax1x.com/2021/03/17/66Wo90.png" alt="66Wo90.png" loading="lazy"></a></figure>
+<p>如果服务器为其提供响应,则会再响应头 <code>Access-Control-Allow-Origin</code> 包含相同的源，或者是公共资源时可以为 <code>*</code></p>
+<figure data-type="image" tabindex="2"><a href="https://imgtu.com/i/66fcP1"><img src="https://s3.ax1x.com/2021/03/17/66fcP1.md.png" alt="66fcP1.md.png" loading="lazy"></a></figure>
+<h3 id="复杂请求">复杂请求</h3>
+<p>除了上述简单请求之外，其余的都为复杂请求。浏览器会先发送一个 <code>OPTIONS请求</code>也叫做<code>预检请求</code>,请求头中会包含:</p>
+<ol>
+<li>Origin  确认源</li>
+<li>Access-Control-Request-Method  希望请求的方法</li>
+<li>Access-Control-Request-Headers 希望使用的请求头,以逗号分隔</li>
+</ol>
+<figure data-type="image" tabindex="3"><a href="https://imgtu.com/i/6646c6"><img src="https://s3.ax1x.com/2021/03/17/6646c6.md.png" alt="6646c6.md.png" loading="lazy"></a></figure>
+<p>服务器需要返回:</p>
+<ol>
+<li>Access-Control-Allow-Origin： 确认源</li>
+<li>Access-Control-Allow-Methods：允许的方法（逗号分隔的列表）。</li>
+<li>Access-Control-Allow-Headers：服务器允许的头部（逗号分隔的列表）。</li>
+<li>Access-Control-Max-Age：缓存预检请求的秒数，再缓存的时间内不会再发送 <code>OPTIONS</code> 请求</li>
+</ol>
+<figure data-type="image" tabindex="4"><a href="https://imgtu.com/i/665y5j"><img src="https://s3.ax1x.com/2021/03/17/665y5j.md.png" alt="665y5j.md.png" loading="lazy"></a></figure>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/ArI6WIEAL/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2021-03-17">2021-03-17</time>
+                  <h4 class="title white no-margin">8. 表单</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
             
-          
-          </div>
-        </div>
+              <div id="comments" class="bg-white hosted ">
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+              </div>
+              <div class="clear"></div>
+            
 
-        </div>
+            </div>
           </div>
-        </div>
       </main>
 
-        <footer id="footer" class="grid-container">
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -334,6 +425,9 @@
     <div class="clear"></div>
 
         
+
+      
+    <script src="https://yuyang0564.github.io/media/js/functions-post.js"></script>
 
     </div>
     <!-- end: #wrapper -->
