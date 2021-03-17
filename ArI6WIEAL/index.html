@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>搜索结果 | 学习笔记</title>
+<title>8. 表单 | 学习笔记</title>
 <meta name="description" content="" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -14,16 +14,18 @@
 <script src="https://yuyang0564.github.io/media/js/view-image.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
-    <script src="/media/gridea-search/fuse.js"></script>
-    <script src="/media/gridea-search/ejs.min.js"></script>
-    <script src="/media/gridea-search/gridea-search.js"></script>
-    <script src="/media/gridea-search/result-template.ejs" type="text/ejs"></script>
-</head>
+    <meta name="referrer" content="never">
+    <meta name="description" content="表单
+form 元素对应javascript 中的 HTMLFormElement 类型，它除了继承 HTMLElement 中的默认属性外，还有一些自己的默认行为
 
+action : 请求的URL
+length : 表单中控件的数量
+el..." />
+    <meta name="keywords" content="DOM" />
+    <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
+  </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -84,22 +86,229 @@
         </div>
       </div>
 
-      <main id="home" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
-        <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
-          <div class="main-article post">
-            <div id="gridea-search-result">
-              <h2 class="searching">搜索中......</h2>
-              <h2 class="no-result" style="display:none">未搜索到相关文章</h2>
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2021-03-17"><i class="fa fa-calendar"></i><span class="lately">5 分钟前</span></time>
+              
+              <a href="https://yuyang0564.github.io/ArI6WIEAL/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/ArI6WIEAL/"> </span>
+              </a>
+              <span id="/ArI6WIEAL/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://yuyang0564.github.io/_-SlRQFkE/" class="ctag ctag-0 ctag-_-SlRQFkE" aria-label="">DOM</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">8. 表单</h1>
             </div>
           </div>
+        </div>  
+
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h1 id="表单">表单</h1>
+<h2 id="form-元素对应javascript-中的-htmlformelement-类型它除了继承-htmlelement-中的默认属性外还有一些自己的默认行为">form 元素对应javascript 中的 HTMLFormElement 类型，它除了继承 HTMLElement 中的默认属性外，还有一些自己的默认行为</h2>
+<ul>
+<li>action : 请求的URL</li>
+<li>length : 表单中控件的数量</li>
+<li>elements : 表单中所有控件的 HTMLCollection</li>
+<li>method : 请求方法</li>
+<li>name :   表单的名字</li>
+<li>reset() : 重置表单</li>
+<li>submit() : 提交表单</li>
+</ul>
+<h2 id="获取表单">获取表单</h2>
+<ul>
+<li>通过 <code>id</code></li>
+<li>通过 <code>document.forms</code> 获取页面中的所有表单,它返回一个HTMLCollction,然后通过<code>索引</code>或<code>name</code>访问特定的表单</li>
+</ul>
+<pre><code class="language-html">&lt;form action=&quot;get&quot; name=&quot;form1&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;&quot; id=&quot;&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
+&lt;/form&gt;
+&lt;script&gt;
+const hl = document.forms
+
+console.log(hl[0])
+console.log(hl[&quot;form1&quot;])
+&lt;/script&gt;
+</code></pre>
+<figure data-type="image" tabindex="1"><a href="https://imgtu.com/i/6rx88e"><img src="https://s3.ax1x.com/2021/03/16/6rx88e.png" alt="6rx88e.png" loading="lazy"></a></figure>
+<h2 id="传统提交表单">传统提交表单</h2>
+<p>在 form 中使用下列任一均可提交表单:</p>
+<pre><code class="language-html">&lt;input type=&quot;submit&quot; value=&quot;提交按钮&quot;&gt; 
+
+&lt;button type=&quot;submit&quot;&gt;提交按钮&lt;/button&gt; 
+
+&lt;input type=&quot;image&quot; src=&quot;submit.png&quot;&gt;
+</code></pre>
+<h2 id="事件">事件</h2>
+<h2 id="submit事件">submit事件</h2>
+<p>当点击提交按钮时会自动触发<code>submit</code> 事件</p>
+<pre><code class="language-js">form.addEventListener(&quot;submit&quot;,(event)=&gt;{
+  
+})
+</code></pre>
+<p>或者对表单进行验证失败时，阻止表单的提交</p>
+<pre><code class="language-js">form.addEventListent(&quot;submit&quot;,(event)=&gt;{
+  ...
+  event.preventDdefault()  // 阻止表单的提交
+})
+</code></pre>
+<h2 id="获取表单中的控件">获取表单中的控件</h2>
+<p>表单对象有一个 <code>elements</code> 属性,它返回当前表单的所有控件集合,它们的顺序就是当前表单书写的顺序。可以通过索引来获取元素,或者通过表单的 <code>name</code> 属性</p>
+<pre><code class="language-html">&lt;form action=&quot;get&quot; name=&quot;form1&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;user&quot; id=&quot;user&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
+&lt;/form&gt;
+</code></pre>
+<pre><code class="language-js">let form = document.form[&quot;form1&quot;]
+
+// 方法一: 过表单获取控件
+let nameInput = form.elements[&quot;user&quot;]
+// 方法二: 通过索引来获取
+let nameInput = form.elements[0]
+</code></pre>
+<h2 id="表单控件共有的属性">表单控件共有的属性</h2>
+<ol>
+<li>disabled : 控件是否禁用</li>
+<li>form : 指向当前所在的表单</li>
+<li>name : 当前控件的名字</li>
+<li>readyOnly : 当前控件是否是只读的</li>
+<li>tpye : 当前控件的类型</li>
+<li>value : 提交到服务器的值</li>
+</ol>
+<h2 id="html5-新增表单验证">HTML5 新增表单验证</h2>
+<ol>
+<li><code>required</code> 必填字段</li>
+</ol>
+<pre><code class="language-html">&lt;input type=&quot;text&quot; name=&quot;user&quot; required&gt;
+</code></pre>
+<ol start="2">
+<li><code>pattern</code> 对控件的值使用正则表达式验证</li>
+</ol>
+<blockquote>
+<p><b style="color: #e74c3c">注意</b>: 此验证严格按照从头至尾的规则</p>
+</blockquote>
+<pre><code class="language-html">&lt;input type=&quot;text&quot; name=&quot;user&quot; pattern=&quot;\d+&quot;&gt;
+</code></pre>
+<p>所有的表单元素上都有一个 <code>checkValidity()</code> 方法,用于验证设置了以上2种规则的表单元素。<code>如果一个表单元素没有设置任何一种验证规则，则这个方法始终返回true</code></p>
+<h2 id="form-元素上的-checkvalidity-方法会检查整个表单是否通过验证">form 元素上的 checkValidity() 方法会检查整个表单是否通过验证</h2>
+<h1 id="file-api-文件系统">File Api 文件系统</h1>
+<p>web浏览器访问文件的唯一方式是通过表单中的文件上传</p>
+<pre><code class="language-html">&lt;input  type=&quot;file&quot;/&gt;
+</code></pre>
+<p>上传后的文件会保存在 <code>FileList</code> 对象中, 它是一个伪数组，拥有length属性。可以通过 <code>Array.from()</code> 转为数组<br>
+<a href="https://imgtu.com/i/6s7pZD"><img src="https://s3.ax1x.com/2021/03/16/6s7pZD.png" alt="6s7pZD.png" loading="lazy"></a><br>
+通过<code>索引</code>可以获得上传的每一个文件的一些信息。每个文件对象都有一些只读属性:</p>
+<ul>
+<li>name: 文件在系统中的名字</li>
+<li>size: 文件的大小 (Kb 为单位)</li>
+<li>type: 文件的MIME类型</li>
+</ul>
+<h2 id="通过-filereader-读取文件">通过 FileReader 读取文件</h2>
+<p>从本地上传的文件会暂存在内存中,可以通过 FileReader 从内存中异步读取出文件数据</p>
+<ol>
+<li>readAsText(file,encoding) 从文件读取纯文本内容</li>
+<li>readAsDataURL(file) 读取文件到URI</li>
+<li>readAsArrayBuffer(file) 读取文件到ArrayBuffer</li>
+<li>abort() 提前结束文件读取</li>
+</ol>
+<p>读取文件的结果会保存在 FileReader实例 的 <b style="color:#2ecc71">result</b> 属性中</p>
+<h3 id="filereader-提供了3个事件-progress-error-load-它们分别表示读取进度读取错误读取完成">FileReader 提供了3个事件 <code>progress</code> 、 <code>error</code> 、 <code>load</code> , 它们分别表示读取进度,读取错误,读取完成</h3>
+<ol>
+<li><b style="color:#3498db">progress</b> 事件每隔 <code>50ms</code> 会触发一次 ,  event 对象中的 <code>total</code> 和 <code>loaded</code> 分别表示 文件总大小和已上传文件大小</li>
+</ol>
+<pre><code class="language-js">const rd = new FileReader()
+
+rd.addEventListener(&quot;progress&quot;,(e)=&gt;{
+  if(e.total === e.loaded) {
+    // 文件上传完成
+  }
+})
+</code></pre>
+<figure data-type="image" tabindex="2"><a href="https://imgtu.com/i/6yS6d1"><img src="https://s3.ax1x.com/2021/03/16/6yS6d1.png" alt="6yS6d1.png" loading="lazy"></a></figure>
+<ol start="2">
+<li><b style="color:#3498db">error</b> 事件会在读取文件发生错误时触发, 会保存在FileReader实例的 error 属性的 code 属性中,这个属性是一个错误码数值</li>
+</ol>
+<ul>
+<li>1 未找到文件</li>
+<li>2 安全错误</li>
+<li>3 读取被中断</li>
+<li>4 文件不可读</li>
+<li>5 编码错误</li>
+</ul>
+<pre><code class="language-js">rd.addEventListener(&quot;error&quot;,()=&gt;{
+  console.log(rd.error.code)
+})
+</code></pre>
+<ol start="3">
+<li><b style="color:#3498db">load</b> 事件会在文件读取成功时触发,可以通过 FileReader 实例的 <code>result</code> 属性获取读取结果</li>
+</ol>
+<pre><code class="language-js">rd.addEventListener(&quot;load&quot;,()=&gt;{
+  ...
+  rd.result
+})
+</code></pre>
+<h1 id="blob-url">Blob URL</h1>
+<p>它可以不用把文件内容读取到javascript,而直接引用File 或者 Blob 中的数据URL</p>
+<pre><code class="language-js">window.URL.createObjectURL(File | Blob)
+</code></pre>
+<p>该方法返回内存地址的 URL 字符串，可以被 DOM 直接引用<br>
+<a href="https://imgtu.com/i/66m8z9"><img src="https://s3.ax1x.com/2021/03/17/66m8z9.png" alt="66m8z9.png" loading="lazy"></a></p>
+<p>当某个 URL 不再使用时使用如下方法及时释放内存</p>
+<pre><code class="language-js">window.URL.revokeObjecURL( string )
+</code></pre>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/pnW_OFHNM/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2021-03-11">2021-03-11</time>
+                  <h4 class="title white no-margin">3.2 innerText/outerText</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
+            
+              <div id="comments" class="bg-white hosted ">
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+              </div>
+              <div class="clear"></div>
+            
+
+            </div>
           </div>
-        </div>
-        </div>
       </main>
 
-        <footer id="footer" class="grid-container">
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -335,6 +544,9 @@
     <div class="clear"></div>
 
         
+
+      
+    <script src="https://yuyang0564.github.io/media/js/functions-post.js"></script>
 
     </div>
     <!-- end: #wrapper -->
