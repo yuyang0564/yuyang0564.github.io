@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vue 表单与v-model | 学习笔记</title>
+<title>Vue 组件 | 学习笔记</title>
 <meta name="description" content="" />
 <link rel="shortcut icon" href="https://yuyang0564.github.io/favicon.ico">
 <link rel="stylesheet" href="https://yuyang0564.github.io/styles/main.css">
@@ -15,9 +15,12 @@
 <script src="https://yuyang0564.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://yuyang0564.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="在表单类型中可以通过 v-model  来创建双向数据绑定
-它会忽略表单元素 value 、 selected 、 checked 的初始值 ，而使用 v-model 绑定的数据作为初始值
-&lt;input  v-model=&quot;..." />
+    <meta name="description" content="Vue 组件
+组件是一个带有名称的可复用实例,vue中任何一个应用都是由一个个组件抽象组合而成
+
+它本质上也就是与根实例一样，通过不同的选项，再通过 new Vue() 实例出来的一个新的Vue 对象
+静态组件
+当组件中的内容都是静态内容时..." />
     <meta name="keywords" content="vue2" />
     <script src="https://yuyang0564.github.io/media/js/waterfall.min.js"></script>
     <script src="https://yuyang0564.github.io/media/js/prism.min.js"></script>
@@ -86,14 +89,14 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/01/t84GkR.md.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://s1.ax1x.com/2020/06/01/t84GkR.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-06-03"><i class="fa fa-calendar"></i><span class="lately">9 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2021-03-18"><i class="fa fa-calendar"></i><span class="lately">33 分钟前</span></time>
               
-              <a href="https://yuyang0564.github.io/tFKRiinFM/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/tFKRiinFM/"> </span>
+              <a href="https://yuyang0564.github.io/zb3pdBshV/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/zb3pdBshV/"> </span>
               </a>
-              <span id="/tFKRiinFM/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/zb3pdBshV/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
@@ -102,7 +105,7 @@
                       <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-0 ctag-XZnOL5tqL" aria-label="">vue2</a>
                     
               </div>
-              <h1 class="title ularge white bold">Vue 表单与v-model</h1>
+              <h1 class="title ularge white bold">Vue 组件</h1>
             </div>
           </div>
         </div>  
@@ -112,81 +115,119 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="在表单类型中可以通过-v-model-来创建双向数据绑定">在表单类型中可以通过 v-model  来创建双向数据绑定</h1>
-<p>它会忽略表单元素 <code>value</code> 、 <code>selected</code> 、 <code>checked</code> 的初始值 ，而使用 v-model 绑定的数据作为初始值</p>
-<pre><code class="language-html">&lt;input  v-model=&quot;inputValue&quot; /&gt;
+                  <h1 id="vue-组件">Vue 组件</h1>
+<p>组件是一个带有名称的可复用实例,vue中任何一个应用都是由一个个组件抽象组合而成</p>
+<figure data-type="image" tabindex="1"><a href="https://imgtu.com/i/6cuJTP"><img src="https://s3.ax1x.com/2021/03/17/6cuJTP.md.png" alt="6cuJTP.md.png" loading="lazy"></a></figure>
+<p>它本质上也就是与根实例一样，通过不同的选项，再通过 <code>new Vue()</code> 实例出来的一个新的Vue 对象</p>
+<h2 id="静态组件">静态组件</h2>
+<p>当组件中的内容都是静态内容时，可以在<code>根元素</code>上设置 <code>v-once</code> 修饰符, 它可以让这些静态内容只计算一次后就被缓存</p>
+<pre><code class="language-html">&lt;div v-once&gt;
+  ...
+&lt;/div&gt;
 </code></pre>
-<pre><code class="language-js">export default {
-    data() {
-        return {
-            inputValue: &quot; &quot;
-        }
-    }
-}
+<h2 id="全局组件">全局组件</h2>
+<p>通过Vue实例创建,暴露在全局可用。会增加打包的体积</p>
+<pre><code class="language-js">// 全局组件
+Vue.component(&quot;child-component&quot;,{ ...options })
 </code></pre>
-<h1 id="v-model-是一个语法糖实际上它在底层监听用户的输入事件并更新数据">v-model 是一个语法糖🍡，实际上它在底层监听用户的输入事件并更新数据</h1>
+<h2 id="局部组件">局部组件</h2>
+<pre><code class="language-js">const childComponent1 = { ...options }
+const childComponent2 = { ...options }
+new Vue({
+  components: {
+    childComponent1: childComponent1,
+    childComponent2: childComponent2
+  }
+})
+</code></pre>
+<h2 id="单文件组件">单文件组件</h2>
+<p>使用 <code>.vue</code> 文件方式创建组件,会经过 webpack 编译和打包(生产首选)</p>
+<h2 id="组件的-prop">组件的 Prop</h2>
+<p>组件是通过 Prop 来接收外界的数据（详情至 Prop ）</p>
+<h2 id="自定义-v-model">自定义 v-model</h2>
+<p><code>v-model</code> 默认会使用名为 <code>value</code> 的 prop , 和 <code>input</code> 事件来进行双向同步。但是在自定义组件中，有可能子组件并没有使用 input 元素,而导致 input 事件无效</p>
 <ul>
-<li>针对 <code>text</code>  和  <code>textarea</code>  的 input，监听 <b style="color: red">input</b> 事件， 同步 value 属性</li>
-<li>针对  <code>checkbox</code> 和 <code>radio</code> 的 input , 监听 <b style="color: red">change</b> 事件 , 同步 checked 属性</li>
-<li>针对 <code>select</code> 元素 , 监听 <b style="color: red">change</b>事件 ， 同步 value 属性</li>
+<li>父组件</li>
 </ul>
-<h2 id="checkbox-️">checkbox  ☕️</h2>
-<pre><code class="language-html">&lt;div&gt;
-        &lt;label for=&quot;a&quot;&gt;A&lt;/label&gt;
-        &lt;input type=&quot;checkbox&quot; id=&quot;a&quot; value=&quot;A&quot; v-model=&quot;checkboxList&quot;&gt;
-        &lt;label for=&quot;b&quot;&gt;B&lt;/label&gt;
-        &lt;input type=&quot;checkbox&quot; id=&quot;b&quot; value=&quot;B&quot; v-model=&quot;checkboxList&quot;&gt;
-        &lt;label for=&quot;c&quot;&gt;C&lt;/label&gt;
-        &lt;input type=&quot;checkbox&quot; id=&quot;c&quot; value=&quot;C&quot; v-model=&quot;checkboxList&quot;&gt;
-&lt;/div&gt;
+<pre><code class="language-html">&lt;child-component v-model=&quot;user&quot;/&gt;
 </code></pre>
-<pre><code class="language-js">export default {
-    return {
-        checkboxList: [ ]
-    }
+<pre><code class="language-js">...
+data() {
+  return {
+    user: &quot;xxxxx&quot;
+  }
 }
-</code></pre>
-<h2 id="radio-️">radio ☕️</h2>
-<pre><code class="language-html">&lt;div&gt;
-        &lt;label for=&quot;a&quot;&gt;A&lt;/label&gt;
-        &lt;input type=&quot;radio&quot; id=&quot;a&quot; value=&quot;selectA&quot; v-model=&quot;radio&quot;&gt;
-
-        &lt;label for=&quot;b&quot;&gt;B&lt;/label&gt;
-        &lt;input type=&quot;radio&quot; id=&quot;b&quot; value=&quot;selectB&quot; v-model=&quot;radio&quot;&gt;
-
-        &lt;label for=&quot;c&quot;&gt;C&lt;/label&gt;
-        &lt;input type=&quot;radio&quot; id=&quot;c&quot; value=&quot;selectC&quot; v-model=&quot;radio&quot;&gt;
- &lt;/div&gt;
-</code></pre>
-<pre><code class="language-js">export default {
-    return {
-        radio: &quot; &quot;
-    }
-}
-</code></pre>
-<h2 id="textarea-️">textarea ☕️</h2>
-<pre><code class="language-html">&lt;div&gt;
-        &lt;textarea v-model=&quot;text&quot;&gt;&lt;/textarea&gt;
-&lt;/div&gt;
-</code></pre>
-<h2 id="select-️">select  ☕️</h2>
-<pre><code class="language-html">&lt;div&gt;
-        &lt;select v-model=&quot;select&quot;&gt;
-          &lt;option value=&quot;&quot; disabled selected&gt;未选择&lt;/option&gt;
-          &lt;option &gt;选择一&lt;/option&gt;
-          &lt;option &gt;选择二&lt;/option&gt;
-          &lt;option &gt;选择三&lt;/option&gt;
-        &lt;/select&gt;
-&lt;/div&gt;
 </code></pre>
 <ul>
-<li>针对 <strong style="color: red">select</strong> ,  最好提供一个 disabled 的 <code>option</code> ,  同时 value 为空，以提供默认值</li>
-<li>当没有为 option 提供 value 属性时， 会把 option 的值作为 value 的值</li>
+<li>子组件</li>
 </ul>
 <pre><code class="language-html">...
-&lt;option &gt;选择一&lt;/option&gt;
-...
-&lt;!--  当选中时， value 的值为 &quot; 选择一 &quot; --&gt;
+&lt;div @click=&quot;handle&quot;&gt;{{user}}&lt;/div&gt;
+</code></pre>
+<pre><code class="language-js">...
+prop: {
+  user: String
+}
+</code></pre>
+<h3 id="使用-model-配置选项">使用 model 配置选项</h3>
+<p>通过为子组件设置 <code>model</code> 选项,重新改变绑定的行为</p>
+<pre><code class="language-js">model: {
+  prop:   父组件传递的属性名
+  event:  用于通知父组件监听的自定义事件
+}
+</code></pre>
+<p>以上面为例:  当子组件触发点击事件时，通过向外发送一个<code>click-handle</code> 自定义事件,并抛出新的值</p>
+<ul>
+<li>子组件</li>
+</ul>
+<pre><code class="language-js">props: { // 只要接收父组件传递的值 props 是必不可少的
+  user: String
+},
+model: {
+  prop: &quot;user&quot;,
+  event: &quot;click-handle&quot;
+},
+methods: {
+  handle() {
+    this.$emit(&quot;click-handle&quot;,&quot;新值&quot;)
+  }
+}
+</code></pre>
+<ul>
+<li>父组件相当于设置如下:</li>
+</ul>
+<pre><code class="language-html">&lt;child-component 
+  :user=&quot;user&quot;
+  @click-handle=&quot;user == $event&quot;
+/&gt;
+</code></pre>
+<h2 id="自定义-v-model-更好的替代方案-sync修饰符">自定义 v-model 更好的替代方案 <code>.sync</code>修饰符</h2>
+<ul>
+<li>父组件</li>
+</ul>
+<pre><code class="language-html">&lt;child-component  :user.sync=&quot;user&quot;/&gt;
+</code></pre>
+<ul>
+<li>子组件</li>
+</ul>
+<pre><code class="language-js">...
+this.$emit(&quot;update:user&quot;,&quot;新值&quot;)
+</code></pre>
+<p>.sync 修饰符相当于</p>
+<pre><code class="language-html">&lt;child-component  
+  :user=&quot;user&quot;
+  @update:user=&quot;user = $event&quot;
+/&gt;
+</code></pre>
+<h1 id="异步组件">异步组件</h1>
+<p>在组件需要被渲染时才会进行加载的组件,通过 <code>import()</code> 函数动态加载</p>
+<pre><code class="language-js">Vue.component(&quot;child-component&quot;,()=&gt;import(&quot;./components/sync-component&quot;))
+</code></pre>
+<p>局部注册</p>
+<pre><code class="language-js">...
+components: {
+  'child-component': () =&gt; import(&quot;./components/sync-component&quot;)
+}
 </code></pre>
 
                 </div>
@@ -197,26 +238,13 @@
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/01/t84GkR.md.jpg');"></div>
-                 <a href="https://yuyang0564.github.io/W5Qxj_AEr/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-06-04">2020-06-04</time>
-                  <h4 class="title white no-margin">Vue prop</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://yuyang0564.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/01/tGnWxs.gif');"></div>
-                 <a href="https://yuyang0564.github.io/NtrhYJ8BR/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></div>
+                 <a href="https://yuyang0564.github.io/Q9Jq_SO1i/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-06-03">2020-06-03</time>
-                  <h4 class="title white no-margin">scss  运算符 &#34; / &#34;</h4>
+                  <time datetime="2021-03-17">2021-03-17</time>
+                  <h4 class="title white no-margin">CROS</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://yuyang0564.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">

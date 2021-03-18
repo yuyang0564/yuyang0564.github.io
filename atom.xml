@@ -2,13 +2,20 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuyang0564.github.io</id>
     <title>学习笔记</title>
-    <updated>2021-03-17T09:56:38.084Z</updated>
+    <updated>2021-03-18T09:42:19.179Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuyang0564.github.io"/>
     <link rel="self" href="https://yuyang0564.github.io/atom.xml"/>
     <logo>https://yuyang0564.github.io/images/avatar.png</logo>
     <icon>https://yuyang0564.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 学习笔记</rights>
+    <entry>
+        <title type="html"><![CDATA[Vue 组件]]></title>
+        <id>https://yuyang0564.github.io/zb3pdBshV/</id>
+        <link href="https://yuyang0564.github.io/zb3pdBshV/">
+        </link>
+        <updated>2021-03-18T09:09:37.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CROS]]></title>
         <id>https://yuyang0564.github.io/Q9Jq_SO1i/</id>
@@ -71,12 +78,5 @@
         <link href="https://yuyang0564.github.io/nk2wQc6PW/">
         </link>
         <updated>2021-02-07T02:31:37.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[7.事件]]></title>
-        <id>https://yuyang0564.github.io/xjiMc-odr/</id>
-        <link href="https://yuyang0564.github.io/xjiMc-odr/">
-        </link>
-        <updated>2021-01-05T03:16:54.000Z</updated>
     </entry>
 </feed>

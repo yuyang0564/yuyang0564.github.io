@@ -81,7 +81,7 @@ export default {
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1615974970809" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1616060534989" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -194,7 +194,7 @@ data = {
 <p>父子之间通过 prop 形成了一个单向下行绑定。<br>
 父级的数据更新时会自动同步到所有的子组件中，但是不能直接在子组件中直接修改 prop 数据。这样会导致其他用到此数据的组件也发生改变</p>
 <h2 id="使用-emit-事件">使用 <code>$emit()</code> 事件</h2>
-<p>当需要改变父组件通过 Prop 传递进来的某个值时，需要通过向外发送一个事件，父组件通过监听这个事件来拿到子组件传递的数据</p>
+<p>当需要改变父组件通过 Prop 传递进来的某个值时，需要通过向外发送一个<code>自定义事件</code>，父组件通过监听这个事件来拿到子组件传递的数据</p>
 <p>👶 子组件通过<code>$emit()</code>向外发送事件,第一个参数即为<code>事件名</code>,第二个参数可以抛出一个值</p>
 <pre><code class="language-html"> &lt;button @click=&quot;handle&quot;&gt;Click&lt;/button&gt;
  &lt;script&gt;
@@ -204,6 +204,9 @@ data = {
  }
  &lt;/script&gt;
 </code></pre>
+<blockquote>
+<p><b style="color:#e74c3c">注意</b>: 自定义事件名推荐使用<code>kebab-case</code> 方式,因为监听时的事件名必须严格一致。</p>
+</blockquote>
 <p>👨 父组件监听 emit 发送的事件,通过自定义处理函数来处理事件</p>
 <pre><code class="language-html">&lt;child-component  @click-handle=&quot;handle&quot;  /&gt;
 &lt;script&gt;
@@ -275,6 +278,21 @@ data = {
                   
                   
                   <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://yuyang0564.github.io/zb3pdBshV/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/06/01/t84GkR.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2021-03-18">2021-03-18</time>
+                      <h4 class="title usmall">
+                        <a href="https://yuyang0564.github.io/zb3pdBshV/">Vue 组件</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
                     <a href="https://yuyang0564.github.io/Q9Jq_SO1i/" class="thumb hover-effect">
                       <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></span>
                     </a>
@@ -289,7 +307,7 @@ data = {
                   
                   
                   
-                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
+                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
                     <a href="https://yuyang0564.github.io/ArI6WIEAL/" class="thumb hover-effect">
                       <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></span>
                     </a>
@@ -303,19 +321,6 @@ data = {
                   </article>
                   
                   
-                  
-                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
-                    <a href="https://yuyang0564.github.io/pnW_OFHNM/" class="thumb hover-effect">
-                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s1.ax1x.com/2020/06/29/NWJt10.jpg');"></span>
-                    </a>
-                    <div class="info gradient-effect">
-                      <time datetime="2021-03-11">2021-03-11</time>
-                      <h4 class="title usmall">
-                        <a href="https://yuyang0564.github.io/pnW_OFHNM/">3.2 innerText/outerText</a>
-                      </h4>
-                    </div>
-                    <div class="clear"></div>
-                  </article>
                   
                   
                   
@@ -433,19 +438,19 @@ data = {
                   <h4 class="widget-title title white bordered">标签云</h4>
                   <div class="tagcloud">
                     
-                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-0 ctag-tgCHrWGK6" aria-label="">javascript</a>
+                      <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-0 ctag-XZnOL5tqL" aria-label="">vue2</a>
                     
-                      <a href="https://yuyang0564.github.io/_-SlRQFkE/" class="ctag ctag-1 ctag-_-SlRQFkE" aria-label="">DOM</a>
+                      <a href="https://yuyang0564.github.io/tgCHrWGK6/" class="ctag ctag-1 ctag-tgCHrWGK6" aria-label="">javascript</a>
                     
-                      <a href="https://yuyang0564.github.io/EXv-_I_8W/" class="ctag ctag-2 ctag-EXv-_I_8W" aria-label="">es6</a>
+                      <a href="https://yuyang0564.github.io/_-SlRQFkE/" class="ctag ctag-2 ctag-_-SlRQFkE" aria-label="">DOM</a>
                     
-                      <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-3 ctag-LQTZpssFQ" aria-label="">css</a>
+                      <a href="https://yuyang0564.github.io/EXv-_I_8W/" class="ctag ctag-3 ctag-EXv-_I_8W" aria-label="">es6</a>
                     
-                      <a href="https://yuyang0564.github.io/s2x-Jul-G/" class="ctag ctag-4 ctag-s2x-Jul-G" aria-label="">Array</a>
+                      <a href="https://yuyang0564.github.io/LQTZpssFQ/" class="ctag ctag-4 ctag-LQTZpssFQ" aria-label="">css</a>
                     
-                      <a href="https://yuyang0564.github.io/FwrXzFa9g/" class="ctag ctag-5 ctag-FwrXzFa9g" aria-label="">工具</a>
+                      <a href="https://yuyang0564.github.io/s2x-Jul-G/" class="ctag ctag-5 ctag-s2x-Jul-G" aria-label="">Array</a>
                     
-                      <a href="https://yuyang0564.github.io/XZnOL5tqL/" class="ctag ctag-6 ctag-XZnOL5tqL" aria-label="">vue2</a>
+                      <a href="https://yuyang0564.github.io/FwrXzFa9g/" class="ctag ctag-6 ctag-FwrXzFa9g" aria-label="">工具</a>
                     
                       <a href="https://yuyang0564.github.io/gLtCooV-x/" class="ctag ctag-7 ctag-gLtCooV-x" aria-label="">uni-app</a>
                     
@@ -491,7 +496,7 @@ data = {
           <a href="https://yuyang0564.github.io"><img src="\media\images\custom-footerLogo.jpg" alt=""></a>
         </div>
         <p class="published border-effect">
-          ©2019 共 56 篇文章
+          ©2019 共 57 篇文章
           <br/>
            Powered by <a href="#">「Yu Yang」</a>
         </p>
